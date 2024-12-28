@@ -4,7 +4,7 @@ A Django-based WhatsApp bot that helps users track their fitness journey, log wo
 
 ## Prerequisites
 
-- Python 3.8+
+- Python 3.9+ (Python 3.10.16 exact)
 - Docker and Docker Compose
 - PostgreSQL (handled via Docker)
 - Twilio Account for WhatsApp integration

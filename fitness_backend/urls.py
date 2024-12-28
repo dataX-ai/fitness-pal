@@ -19,5 +19,5 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('whatsapp/', include('whatsapp_bot.urls')),
+    path('', include('whatsapp_bot.urls')),
 ]
