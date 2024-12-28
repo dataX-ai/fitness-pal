@@ -1,0 +1,10 @@
+django==5.0
+twilio==8.10.0
+python-dotenv==1.0.0
+requests==2.31.0
+pillow==10.1.0  # For image handling
+django-environ==0.11.2  # For better environment variable management
+django-crispy-forms==2.1  # For better form rendering
+whitenoise==6.6.0  # For serving static files
+psycopg2-binary==2.9.9  # PostgreSQL adapter
+gunicorn==21.2.0  # Production server 
