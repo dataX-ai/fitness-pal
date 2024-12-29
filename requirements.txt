@@ -8,3 +8,6 @@ django-crispy-forms==2.1  # For better form rendering
 whitenoise==6.6.0  # For serving static files
 psycopg2-binary==2.9.9  # PostgreSQL adapter
 gunicorn==21.2.0  # Production server 
+litellm==1.56.4
+llama_cpp_python==0.3.5
+google-ai-generativelanguage==0.6.10
