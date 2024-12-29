@@ -3,7 +3,6 @@ import logging
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_http_methods
-from twilio.twiml.messaging_response import MessagingResponse
 from .dao.user_dao import UserDAO
 from .services.message_handler import handle_message
 
