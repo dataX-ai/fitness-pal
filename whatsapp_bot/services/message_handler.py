@@ -1,67 +1,103 @@
 from typing import Dict, Any
 from twilio.twiml.messaging_response import MessagingResponse
-from ..models import WhatsAppUser, RawMessage
+from ..models import WhatsAppUser
+from ..dao.raw_message_dao import RawMessageDAO
 from ..ai_services.nlp_processor import is_gym_log
 from ..dao.user_dao import UserDAO
 from ..dao.body_history_dao import BodyHistoryDAO
 from .message_flow import is_hello_message
-from ..ai_services.nlp_processor import is_name_response
+from ..ai_services.nlp_processor import is_name_response, is_measurement_response
+from .message_types import *
+from .twilio_helper import twilio_client
 
 def handle_welcome_and_details(user: WhatsAppUser) -> MessagingResponse:
     """
     Generate combined welcome and details request based on user state
     """
     response = MessagingResponse()
-    
+
     # First message - Welcome
-    msg1 = response.message()
-    msg1.body("""Hello! Welcome to GymTracker! 💪
+    message ="""Hello! Welcome to GymTracker! 💪
 
-Track your workouts in natural language, monitor progress, and achieve your fitness goals.""")
-    
+Track your workouts in natural language, monitor progress, and achieve your fitness goals."""
+    add_message_to_response(response, message, user)
     # Second message - Based on user state
-    msg2 = response.message()
     if not user.name:
-        msg2.body("Hi,What's your name?")
+        add_name_message(response)
     elif not BodyHistoryDAO.has_activity(user):
-        msg2.body("Please select your activity level:")
-        msg2.options([
-            "Sedentary (little or no exercise)",
-            "Lightly Active (1-3 days/week)",
-            "Moderately Active (3-5 days/week)",
-            "Very Active (6-7 days/week)",
-            "Extra Active (very active & physical job)"
-        ])
+        add_body_history_message(response, user)
     elif not BodyHistoryDAO.has_measurements(user):
-        msg2.body("""Please provide your height and weight:
-- Height (in cm)
-- Weight (in kg)
+        add_height_weight_message(response)
 
-Format: "height: 170, weight: 70"
-
-You can also send a progress photo (optional).""")
-    else:
-        metrics = BodyHistoryDAO.get_latest_metrics(user)
-        msg2.body(f"Welcome back! Your current stats:\nHeight: {metrics.get('height')}cm\nWeight: {metrics.get('weight')}kg\n\nYou can start logging your workouts!")
-        
     return response
 
-def handle_name_retry(user: WhatsAppUser) -> MessagingResponse:
-    response = MessagingResponse()
-    msg = response.message()
-    msg.body("Hi,Please provide your name :)")
-    return response
+# Success Messages
 
 def handle_name_success(user: WhatsAppUser) -> MessagingResponse:
     response = MessagingResponse()
-    msg = response.message()
-    msg.body(f"Thanks {user.name}! Now, let me help you track your fitness journey.")
+    message = f"Thanks {user.name}! Now, let me help you track your fitness journey."
+    add_message_to_response(response, message, user)
+    
+    if not BodyHistoryDAO.has_activity(user):
+        add_body_history_message(response, user)
+    elif not BodyHistoryDAO.has_measurements(user):
+        add_height_weight_message(response)
+    else:
+        add_start_track_message(response, user)
+    return response
+
+def handle_activity_success(user: WhatsAppUser) -> MessagingResponse:
+    response = MessagingResponse()
+    if user.name:
+        message = f"Thanks {user.name}! Your activity level has been set to {BodyHistoryDAO.ACTIVITY_CHOICES[BodyHistoryDAO.get_latest_metrics(user).get('activity')]}"
+    else:
+        message = f"Thanks! Your activity level has been set to {BodyHistoryDAO.ACTIVITY_CHOICES[BodyHistoryDAO.get_latest_metrics(user).get('activity')]}"
+    add_message_to_response(response, message, user)
+    
+    if not user.name:
+        add_name_message(response)
+    elif not BodyHistoryDAO.has_measurements(user):
+        add_height_weight_message(response)
+    else:
+        add_start_track_message(response, user)
+    return response
+
+def handle_height_weight_success(user: WhatsAppUser) -> MessagingResponse:
+    response = MessagingResponse()
+    if not user.name:
+        add_name_message(response)
+    elif not BodyHistoryDAO.has_activity(user):
+        add_body_history_message(response, user)
+    else:
+        message = "Thanks! Your measurements has been recorded."
+        add_message_to_response(response, message, user)
+    return response
+
+# Retry Messages
+
+def handle_name_retry(user: WhatsAppUser) -> MessagingResponse:
+    response = MessagingResponse()
+    add_name_message(response)
     return response
 
 def handle_activity_retry(user: WhatsAppUser) -> MessagingResponse:
     response = MessagingResponse()
-    msg = response.message()
-    msg.body("Hi,Please provide your name :)")
+    add_body_history_message(response, user)
+    return response
+
+def handle_height_weight_retry(user: WhatsAppUser) -> MessagingResponse:
+    response = MessagingResponse()
+    add_height_weight_message(response)
+    return response
+
+def handle_height_retry(user: WhatsAppUser) -> MessagingResponse:
+    response = MessagingResponse()
+    add_only_height_message(response)
+    return response
+
+def handle_weight_retry(user: WhatsAppUser) -> MessagingResponse:
+    response = MessagingResponse()
+    add_only_weight_message(response)
     return response
 
 def handle_message(form_data: Dict[str, Any], user: WhatsAppUser) -> MessagingResponse:
@@ -72,11 +108,7 @@ def handle_message(form_data: Dict[str, Any], user: WhatsAppUser) -> MessagingRe
     message_body = form_data.get('body', '')
 
     # Store raw message
-    RawMessage.objects.create(
-        phone_number=phone_number,
-        message=message_body,
-        incoming=True
-    )
+    RawMessageDAO.create_raw_message(phone_number, message_body, True)
 
     # If hello message, handle welcome flow
     if is_hello_message(message_body):
@@ -85,8 +117,9 @@ def handle_message(form_data: Dict[str, Any], user: WhatsAppUser) -> MessagingRe
     # If no name, check if this is a name response
     if not user.name:
         is_name, extracted_name = is_name_response(message_body, user)
-        if is_name:
+        if is_name and extracted_name:
             UserDAO.update_user_details(phone_number, name=extracted_name)
+            return handle_name_success(user)
         else:
             return handle_name_retry(user)
     else:
@@ -94,16 +127,11 @@ def handle_message(form_data: Dict[str, Any], user: WhatsAppUser) -> MessagingRe
 
     # If no activity, check if this is an activity selection
     if not BodyHistoryDAO.has_activity(user):
-        activity_map = {
-            "sedentary": "Sedentary (little or no exercise)",
-            "light": "Lightly Active (1-3 days/week)",
-            "moderate": "Moderately Active (3-5 days/week)",
-            "very": "Very Active (6-7 days/week)",
-            "extra": "Extra Active (very active & physical job)"
-        }
-        selected_activity = message_body.strip().lower()
+        selected_activity = message_body.replace("\n", " ").strip().lower()
+        activity_map = {value.strip().lower(): key for key, value in BodyHistoryDAO.ACTIVITY_CHOICES}
         if selected_activity in activity_map:
-            BodyHistoryDAO.create_entry(user, activity=selected_activity)
+            BodyHistoryDAO.create_entry(user, activity=activity_map[selected_activity])
+            return handle_activity_success(user)
         else:
             return handle_activity_retry(user)
     else:
@@ -111,27 +139,36 @@ def handle_message(form_data: Dict[str, Any], user: WhatsAppUser) -> MessagingRe
 
     # If no measurements, check if this is height/weight input
     if not BodyHistoryDAO.has_measurements(user):
-        import re
-        height_match = re.search(r'height:\s*(\d+)', message_body.lower())
-        weight_match = re.search(r'weight:\s*(\d+)', message_body.lower())
-        
-        if height_match and weight_match:
-            height = float(height_match.group(1))
-            weight = float(weight_match.group(1))
-            if 100 <= height <= 250 and 30 <= weight <= 200:  # Basic validation
+        is_measurement, height, weight = is_measurement_response(message_body)
+        if is_measurement:
+            if weight and height and 80 <= height <= 250 and 30 <= weight <= 200:
                 BodyHistoryDAO.create_entry(user, height=height, weight=weight)
-                return handle_welcome_and_details(user)
+                return handle_height_weight_success(user)
+            elif height and 80 <= height <= 250:
+                bodyHistory = BodyHistoryDAO.create_entry(user, height=height)
+                if bodyHistory.weight:
+                    return handle_height_weight_success(user)
+                else:
+                    return handle_height_weight_retry(user)
+            elif weight and 30 <= weight <= 200:  # Basic validation
+                bodyHistory = BodyHistoryDAO.create_entry(user, weight=weight)
+                if bodyHistory.height:
+                    return handle_height_weight_success(user)
+                else:
+                    return handle_height_weight_retry(user)
+        else:
+            return handle_height_weight_retry(user)
 
     # Handle other message types
     if is_gym_log(message_body):
         response = MessagingResponse()
-        msg = response.message()
-        msg.body("Logging your workout...")
+        message = "Logging your workout."
+        add_message_to_response(response, message, user)
         return response
     
     # Default response
     response = MessagingResponse()
-    msg = response.message()
-    msg.body("I didn't understand that. Try sending a workout log or type 'help' for options.")
+    message = "I didn't understand that. Try sending a workout log or type 'help' for options."
+    add_message_to_response(response, message, user)
     return response
 

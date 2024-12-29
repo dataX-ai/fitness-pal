@@ -3,7 +3,6 @@ from ..models import WhatsAppUser
 from .prompts import LLAMA_SYSTEM_PROMPT, GEMINI_EXERCISE_SYSTEM_PROMPT, GEMINI_NAME_SYSTEM_PROMPT
 from .json_response_schema import GEMINI_EXERCISE_RESPONSE_SCHEMA,GEMINI_NAME_RESPONSE_SCHEMA,Measurements
 import os
-import litellm
 from litellm import completion,JSONSchemaValidationError
 from dotenv import load_dotenv
 from ..services import logger_service
@@ -12,6 +11,17 @@ from llama_cpp import Llama
 from enum import Enum
 import google.generativeai as genai
 
+def is_gym_log(message: str) -> bool:
+    """
+    Determine if the message is a gym log.
+    Args:
+        message: The user's message text
+    Returns:
+        True or False
+    """
+    # TODO: Implement NLP logic
+    return "gym" in message.lower()
+    pass
 
 class MessageIntent(Enum):
     NAME = 'name'
@@ -127,7 +137,6 @@ def extract_name_response(message: str, user: WhatsAppUser) -> str:
         message: The message text
         user: WhatsAppUser object
     """
-    
     try:
         response = completion(
             model="gemini/gemini-2.0-flash-exp", 
@@ -166,3 +175,16 @@ def extract_name_response(message: str, user: WhatsAppUser) -> str:
         raise RuntimeError(f"Failed to process name details: {str(e)}")
     
     return json_response['name']
+
+
+def is_measurement_response(message: str) -> tuple[bool, float, float]:
+    """
+    Check if message is a measurement response and extract measurement
+    Args:
+        message: The message text
+    Returns:
+        True or False
+    """
+    # TODO: Implement NLP logic
+    return True, 170, 70
+    pass

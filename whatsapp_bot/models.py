@@ -22,17 +22,37 @@ class WhatsAppUser(models.Model):
         return f"{self.name} ({self.phone_number})"
 
 class BodyHistory(models.Model):
+    ACTIVITY_CHOICES = [
+        ('sedentary', 'Sedentary (little or no exercise)'),
+        ('light', 'Lightly Active (1-3 days/week)'),
+        ('moderate', 'Moderately Active (3-5 days/week)'),
+        ('very', 'Very Active (6-7 days/week)'),
+        ('extra', 'Extra Active (very active & physical job)'),
+    ]
+
+    BODY_COMPOSITION_CHOICES = [
+        ('calorie_deficit', 'Calorie Deficit'),
+        ('calorie_maintenance', 'Calorie Maintenance'),
+        ('calorie_surplus', 'Calorie Surplus'),
+    ]
+
+    GOAL_CHOICES = [
+        ('lean', 'Lean'),
+        ('athletic', 'Athletic'),
+        ('bulk', 'Bulk'),
+    ]
+
     user = models.ForeignKey(WhatsAppUser, on_delete=models.CASCADE)
     height = models.FloatField(null=True, blank=True)  # in cm
     weight = models.FloatField(null=True, blank=True)  # in kg
-    activity = models.CharField(max_length=50, null=True, blank=True)
+    activity = models.CharField(max_length=50, choices=ACTIVITY_CHOICES, null=True, blank=True)
     body_fat = models.FloatField(null=True, blank=True)  # in percentage
     bmi = models.FloatField(null=True, blank=True)
     maintenance_calories = models.IntegerField(null=True, blank=True)
-    body_composition = models.CharField(max_length=50, null=True, blank=True)
+    body_composition = models.CharField(max_length=50, choices=BODY_COMPOSITION_CHOICES, null=True, blank=True)
     photo_link = models.URLField(null=True, blank=True)
     dream_photo_link = models.URLField(null=True, blank=True)
-    goal = models.CharField(max_length=50, null=True, blank=True)
+    goal = models.CharField(max_length=50, choices=GOAL_CHOICES, null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
@@ -53,8 +73,10 @@ class Exercise(models.Model):
     raw_message = models.ForeignKey(RawMessage, on_delete=models.CASCADE, related_name='exercises')
     name = models.CharField(max_length=100)
     weights = models.IntegerField()
+    weight_unit = models.CharField(max_length=10, null=True, blank=True)
     sets = models.IntegerField()
     reps = models.IntegerField()
+    workout_machine = models.CharField(max_length=100, null=True, blank=True)
 
     def __str__(self):
         return f"{self.name} - {self.sets}x{self.reps}"
