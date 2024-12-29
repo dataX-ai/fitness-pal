@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'whatsapp_bot.apps.WhatsappBotConfig',
     'crispy_forms',
+    'django_cron',
 ]
 
 MIDDLEWARE = [
@@ -164,3 +165,16 @@ LOGGING = {
         },
     },
 }
+
+# Django Cron Settings
+CRON_CLASSES = [
+    'whatsapp_bot.cron.CleanupOldSessionsCronJob',
+]
+
+# Cron specific settings
+DJANGO_CRON_LOCK_BACKEND = 'django_cron.backends.lock.file.FileLock'
+DJANGO_CRON_LOCKFILE_PATH = os.path.join(BASE_DIR, 'cron_locks')
+DJANGO_CRON_LOCK_TIME = 300  # Default lock timeout in seconds
+DJANGO_CRON_DELETE_LOGS_AFTER_DAYS = 30  # Keep cron logs for 30 days
+DJANGO_CRON_EMAIL_ERRORS = True  # Send emails on cron errors
+DJANGO_CRON_CACHE = 'default'  # Use default cache for locking

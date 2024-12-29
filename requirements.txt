@@ -11,3 +11,5 @@ gunicorn==21.2.0  # Production server
 litellm==1.56.4
 llama_cpp_python==0.3.5
 google-ai-generativelanguage==0.6.10
+google-generativeai==0.8.3
+django-cron==0.6.0  # For handling scheduled tasks
