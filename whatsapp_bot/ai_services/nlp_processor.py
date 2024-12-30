@@ -11,30 +11,18 @@ from llama_cpp import Llama
 from enum import Enum
 import google.generativeai as genai
 
-def is_gym_log(message: str) -> bool:
-    """
-    Determine if the message is a gym log.
-    Args:
-        message: The user's message text
-    Returns:
-        True or False
-    """
-    # TODO: Implement NLP logic
-    return "gym" in message.lower()
-    pass
+load_dotenv()
+
+logger = logger_service.get_logger
+os.environ['GEMINI_API_KEY'] = os.getenv('GEMINI_API_KEY')
+genai.configure(api_key=os.getenv('GEMINI_API_KEY'))
+
 
 class MessageIntent(Enum):
     NAME = 'name'
     EXERCISE = 'exercise'
     HEIGHT_WEIGHT = 'height_weight'
     UNKNOWN = 'unknown'
-
-load_dotenv()
-
-logger = logger_service.get_logger
-os.environ['GEMINI_API_KEY'] = os.getenv('GEMINI_API_KEY')
-genai.configure(os.getenv('GEMINI_API_KEY'))
-
 
 def extract_workout_details(message: str) -> Dict[str, Any]:
     if os.getenv('DEBUG') is True:
@@ -177,14 +165,3 @@ def extract_name_response(message: str, user: WhatsAppUser) -> str:
     return json_response['name']
 
 
-def is_measurement_response(message: str) -> tuple[bool, float, float]:
-    """
-    Check if message is a measurement response and extract measurement
-    Args:
-        message: The message text
-    Returns:
-        True or False
-    """
-    # TODO: Implement NLP logic
-    return True, 170, 70
-    pass
