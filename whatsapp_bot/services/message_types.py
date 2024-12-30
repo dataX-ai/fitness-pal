@@ -1,7 +1,7 @@
 from twilio.twiml.messaging_response import MessagingResponse
 from ..dao.body_history_dao import BodyHistoryDAO
 from ..models import WhatsAppUser
-from .twilio_helper import twilio_client
+from .twilio_services import twilio_client
 from ..dao.raw_message_dao import RawMessageDAO
 
 def add_message_to_response(response: MessagingResponse, message: str, user: WhatsAppUser):

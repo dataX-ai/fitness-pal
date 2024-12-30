@@ -4,12 +4,12 @@ from ..models import WhatsAppUser, BodyHistory
 
 class UserDAO:
     @staticmethod
-    def get_or_create_user(phone_number: str) -> Tuple[WhatsAppUser, bool]:
-        """
-        Get existing user or create new one
-        Returns: (user, created) tuple
-        """
-        return WhatsAppUser.objects.get_or_create(phone_number=phone_number)
+    def get_or_create_user(phone_number: str) -> WhatsAppUser:
+        """Get or create a WhatsAppUser"""
+        user, _ = WhatsAppUser.objects.get_or_create(
+            phone_number=phone_number
+        )
+        return user
 
     @staticmethod
     def get_user_by_phone(phone_number: str) -> Optional[WhatsAppUser]:
@@ -115,3 +115,10 @@ class UserDAO:
             return bool(user.name)
         except WhatsAppUser.DoesNotExist:
             return False
+
+    @staticmethod
+    def update_paid_status(user: WhatsAppUser, paid: bool = True) -> WhatsAppUser:
+        """Update user's paid status"""
+        user.paid = paid
+        user.save()
+        return user
