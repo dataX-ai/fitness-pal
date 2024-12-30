@@ -1,20 +1,22 @@
 import json
 import logging
-from django.http import HttpResponse, JsonResponse
+from django.http import HttpResponse, JsonResponse, HttpResponseForbidden
 from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_http_methods
 from .dao.user_dao import UserDAO
 from .services.message_handler import handle_message
 from .services.payments import PaymentService
 from .utils.jwt_utils import verify_token
+from .models import PaymentHistory
+from .dao.user_dao import UserDAO
+from .services import logger_service
+from .utils.formatUtils import format_phone_number
+from standardwebhooks import Webhook
+from .utils.config import DODO_WEBHOOK_SECRET
+from .services.payments import handle_dodo_webhook
 
 # Configure logging
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-    handlers=[logging.StreamHandler()]
-)
-logger = logging.getLogger(__name__)
+logger = logger_service.get_logger()
 
 
 @csrf_exempt
@@ -50,8 +52,15 @@ def webhook(request):
 
 
 @csrf_exempt
-@require_http_methods(["POST"])
+@require_http_methods(["POST", "OPTIONS"])
 def create_payment(request):
+    if request.method == "OPTIONS":
+        response = HttpResponse()
+        response["Access-Control-Allow-Origin"] = "*"
+        response["Access-Control-Allow-Methods"] = "POST, OPTIONS"
+        response["Access-Control-Allow-Headers"] = "Content-Type, Authorization"
+        return response
+        
     logger.info("=== PAYMENT ENDPOINT HIT ===")
     
     try:
@@ -66,24 +75,26 @@ def create_payment(request):
             decoded = verify_token(token)
             phone = decoded.get('Phone')
             if not phone:
-                return JsonResponse({'error': 'Invalid token payload'}, status=401)
+                return JsonResponse({'error': 'Phone number not found in token'}, status=401)
         except ValueError as ve:
+            logger.error(f"Token verification failed: {str(ve)}")
             return JsonResponse({'error': str(ve)}, status=401)
             
         # Parse JSON body
-        data = json.loads(request.body)
+        try:
+            data = json.loads(request.body)
+        except json.JSONDecodeError:
+            return JsonResponse({'error': 'Invalid JSON in request body'}, status=400)
         
-        # Validate amount and ensure phone matches token
+        # Validate amount
         if not data.get('amount'):
             return JsonResponse({'error': 'Amount is required'}, status=400)
         
         # Add verified phone to data
         data['phone'] = phone
         
-        # Initialize payment service
+        # Initialize payment service and create link
         payment_service = PaymentService()
-        
-        # Create payment link
         result = payment_service.create_payment_link(data)
         
         return JsonResponse(result)
@@ -93,7 +104,15 @@ def create_payment(request):
         return JsonResponse({'error': str(ve)}, status=400)
     except Exception as e:
         logger.error(f"Error in create_payment: {str(e)}")
+        logger.exception("Full traceback:")  # This will log the full stack trace
         return JsonResponse(
             {'error': 'Payment creation failed'}, 
             status=500
         )
+
+
+@csrf_exempt
+@require_http_methods(["POST"])
+def dodo_webhook(request):
+    logger.info("=== DODO WEBHOOK HIT ===")
+    return handle_dodo_webhook(request)

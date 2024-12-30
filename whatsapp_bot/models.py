@@ -14,6 +14,7 @@ class RawMessage(models.Model):
 class WhatsAppUser(models.Model):
     phone_number = models.CharField(max_length=50, unique=True)
     name = models.CharField(max_length=50, null=True, blank=True)
+    paid = models.BooleanField(default=False)
 
     # metadata
     created_at = models.DateTimeField(auto_now_add=True)
@@ -108,3 +109,64 @@ class ProgressPhoto(models.Model):
     
     def __str__(self):
         return f"{self.user.phone_number} - Photo at {self.created_at}"
+
+class PaymentHistory(models.Model):
+    STATUS_CHOICES = [
+        ('active', 'Active'),
+        ('inactive', 'Inactive'),
+        ('cancelled', 'Cancelled'),
+        ('failed', 'Failed'),
+    ]
+
+    PERIOD_INTERVAL_CHOICES = [
+        ('Year', 'Year'),
+        ('Month', 'Month'),
+        ('Week', 'Week'),
+        ('Day', 'Day'),
+    ]
+
+    # User and basic info
+    user = models.ForeignKey(WhatsAppUser, on_delete=models.CASCADE, related_name='payments')
+    subscription_id = models.CharField(max_length=255)
+    customer_id = models.CharField(max_length=255, null=True, blank=True)
+    product_id = models.CharField(max_length=255, null=True, blank=True)
+    business_id = models.CharField(max_length=255, null=True, blank=True)
+    type = models.CharField(max_length=255)
+
+    # Amount and currency
+    amount = models.DecimalField(max_digits=10, decimal_places=2)
+    currency = models.CharField(max_length=3, null=True, blank=True)
+    
+    # Status and timing
+    status = models.CharField(max_length=20, choices=STATUS_CHOICES)
+    created_at = models.DateTimeField(auto_now_add=True)
+    payment_time = models.DateTimeField(null=True, blank=True)
+    next_billing_date = models.DateTimeField(null=True, blank=True)
+    
+    # Subscription details
+    trial_period_days = models.IntegerField(null=True, blank=True)
+    quantity = models.IntegerField(null=True, blank=True)
+    
+    # Intervals
+    subscription_period_interval = models.CharField(
+        max_length=10, 
+        choices=PERIOD_INTERVAL_CHOICES,
+        null=True, blank=True
+    )
+    payment_frequency_interval = models.CharField(
+        max_length=10, 
+        choices=PERIOD_INTERVAL_CHOICES,
+        null=True, blank=True
+    )
+    subscription_period_count = models.IntegerField(null=True, blank=True)
+    payment_frequency_count = models.IntegerField(null=True, blank=True)
+    
+    # Additional data
+    metadata = models.JSONField(null=True, blank=True)
+
+    class Meta:
+        ordering = ['-created_at']
+        verbose_name_plural = "Payment histories"
+
+    def __str__(self):
+        return f"{self.user.phone_number} - {self.subscription_id} ({self.status})"

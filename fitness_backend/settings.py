@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'whatsapp_bot.apps.WhatsappBotConfig',
     'crispy_forms',
     'django_cron',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -59,6 +60,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'fitness_backend.urls'
@@ -178,3 +180,29 @@ DJANGO_CRON_LOCK_TIME = 300  # Default lock timeout in seconds
 DJANGO_CRON_DELETE_LOGS_AFTER_DAYS = 30  # Keep cron logs for 30 days
 DJANGO_CRON_EMAIL_ERRORS = True  # Send emails on cron errors
 DJANGO_CRON_CACHE = 'default'  # Use default cache for locking
+
+# CORS settings
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",  # Your frontend URL
+]
+
+CORS_ALLOW_METHODS = [
+    "DELETE",
+    "GET",
+    "OPTIONS",
+    "PATCH",
+    "POST",
+    "PUT",
+]
+
+CORS_ALLOW_HEADERS = [
+    "accept",
+    "authorization",
+    "content-type",
+    "user-agent",
+    "x-csrftoken",
+    "x-requested-with",
+]
+
+# Add this with your other settings
+JWT_SECRET = env('JWT_SECRET')  # Make sure this matches your frontend NEXT_PUBLIC_JWT_SECRET

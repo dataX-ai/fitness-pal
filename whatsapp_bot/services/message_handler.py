@@ -7,11 +7,11 @@ from ..dao.body_history_dao import BodyHistoryDAO
 from .message_flow import is_hello_message
 from ..ai_services.nlp_services import is_name_response, is_measurement_response, is_gym_log
 from .message_types import *
-from .twilio_helper import twilio_client
+from .twilio_services import twilio_client
 from ..services import logger_service
 from ..dao.workout_session_dao import WorkoutSessionDAO
 from ..models import RawMessage
-logger = logger_service.get_logger
+logger = logger_service.get_logger()
 
 ###############################################1
 # Success Response Messages
