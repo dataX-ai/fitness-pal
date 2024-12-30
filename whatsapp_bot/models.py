@@ -5,6 +5,7 @@ class RawMessage(models.Model):
     phone_number = models.CharField(max_length=50)
     message = models.TextField()
     incoming = models.BooleanField(default=True)
+    processed = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
@@ -55,6 +56,23 @@ class BodyHistory(models.Model):
     goal = models.CharField(max_length=50, choices=GOAL_CHOICES, null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
+    def save(self, *args, **kwargs):
+        if not self.pk:  # Only for new instances
+            latest = BodyHistory.objects.filter(user=self.user).order_by('-created_at').first()
+            if latest:
+                # List of fields to copy if they're null
+                fields_to_copy = [
+                    'height', 'weight', 'activity', 'body_fat', 'bmi',
+                    'maintenance_calories', 'body_composition', 'goal'
+                ]
+                
+                for field in fields_to_copy:
+                    current_value = getattr(self, field)
+                    if current_value is None:
+                        setattr(self, field, getattr(latest, field))
+        
+        super().save(*args, **kwargs)
+
     def __str__(self):
         return f"{self.user}'s body history at {self.created_at}"
 
@@ -62,7 +80,8 @@ class WorkoutSession(models.Model):
     user = models.ForeignKey(WhatsAppUser, on_delete=models.CASCADE, related_name='workouts')
     activity_type = models.CharField(max_length=100, null=True, blank=True)
     duration_minutes = models.IntegerField(null=True, blank=True)
-    raw_messages = models.ManyToManyField(RawMessage, related_name='workout_sessions')
+    raw_messages = models.ManyToManyField(RawMessage, related_name='raw_workout_sessions')
+    processed_messages = models.ManyToManyField(RawMessage, related_name='processed_workout_sessions')
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
