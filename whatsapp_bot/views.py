@@ -34,7 +34,7 @@ def webhook(request):
             "media_type": request.POST.get('MediaContentType0'),
             "message_sid": request.POST.get('MessageSid')
         }
-        logger.info(f"Received form data: {json.dumps(form_data, indent=2)}")
+        logger.debug(f"Received form data: {json.dumps(form_data, indent=2)}")
 
         # Get or create user
         phone_number = form_data['from']

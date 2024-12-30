@@ -30,11 +30,6 @@ class PaymentService:
     def create_payment_link(self, data: Dict[str, Any]) -> Dict[str, Any]:
         """Create a payment link using DodoPayments SDK"""
 
-        logger.info(f"DODO_PRODUCT_IDS: {self.DODO_PRODUCT_IDS}")
-        logger.info(f"ENVIRONMENT: {DODO_ENVIRONMENT}")
-        bearer_token = os.getenv('DODO_PAYMENTS_API_KEY')
-        logger.info(f"bearer_token: {bearer_token}")
-
         amount = str(data.get('amount'))
         phone = data.get('phone')
         
