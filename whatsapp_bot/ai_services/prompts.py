@@ -237,3 +237,86 @@ Extract the name of the person from the given text. If the name is not present, 
 
 '''
 
+GEMINI_MEASUREMENTS_SYSTEM_PROMPT = '''
+Extract height and weight measurements from the given text. Return them in a structured JSON format.
+
+**Input:**
+"{Your input string here}"
+
+**Output:**
+{
+  "height": {
+    "value": number,
+    "unit": "cm" or "ft" or "in" or null
+  },
+  "weight": {
+    "value": number,
+    "unit": "kg" or "lbs" or null
+  }
+}
+
+**Example 1:**
+**Input:**
+"I am 5'11" and weigh 165 pounds"
+
+**Output:**
+{
+  "height": {
+    "value": 5.11,
+    "unit": "ft"
+  },
+  "weight": {
+    "value": 165,
+    "unit": "lbs"
+  }
+}
+
+**Example 2:**
+**Input:**
+"My weight is 75 kg and height is 180 cm"
+
+**Output:**
+{
+  "height": {
+    "value": 180,
+    "unit": "cm"
+  },
+  "weight": {
+    "value": 75,
+    "unit": "kg"
+  }
+}
+
+**Example 3:**
+**Input:**
+"Just chatting about the weather"
+
+**Output:**
+{
+  "height": {
+    "value": null,
+    "unit": null
+  },
+  "weight": {
+    "value": null,
+    "unit": null
+  }
+}
+
+**Example 4:**
+**Input:**
+"I am 70kgs"
+
+**Output:**
+{
+  "height": {
+    "value": null,
+    "unit": null
+  },
+  "weight": {
+    "value": 70,
+    "unit": kg
+  }
+}
+'''
+

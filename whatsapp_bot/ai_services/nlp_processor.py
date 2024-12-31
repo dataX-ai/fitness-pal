@@ -1,6 +1,6 @@
 from typing import Dict, List, Optional, Tuple,Any
 from ..models import WhatsAppUser
-from .prompts import LLAMA_SYSTEM_PROMPT, GEMINI_EXERCISE_SYSTEM_PROMPT, GEMINI_NAME_SYSTEM_PROMPT
+from .prompts import LLAMA_SYSTEM_PROMPT, GEMINI_EXERCISE_SYSTEM_PROMPT, GEMINI_NAME_SYSTEM_PROMPT, GEMINI_MEASUREMENTS_SYSTEM_PROMPT
 from .json_response_schema import GEMINI_EXERCISE_RESPONSE_SCHEMA,GEMINI_NAME_RESPONSE_SCHEMA,Measurements
 import os
 from litellm import completion,JSONSchemaValidationError
@@ -98,10 +98,11 @@ def classify_message_intent(message:str)->str:
         return MessageIntent.UNKNOWN
 
 def extract_height_weight(message: str) -> Dict[str,Any]:
-    model = genai.GenerativeModel("gemini-2.0-flash-exp")
+    model = genai.GenerativeModel("gemini-2.0-flash-exp",
+                                  system_instruction=GEMINI_MEASUREMENTS_SYSTEM_PROMPT)
     try:
         result = model.generate_content(
-            "I weighed myself today and I am 190 pounds. Yayy",
+            message,
             generation_config=genai.GenerationConfig(
                 response_mime_type="application/json",
                 response_schema=Measurements
