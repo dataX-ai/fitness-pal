@@ -3,8 +3,9 @@ from django.utils import timezone
 from django_cron.backends.lock.file import FileLock
 from django.conf import settings
 import os
-from .models import WorkoutSession
 from .services.logger_service import get_logger
+from .cron_services.process_pending_workout_messages import process_pending_workout_messages
+
 import traceback
 
 logger = get_logger(__name__)
@@ -71,43 +72,17 @@ class BaseCronJob(CronJobBase):
                 lock.release()
 
 
-class CleanupOldSessionsCronJob(BaseCronJob):
+class ProcessPendingWorkoutMessagesCronJob(BaseCronJob):
     """
-    Cron job to cleanup old workout sessions that are incomplete
-    Runs daily at midnight
+    Cron job to identify workout sessions with unprocessed messages
+    Runs every 15 minutes
     """
-    RUN_EVERY_MINS = 24 * 60  # once per day
+    RUN_EVERY_MINS = 15
     schedule = Schedule(run_every_mins=RUN_EVERY_MINS)
-    code = 'whatsapp_bot.cleanup_old_sessions'
+    code = 'whatsapp_bot.process_pending_workout_messages'
     
-    TIMEOUT_SECONDS = 600  # 10 minutes timeout for cleanup
+    TIMEOUT_SECONDS = 300  # 5 minutes timeout
     ALLOW_PARALLEL_RUNS = False
     
     def do(self):
-        """Cleanup old incomplete workout sessions"""
-        try:
-            yesterday = timezone.now() - timezone.timedelta(days=1)
-            # Use select_for_update() to prevent race conditions
-            old_sessions = WorkoutSession.objects.select_for_update().filter(
-                created_at__lt=yesterday,
-                is_completed=False
-            )
-            
-            count = old_sessions.count()
-            if count > 0:
-                # Batch delete to handle large datasets efficiently
-                batch_size = 1000
-                while old_sessions.exists():
-                    batch_ids = old_sessions[:batch_size].values_list('id', flat=True)
-                    WorkoutSession.objects.filter(id__in=list(batch_ids)).delete()
-                    
-                logger.info(f"Cleaned up {count} old incomplete workout sessions")
-            else:
-                logger.info("No old sessions to clean up")
-            
-            return f"Successfully cleaned up {count} sessions"
-            
-        except Exception as e:
-            logger.error(f"Failed to cleanup old sessions: {str(e)}")
-            logger.error(f"Traceback: {traceback.format_exc()}")
-            raise 
+        process_pending_workout_messages()

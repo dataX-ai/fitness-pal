@@ -8,9 +8,9 @@ class WhatsAppUserAdmin(admin.ModelAdmin):
 
 @admin.register(RawMessage)
 class RawMessageAdmin(admin.ModelAdmin):
-    list_display = ('phone_number', 'message', 'incoming', 'created_at')
+    list_display = ('user', 'message', 'incoming', 'created_at')
     list_filter = ('incoming', 'created_at')
-    search_fields = ('phone_number', 'message')
+    search_fields = ('user__phone_number', 'message')
 
 @admin.register(BodyHistory)
 class BodyHistoryAdmin(admin.ModelAdmin):

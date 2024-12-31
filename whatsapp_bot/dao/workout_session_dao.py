@@ -6,10 +6,10 @@ from ..models import WorkoutSession, WhatsAppUser, RawMessage
 class WorkoutSessionDAO:
 
     @staticmethod
-    def get_active_session(phone_number: str) -> Optional[WorkoutSession]:
+    def get_active_session(user: WhatsAppUser) -> Optional[WorkoutSession]:
         six_hours_ago = timezone.now() - timedelta(hours=6)
         return WorkoutSession.objects.filter(
-            user__phone_number=phone_number,
+            user=user,
             created_at__gte=six_hours_ago
         ).order_by('-created_at').first()
 

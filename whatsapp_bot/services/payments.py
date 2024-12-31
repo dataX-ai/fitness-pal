@@ -108,7 +108,7 @@ def handle_dodo_webhook(request):
             return JsonResponse({'error': 'No phone number found'}, status=400)
 
         # Get or create user
-        user = UserDAO.get_or_create_user(phone_number)
+        user, _ = UserDAO.get_or_create_user(phone_number)
 
         # Create payment history record using DAO
         payment_record = PaymentDAO.create_payment_record(user, payment_data)
@@ -122,7 +122,7 @@ def handle_dodo_webhook(request):
                 "2": subscription_id
             }
             twilio_client.send_template_message(
-                phone_number, 
+                user, 
                 WHATSAPP_PAYMENT_SUCCESS_TEMPLATE_SID, 
                 json.dumps(template_data)
             )
@@ -133,7 +133,7 @@ def handle_dodo_webhook(request):
                 "2": subscription_id
             }
             twilio_client.send_template_message(
-                phone_number, 
+                user, 
                 WHATSAPP_PAYMENT_FAILED_TEMPLATE_SID, 
                 json.dumps(template_data)
             )

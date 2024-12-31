@@ -3,25 +3,25 @@ from django.db.models import Q
 from ..models import BodyHistory, WhatsAppUser
 
 class BodyHistoryDAO:
-    ACTIVITY_CHOICES = [
+    ACTIVITY_CHOICES = dict([
         ('sedentary', 'Sedentary (little or no exercise)'),
         ('light', 'Lightly Active (1-3 days/week)'),
         ('moderate', 'Moderately Active (3-5 days/week)'),
         ('very', 'Very Active (6-7 days/week)'),
         ('extra', 'Extra Active (very active & physical job)'),
-    ]
+    ])
 
-    BODY_COMPOSITION_CHOICES = [
+    BODY_COMPOSITION_CHOICES = dict([
         ('calorie_deficit', 'Calorie Deficit'),
         ('calorie_maintenance', 'Calorie Maintenance'),
         ('calorie_surplus', 'Calorie Surplus'),
-    ]
+    ])
 
-    GOAL_CHOICES = [
-        ('lean', 'Lean'),
-        ('athletic', 'Athletic'),
-        ('bulk', 'Bulk'),
-    ]
+    GOAL_CHOICES = dict([
+        ('lean', 'Lean (Slim and Defined)'),
+        ('athletic', 'Athletic (Muscular and Balanced)'),
+        ('bulk', 'Bulk (Large and Powerful)'),
+    ])
 
     @staticmethod
     def get_latest_entry(user: WhatsAppUser) -> Optional[BodyHistory]:
@@ -65,18 +65,18 @@ class BodyHistoryDAO:
         return bool(latest and latest.height and latest.weight)
 
     @staticmethod
-    def get_latest_metrics(user: WhatsAppUser) -> dict:
-        """Get user's latest metrics as a dictionary"""
+    def get_latest_metrics(user: WhatsAppUser):
+        """Get user's latest metrics
+        Args:
+            user: WhatsAppUser object
+        Returns:
+            BodyHistory object or None if no entries exist
+        """
         latest = BodyHistoryDAO.get_latest_entry(user)
-        if not latest:
-            return {}
-        
-        return {
-            'height': latest.height,
-            'weight': latest.weight,
-            'activity': latest.activity,
-            'body_fat': latest.body_fat,
-            'bmi': latest.bmi,
-            'maintenance_calories': latest.maintenance_calories,
-            'body_composition': latest.body_composition
-        } 
+        return latest
+
+    @staticmethod
+    def has_goal(user: WhatsAppUser) -> bool:
+        """Check if user has set their goal"""
+        latest = BodyHistory.objects.filter(user=user).order_by('-created_at').first()
+        return latest is not None and latest.goal is not None 

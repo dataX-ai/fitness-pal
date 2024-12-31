@@ -1,6 +1,11 @@
 from typing import Dict, List, Optional, Tuple,Any
 from ..models import WhatsAppUser
-from .prompts import LLAMA_SYSTEM_PROMPT, GEMINI_EXERCISE_SYSTEM_PROMPT, GEMINI_NAME_SYSTEM_PROMPT
+from .prompts import (
+    LLAMA_SYSTEM_PROMPT, 
+    GEMINI_EXERCISE_SYSTEM_PROMPT, 
+    GEMINI_NAME_SYSTEM_PROMPT,
+    GEMINI_HEIGHT_WEIGHT_PROMPT
+)
 from .json_response_schema import GEMINI_EXERCISE_RESPONSE_SCHEMA,GEMINI_NAME_RESPONSE_SCHEMA,Measurements
 import os
 from litellm import completion,JSONSchemaValidationError
@@ -13,7 +18,7 @@ import google.generativeai as genai
 
 load_dotenv()
 
-logger = logger_service.get_logger
+logger = logger_service.get_logger()
 os.environ['GEMINI_API_KEY'] = os.getenv('GEMINI_API_KEY')
 genai.configure(api_key=os.getenv('GEMINI_API_KEY'))
 
@@ -73,6 +78,7 @@ def classify_message_intent(message:str)->str:
     llm = Llama.from_pretrained(
         repo_id="bartowski/Llama-3.2-1B-Instruct-GGUF",
         filename="Llama-3.2-1B-Instruct-Q4_K_L.gguf",
+        verbose=False
     )
     response = llm.create_chat_completion(
 	messages = [
@@ -87,7 +93,7 @@ def classify_message_intent(message:str)->str:
 	    ]
     )
     classification = response['choices'][0]['message']['content']
-    logger.info(f"Predicted message intent {classification}")
+    logger.debug(f"Predicted message intent {classification}")
     if 'name' in classification:
         return MessageIntent.NAME
     elif 'exercise' in classification:
@@ -101,13 +107,19 @@ def extract_height_weight(message: str) -> Dict[str,Any]:
     model = genai.GenerativeModel("gemini-2.0-flash-exp")
     try:
         result = model.generate_content(
-            "I weighed myself today and I am 190 pounds. Yayy",
+            [
+                {"text": GEMINI_HEIGHT_WEIGHT_PROMPT},
+                {"text": message}
+            ],
             generation_config=genai.GenerationConfig(
                 response_mime_type="application/json",
                 response_schema=Measurements
             ),
         )
         json_response = json.loads(result.text)
+        
+        # Return in the format expected by the handler
+        return json_response
         
     except JSONSchemaValidationError as e:
         logger.error(f"Schema validation error in Gemini response: {e}")
@@ -116,9 +128,9 @@ def extract_height_weight(message: str) -> Dict[str,Any]:
         logger.error(f"Error in parsing Gemini response: {e}")
         raise RuntimeError(f"Failed to process workout details: {str(e)}")
 
-    return json_response
+    return None
 
-def extract_name_response(message: str, user: WhatsAppUser) -> str:
+def extract_name_response(message: str) -> str:
     """
     Extract Name from a message
     Args:

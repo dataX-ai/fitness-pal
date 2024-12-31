@@ -1,10 +1,11 @@
-import typing
+from typing_extensions import TypedDict
+from typing import Optional
 
-class Measurement(typing.TypedDict):
-    value: typing.Optional[float]
-    unit: typing.Optional[str]
+class Measurement(TypedDict):
+    value: Optional[float]
+    unit: Optional[str]
 
-class Measurements(typing.TypedDict):
+class Measurements(TypedDict):
     height: Measurement
     weight: Measurement
 

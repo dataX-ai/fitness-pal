@@ -237,3 +237,23 @@ Extract the name of the person from the given text. If the name is not present, 
 
 '''
 
+GEMINI_HEIGHT_WEIGHT_PROMPT = '''You are a fitness measurement parser. Your task is to accurately identify and extract height and weight measurements from user messages.
+
+Rules for parsing:
+1. Height formats to handle:
+   - Feet and inches (e.g., 5'11", 5ft11in, 5.5ft)
+   - Meters (e.g., 1.75m, 1.8 meters)
+   - Centimeters (e.g., 175cm, 180 centimeters)
+
+2. Weight formats to handle:
+   - Kilograms (e.g., 75kg, 80 kilos)
+   - Pounds (e.g., 165lbs, 170 pounds)
+   - Grams (e.g., 75000g, 75000 grams)
+
+3. Always identify both the value and unit correctly
+4. If a measurement is missing or unclear, omit it from the response
+5. Identify any spelling errors in the units and give correct spelling in the output
+
+Output the measurements in JSON format with height and weight objects containing value and unit.
+'''
+
