@@ -1,15 +1,4 @@
 from django.db import models
-from django.utils import timezone
-
-class RawMessage(models.Model):
-    phone_number = models.CharField(max_length=50)
-    message = models.TextField()
-    incoming = models.BooleanField(default=True)
-    processed = models.BooleanField(default=False)
-    created_at = models.DateTimeField(auto_now_add=True)
-
-    def __str__(self):
-        return f"{self.phone_number}: {self.message[:50]}..."
 
 class WhatsAppUser(models.Model):
     phone_number = models.CharField(max_length=50, unique=True)
@@ -22,6 +11,16 @@ class WhatsAppUser(models.Model):
 
     def __str__(self):
         return f"{self.name} ({self.phone_number})"
+
+class RawMessage(models.Model):
+    user = models.ForeignKey(WhatsAppUser, on_delete=models.CASCADE, related_name='raw_messages')
+    message = models.TextField()
+    incoming = models.BooleanField(default=True)
+    processed = models.BooleanField(default=False)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.user.phone_number}: {self.message[:50]}..."
 
 class BodyHistory(models.Model):
     ACTIVITY_CHOICES = [
@@ -39,9 +38,9 @@ class BodyHistory(models.Model):
     ]
 
     GOAL_CHOICES = [
-        ('lean', 'Lean'),
-        ('athletic', 'Athletic'),
-        ('bulk', 'Bulk'),
+        ('lean', 'Lean (Slim and Defined)'),
+        ('athletic', 'Athletic ( Muscular and Balanced)'),
+        ('bulk', 'Bulk (Large and Powerful)'),
     ]
 
     user = models.ForeignKey(WhatsAppUser, on_delete=models.CASCADE)
@@ -90,10 +89,9 @@ class WorkoutSession(models.Model):
 
 class Exercise(models.Model):
     workout_session = models.ForeignKey(WorkoutSession, on_delete=models.CASCADE, related_name='exercises')
-    raw_message = models.ForeignKey(RawMessage, on_delete=models.CASCADE, related_name='exercises')
     name = models.CharField(max_length=100)
     weights = models.IntegerField()
-    weight_unit = models.CharField(max_length=10, null=True, blank=True)
+    weight_unit = models.CharField(max_length=50, null=True, blank=True)
     sets = models.IntegerField()
     reps = models.IntegerField()
     workout_machine = models.CharField(max_length=100, null=True, blank=True)

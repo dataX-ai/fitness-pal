@@ -14,7 +14,7 @@ import google.generativeai as genai
 
 load_dotenv()
 
-logger = logger_service.get_logger
+logger = logger_service.get_logger()
 os.environ['GEMINI_API_KEY'] = os.getenv('GEMINI_API_KEY')
 genai.configure(api_key=os.getenv('GEMINI_API_KEY'))
 
@@ -81,6 +81,7 @@ def classify_message_intent(message:str)->str:
     llm = Llama.from_pretrained(
         repo_id="bartowski/Llama-3.2-1B-Instruct-GGUF",
         filename="Llama-3.2-1B-Instruct-Q4_K_L.gguf",
+        verbose=False
     )
     response = llm.create_chat_completion(
 	messages = [
@@ -95,7 +96,7 @@ def classify_message_intent(message:str)->str:
 	    ]
     )
     classification = response['choices'][0]['message']['content']
-    logger.info(f"Predicted message intent {classification}")
+    logger.debug(f"Predicted message intent {classification}")
     if 'name' in classification:
         return MessageIntent.NAME
     elif 'exercise' in classification:
@@ -118,6 +119,9 @@ def extract_height_weight(message: str) -> Dict[str,Any]:
         )
         json_response = json.loads(result.text)
         
+        # Return in the format expected by the handler
+        return json_response
+        
     except JSONSchemaValidationError as e:
         logger.error(f"Schema validation error in Gemini response: {e}")
         raise ValueError("Failed to parse workout details - invalid response format")
@@ -125,9 +129,9 @@ def extract_height_weight(message: str) -> Dict[str,Any]:
         logger.error(f"Error in parsing Gemini response: {e}")
         raise RuntimeError(f"Failed to process workout details: {str(e)}")
 
-    return json_response
+    return None
 
-def extract_name_response(message: str, user: WhatsAppUser) -> str:
+def extract_name_response(message: str) -> str:
     """
     Extract Name from a message
     Args:

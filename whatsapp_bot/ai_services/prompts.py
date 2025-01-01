@@ -431,5 +431,21 @@ Extract height and weight measurements from the given text. Return them in a str
     "unit": kg
   }
 }
+
+**Example 5:**
+**Input:**
+"I am 90 kilo and 180cm"
+
+**Output:**
+{
+  "height": {
+    "value": 180,
+    "unit": cm
+  },
+  "weight": {
+    "value": 90,
+    "unit": kg
+  }
+}
 '''
 
