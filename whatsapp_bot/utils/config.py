@@ -44,7 +44,7 @@ def get_product_ids():
 TWILIO_ACCOUNT_SID = os.getenv('TWILIO_ACCOUNT_SID')
 TWILIO_AUTH_TOKEN = os.getenv('TWILIO_AUTH_TOKEN')
 TWILIO_PHONE_NUMBER = os.getenv('TWILIO_PHONE_NUMBER')
-TWILIO_WHATSAPP_NUMBER = 'whatsapp:+14155238886'
+TWILIO_WHATSAPP_NUMBER = 'whatsapp:+12316255796' #'whatsapp:+14155238886'
 
 
 ############################
@@ -60,4 +60,4 @@ WHATSAPP_ACTIVITY_TEMPLATE_SID = "HX924f53aed72555c48b8f5f402a615098"
 # Subscription Configuration
 ############################
 
-MAX_FREE_MESSAGES_PER_DAY = os.getenv('MAX_FREE_MESSAGES_PER_DAY', 3)
+MAX_FREE_MESSAGES_PER_DAY = int(os.getenv('MAX_FREE_MESSAGES_PER_DAY', '3'))

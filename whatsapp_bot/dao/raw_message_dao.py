@@ -13,7 +13,7 @@ class RawMessageDAO:
         Count messages sent by a user since a given datetime
         
         Args:
-            phone_number: The user's phone number
+            user: The WhatsAppUser object
             since_datetime: Datetime to count messages from
             
         Returns:

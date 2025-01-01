@@ -160,9 +160,10 @@ def handle_name_message(user: WhatsAppUser, message_body: str) -> MessagingRespo
 
 def handle_activity_message(user: WhatsAppUser, message_body: str) -> MessagingResponse:
     selected_activity = message_body.replace("\n", " ").strip().lower()
-    activity_map = {value.strip().lower(): key for key, value in BodyHistoryDAO.ACTIVITY_CHOICES.items()}
+    activity_map = {key.strip().lower(): value for key, value in BodyHistoryDAO.ACTIVITY_CHOICES.items()}
+    logger.info(f"Activity map: {activity_map}, selected activity: {selected_activity}, message body: {message_body}")
     if selected_activity in activity_map:
-        BodyHistoryDAO.create_entry(user, activity=activity_map[selected_activity])
+        BodyHistoryDAO.create_entry(user, activity=selected_activity)
         return handle_activity_success(user)
     else:
         return handle_activity_retry(user)
@@ -214,11 +215,11 @@ def handle_gym_log_message(user: WhatsAppUser, raw_message: RawMessage) -> Messa
 
 def handle_goal_message(user: WhatsAppUser, message_body: str) -> MessagingResponse:
     selected_goal = message_body.replace("\n", " ").strip().lower()
-    goal_map = {value.strip().lower(): key for key, value in BodyHistoryDAO.GOAL_CHOICES.items()}
+    goal_map = {key.strip().lower(): value for key, value in BodyHistoryDAO.GOAL_CHOICES.items()}
     logger.info(f"Goal map: {goal_map}, selected goal: {selected_goal}")
     if selected_goal in goal_map.keys():
         logger.info(f"present in goal map")
-        BodyHistoryDAO.create_entry(user, goal=goal_map[selected_goal])
+        BodyHistoryDAO.create_entry(user, goal=selected_goal)
         return handle_goal_success(user)
     else:
         return handle_goal_retry(user)

@@ -24,7 +24,7 @@ class SubscriptionCheck:
         # For non-paid users, check message count for current day in IST
         ist_now = timezone.now().astimezone(SubscriptionCheck.IST_TIMEZONE)
         start_of_day = ist_now.replace(hour=0, minute=0, second=0, microsecond=0)
-        messages_today = RawMessageDAO.count_messages_since(user.phone_number, start_of_day)
+        messages_today = RawMessageDAO.count_messages_since(user, start_of_day)
         
         return messages_today < MAX_FREE_MESSAGES_PER_DAY
 
@@ -41,5 +41,5 @@ class SubscriptionCheck:
             return -1  # Unlimited messages
         ist_now = timezone.now().astimezone(SubscriptionCheck.IST_TIMEZONE)
         start_of_day = ist_now.replace(hour=0, minute=0, second=0, microsecond=0)
-        messages_today = RawMessageDAO.count_messages_since(user.phone_number, start_of_day)
+        messages_today = RawMessageDAO.count_messages_since(user, start_of_day)
         return max(0, MAX_FREE_MESSAGES_PER_DAY - messages_today)

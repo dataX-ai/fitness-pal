@@ -24,7 +24,7 @@ class TwilioClient:
 
     def send_template_message(self, user: WhatsAppUser, content_sid: str, content_variables: dict = None):
         RawMessageDAO.create_raw_message(user=user, message=f"template:{content_sid}", incoming=False)
-        self.client.messages.create(to='whatsapp:'+user.phone_number, from_=TWILIO_WHATSAPP_NUMBER, content_sid=content_sid, content_variables=content_variables)
+        self.client.messages.create(to=user.phone_number, from_=TWILIO_WHATSAPP_NUMBER, content_sid=content_sid, content_variables=content_variables)
 
 twilio_client = TwilioClient()
 

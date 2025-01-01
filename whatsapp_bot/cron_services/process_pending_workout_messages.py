@@ -20,8 +20,8 @@ def process_pending_workout_messages():
         pending_sessions = WorkoutSession.objects.filter(
             created_at__gte=eight_hours_ago
         ).annotate(
-            raw_count=Count('raw_messages'),
-            processed_count=Count('processed_messages')
+            raw_count=Count('raw_messages', distinct=True),
+            processed_count=Count('processed_messages', distinct=True)
         ).filter(
             Q(raw_count__gt=0) & Q(raw_count__gt=F('processed_count'))  # Compare counts at DB level
         ).values('id', 'raw_count', 'processed_count')

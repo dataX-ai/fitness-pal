@@ -77,7 +77,7 @@ class ProcessPendingWorkoutMessagesCronJob(BaseCronJob):
     Cron job to identify workout sessions with unprocessed messages
     Runs every 15 minutes
     """
-    RUN_EVERY_MINS = 15
+    RUN_EVERY_MINS = 1
     schedule = Schedule(run_every_mins=RUN_EVERY_MINS)
     code = 'whatsapp_bot.process_pending_workout_messages'
     
