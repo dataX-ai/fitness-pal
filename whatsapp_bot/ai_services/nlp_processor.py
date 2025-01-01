@@ -1,6 +1,7 @@
 from typing import Dict, List, Optional, Tuple,Any
+import typing
 from ..models import WhatsAppUser
-from .prompts import LLAMA_SYSTEM_PROMPT, GEMINI_EXERCISE_SYSTEM_PROMPT, GEMINI_NAME_SYSTEM_PROMPT, GEMINI_MEASUREMENTS_SYSTEM_PROMPT
+from .prompts import LLAMA_SYSTEM_PROMPT, GEMINI_EXERCISE_SYSTEM_PROMPT, GEMINI_NAME_SYSTEM_PROMPT, GEMINI_MEASUREMENTS_SYSTEM_PROMPT, GEMINI_MATCH_EXERCISE_SYSTEM_PROMPT
 from .json_response_schema import GEMINI_EXERCISE_RESPONSE_SCHEMA,GEMINI_NAME_RESPONSE_SCHEMA,Measurements
 import os
 from litellm import completion,JSONSchemaValidationError
@@ -23,6 +24,13 @@ class MessageIntent(Enum):
     EXERCISE = 'exercise'
     HEIGHT_WEIGHT = 'height_weight'
     UNKNOWN = 'unknown'
+
+class ExerciseMatch(typing.TypedDict, total=True):  # total=True makes all fields required
+    matched_exercise: str
+    confidence: typing.Literal["HIGH", "MEDIUM", "LOW"]
+
+class ExerciseMatchResponse(typing.TypedDict, total=True):
+    matched_exercises: list[ExerciseMatch]
 
 def extract_workout_details(message: str) -> Dict[str, Any]:
     if os.getenv('DEBUG') is True:
@@ -165,4 +173,25 @@ def extract_name_response(message: str, user: WhatsAppUser) -> str:
     
     return json_response['name']
 
+def match_exercise_name(exercise_dict:Dict) -> Dict[str,Any]:
+    model = genai.GenerativeModel("gemini-2.0-flash-exp",
+                                  system_instruction=GEMINI_MATCH_EXERCISE_SYSTEM_PROMPT)
+    try:
+        result = model.generate_content(
+            json.dumps(exercise_dict),
+            generation_config=genai.GenerationConfig(
+                response_mime_type="application/json",
+                response_schema=ExerciseMatchResponse
+            ),
+        )
+        matched_exercise_json = json.loads(result.text)
+        
+    except JSONSchemaValidationError as e:
+        logger.error(f"Schema validation error in Gemini response: {e}")
+        raise ValueError("Failed to parse workout details - invalid response format")
+    except Exception as e:
+        logger.error(f"Error in parsing Gemini response: {e}")
+        raise RuntimeError(f"Failed to process workout details: {str(e)}")
+
+    return matched_exercise_json
 

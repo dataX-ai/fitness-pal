@@ -16,3 +16,4 @@ django-cron==0.6.0  # For handling scheduled tasks
 pyjwt==2.10.1
 dodopayments==0.14.1
 standardwebhooks==1.0.0
+pandas==2.2.3
