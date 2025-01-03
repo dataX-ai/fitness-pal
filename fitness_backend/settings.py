@@ -35,7 +35,7 @@ SECRET_KEY = env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env('DEBUG')
 
-ALLOWED_HOSTS = env.list('ALLOWED_HOSTS', default=['localhost', '127.0.0.1'])
+ALLOWED_HOSTS = env.list('ALLOWED_HOSTS', default=['localhost', '127.0.0.1']) + ['.ngrok-free.app']
 
 # Application definition
 INSTALLED_APPS = [
@@ -183,7 +183,9 @@ DJANGO_CRON_CACHE = 'default'  # Use default cache for locking
 
 # CORS settings
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",  # Your frontend URL
+    "http://localhost:3000",
+    "https://*.ngrok-free.app",  # Your ngrok URL
+  # Your frontend URL
 ]
 
 CORS_ALLOW_METHODS = [
@@ -195,6 +197,9 @@ CORS_ALLOW_METHODS = [
     "PUT",
 ]
 
+CORS_ALLOW_CREDENTIALS = True
+CORS_ORIGIN_ALLOW_ALL = False
+
 CORS_ALLOW_HEADERS = [
     "accept",
     "authorization",
@@ -202,6 +207,7 @@ CORS_ALLOW_HEADERS = [
     "user-agent",
     "x-csrftoken",
     "x-requested-with",
+    "ngrok-skip-browser-warning"
 ]
 
 # Add this with your other settings

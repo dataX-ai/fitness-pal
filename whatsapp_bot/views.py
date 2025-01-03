@@ -116,3 +116,39 @@ def create_payment(request):
 def dodo_webhook(request):
     logger.info("=== DODO WEBHOOK HIT ===")
     return handle_dodo_webhook(request)
+
+@csrf_exempt
+@require_http_methods(["GET"])
+def fetch_workout_info(request):
+    try:
+        import pandas as pd
+        # Read CSV file
+        df = pd.read_csv('whatsapp_bot/exercise_inventory - exercises.csv')
+        
+        # Initialize list to store exercise objects
+        exercises = []
+        
+        # Iterate through DataFrame rows
+        for index, row in df.iterrows():            
+            # Create exercise object
+            exercise = {
+                'id': index + 1,
+                'name': row['exercise_name'] if pd.notna(row['exercise_name']) else "",
+                'gifUrl': row['exercise_image_url'] if pd.notna(row['exercise_image_url']) else "",
+                'targetMuscleImage': row['muscles_worked_image'] if pd.notna(row['muscles_worked_image']) else "",
+                'targetMuscle': row['muscle_group'] if 'muscle_group' in row and pd.notna(row['muscle_group']) else "",
+                'description': row['commentary'] if pd.notna(row['commentary']) else "",
+                'category': 'Strength',
+                'equipment': 'Body Weight'
+            }
+            
+            exercises.append(exercise)
+        
+        return JsonResponse({'exercises': exercises}, safe=False)
+        
+    except Exception as e:
+        logger.error(f"Error in fetch_workout_info: {str(e)}")
+        return JsonResponse(
+            {'error': 'Failed to fetch workout information'}, 
+            status=500
+        )    

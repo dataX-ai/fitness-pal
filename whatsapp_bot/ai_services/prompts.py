@@ -1,7 +1,7 @@
 import pandas as pd
 import json
 
-df = pd.read_csv("Excercise list with rep time  - Sheet1.csv")
+df = pd.read_csv("whatsapp_bot/ai_services/Excercise list with rep time  - Sheet1.csv")
 exercise_names = df['Exercise Name'].to_list()
 exercise_names_dict = {"exercises": exercise_names}
 
