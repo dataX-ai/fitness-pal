@@ -36,6 +36,8 @@ INSTANCE="fitness-prod-4-8g"
 # Default to asking for build preference
 SKIP_BUILD=
 
+# --------------------------- Argument Input Handling ------------------------------------------------------------------------------------------
+
 # Parse command line arguments
 while [[ "$#" -gt 0 ]]; do
     case $1 in
@@ -44,6 +46,9 @@ while [[ "$#" -gt 0 ]]; do
     esac
     shift
 done
+
+# --------------------------- Review Deployment Information -------------------------------------------------------------------------------------
+
 
 # Get the parent directory of the scripts folder
 PARENT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
@@ -74,6 +79,8 @@ if [ -z "$SKIP_BUILD" ]; then
     fi
 fi
 
+# --------------------------- GCloud Authentication ----------------------------------------------------------------------------------------------
+
 # Check GCloud Authentication
 print_header "Authentication Check"
 if ! gcloud auth list --filter=status:ACTIVE --format="get(account)" 2>/dev/null | grep -q '^'; then
@@ -92,6 +99,8 @@ echo "Setting GCloud project..."
 gcloud config set project $PROJECT
 print_success "Project set to $PROJECT"
 
+# --------------------------- Env Check ------------------------------------------------------------------------------------------
+
 # Load environment variables from .env file
 if [ -f "$PARENT_DIR/.env" ]; then
     print_success "Loading environment variables from .env file"
@@ -108,6 +117,8 @@ if [ -z "$TSCALE_USERNAME" ] || [ -z "$TSCALE_TOKEN" ]; then
 fi
 print_success "TreeScale credentials verified"
 
+# --------------------------- Docker Build ------------------------------------------------------------------------------------------
+
 # Build and push if not skipped
 if [ "$SKIP_BUILD" = false ]; then
     print_header "Building and Pushing Image"
@@ -120,6 +131,8 @@ if [ "$SKIP_BUILD" = false ]; then
 else
     print_warning "Skipping image build and push"
 fi
+
+# --------------------------- File Transfer To VM ------------------------------------------------------------------------------------------
 
 # Files to copy
 print_header "File Transfer"
@@ -141,6 +154,8 @@ for file in "${FILES_TO_COPY[@]}"; do
     fi
 done
 
+# --------------------------- Deploy Image to VM ------------------------------------------------------------------------------------------
+
 # Create a temporary file for docker login
 echo "$TSCALE_TOKEN" > /tmp/docker_pass.txt
 
@@ -161,6 +176,8 @@ gcloud compute ssh $INSTANCE --zone=$ZONE --project=$PROJECT --command="
     echo 'Logging into TreeScale registry...'
     echo $TSCALE_TOKEN | sudo docker login c.tsapp.dev -u $TSCALE_USERNAME --password-stdin
 "
+
+# --------------------------- Clean Up ------------------------------------------------------------------------------------------
 
 # Clean up
 rm -f /tmp/docker_pass.txt
