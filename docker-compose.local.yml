@@ -3,7 +3,7 @@ version: '3.8'
 
 services:
   web:
-    image: c.tsapp.dev/kanishka/fitness-tracker:latest  # Change to use local image
+    # image: c.tsapp.dev/kanishka/fitness-tracker:latest  # Change to use local image
     build: 
       context: .
       dockerfile: Dockerfile

@@ -140,6 +140,8 @@ FILES_TO_COPY=(
     "$PARENT_DIR/docker-compose.prod.yml"
     "$PARENT_DIR/.env.prod"
     "$PARENT_DIR/nginx.conf"
+    "$PARENT_DIR/start.sh"
+    "$PARENT_DIR/healthcheck.sh"
 )
 
 # Copy necessary files to VM
@@ -175,6 +177,27 @@ gcloud compute ssh $INSTANCE --zone=$ZONE --project=$PROJECT --command="
     # Login to TreeScale registry
     echo 'Logging into TreeScale registry...'
     echo $TSCALE_TOKEN | sudo docker login c.tsapp.dev -u $TSCALE_USERNAME --password-stdin
+
+    # Fix line endings and permissions
+    echo 'Fixing script permissions...'
+    sudo dos2unix start.sh healthcheck.sh
+    sudo chmod +x start.sh healthcheck.sh
+
+    # Pull new images first while old containers are still running
+    echo 'Pulling new images...'
+    sudo docker-compose -f docker-compose.prod.yml pull
+
+    # Recreate containers one at a time
+    echo 'Updating containers...'
+    sudo docker-compose -f docker-compose.prod.yml up -d --remove-orphans --no-build --force-recreate
+
+    # Clean up old images
+    echo 'Cleaning up old images...'
+    sudo docker image prune -f
+
+    # Verify deployment
+    echo 'Verifying deployment...'
+    sudo docker-compose -f docker-compose.prod.yml ps
 "
 
 # --------------------------- Clean Up ------------------------------------------------------------------------------------------

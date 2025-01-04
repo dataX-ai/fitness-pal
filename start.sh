@@ -26,4 +26,4 @@ exec gunicorn fitness_backend.wsgi:application \
     --log-level=info \
     --backlog=2048 \
     --worker-connections=1000 \
-    --keep-alive=5 
+    --keep-alive=5
