@@ -119,7 +119,7 @@ def dodo_webhook(request):
     return handle_dodo_webhook(request)
 
 
-@require_http_methods(["GET"])
+@csrf_exempt
 def health_check(request):
     """Health check endpoint for Docker"""
     try:
