@@ -1,7 +1,12 @@
 import pandas as pd
 import json
+import os
 
-df = pd.read_csv("Excercise list with rep time  - Sheet1.csv")
+# Get the directory containing this file
+current_dir = os.path.dirname(os.path.abspath(__file__))
+csv_path = os.path.join(current_dir, "exercise_list.csv")
+
+df = pd.read_csv(csv_path)
 exercise_names = df['Exercise Name'].to_list()
 exercise_names_dict = {"exercises": exercise_names}
 

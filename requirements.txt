@@ -9,6 +9,7 @@ whitenoise==6.6.0  # For serving static files
 psycopg2-binary==2.9.9  # PostgreSQL adapter
 gunicorn==21.2.0  # Production server 
 litellm==1.56.4
+--extra-index-url https://jllllll.github.io/llama-cpp-python-cuBLAS-wheels/AVX2/cu117
 llama_cpp_python==0.3.5
 google-ai-generativelanguage==0.6.10
 google-generativeai==0.8.3
@@ -19,3 +20,5 @@ standardwebhooks==1.0.0
 typing_extensions>=4.9.0  # For TypedDict support on Python < 3.12
 pytz==2024.1
 pandas==2.2.3
+django-cors-headers==4.3.1  # For handling CORS
+ollama==0.4.5

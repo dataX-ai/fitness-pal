@@ -14,6 +14,7 @@ from .utils.formatUtils import format_phone_number
 from standardwebhooks import Webhook
 from .utils.config import DODO_WEBHOOK_SECRET
 from .services.payments import handle_dodo_webhook
+from django.db import connection
 
 # Configure logging
 logger = logger_service.get_logger()
@@ -116,3 +117,16 @@ def create_payment(request):
 def dodo_webhook(request):
     logger.info("=== DODO WEBHOOK HIT ===")
     return handle_dodo_webhook(request)
+
+
+@require_http_methods(["GET"])
+def health_check(request):
+    """Health check endpoint for Docker"""
+    try:
+        # Test database connection
+        with connection.cursor() as cursor:
+            cursor.execute("SELECT 1")
+            cursor.fetchone()
+        return JsonResponse({"status": "healthy"})
+    except Exception as e:
+        return JsonResponse({"status": "unhealthy", "error": str(e)}, status=500)
