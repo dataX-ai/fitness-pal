@@ -84,12 +84,9 @@ def extract_workout_details(message: str) -> Dict[str, Any]:
 
 
 def classify_message_intent(message:str)->str:
-    
-    
     try:
-        
         response: ChatResponse = client.chat(
-            model='hf.co/bartowski/Llama-3.2-1B-Instruct-GGUF:Q4_K_L', 
+            model='hf.co/bartowski/Llama-3.2-1B-Instruct-GGUF:Q4_K_L',
             messages=[
                 {
                     'role': 'system',
@@ -115,6 +112,7 @@ def classify_message_intent(message:str)->str:
     except Exception as e:
         logger.error(f"Error in classify_message_intent: {str(e)}")
         return MessageIntent.UNKNOWN
+
 
 def extract_height_weight(message: str) -> Dict[str,Any]:
     model = genai.GenerativeModel("gemini-2.0-flash-exp",
