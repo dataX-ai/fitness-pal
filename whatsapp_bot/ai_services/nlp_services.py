@@ -78,7 +78,7 @@ def get_converted_height_weight(message: str) -> tuple[float, float]:
     weight_unit = weight_data.get('unit', '').lower() if weight_data.get('unit') else None
     
     # Check if at least one measurement is present
-    if height_value is None and weight_value is None:
+    if (height_value is None or height_unit is None) and (weight_value is None or weight_unit is None):
         raise ValueError("No height or weight measurements found in the message")
     
     # Convert height to cm if present

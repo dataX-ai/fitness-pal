@@ -9,8 +9,12 @@ from dotenv import load_dotenv
 from ..services import logger_service
 import json
 from llama_cpp import Llama
+from llama_cpp.llama_speculative import LlamaPromptLookupDecoding
 from enum import Enum
+from ollama import chat
+from ollama import ChatResponse
 import google.generativeai as genai
+from ollama import Client
 
 load_dotenv()
 
@@ -18,6 +22,9 @@ logger = logger_service.get_logger()
 os.environ['GEMINI_API_KEY'] = os.getenv('GEMINI_API_KEY')
 genai.configure(api_key=os.getenv('GEMINI_API_KEY'))
 
+ollama_host = os.getenv('OLLAMA_HOST', 'localhost')
+ollama_port = os.getenv('OLLAMA_PORT', '11434')
+client = Client(host=f"http://{ollama_host}:{ollama_port}")
 
 class MessageIntent(Enum):
     NAME = 'name'
@@ -77,34 +84,35 @@ def extract_workout_details(message: str) -> Dict[str, Any]:
 
 
 def classify_message_intent(message:str)->str:
-
-    llm = Llama.from_pretrained(
-        repo_id="bartowski/Llama-3.2-1B-Instruct-GGUF",
-        filename="Llama-3.2-1B-Instruct-Q4_K_L.gguf",
-        verbose=False
-    )
-    response = llm.create_chat_completion(
-	messages = [
-        {
-            "role": "system",
-            "content": LLAMA_SYSTEM_PROMPT
-		},
-		{
-			"role": "user",
-			"content": message
-		}
-	    ]
-    )
-    classification = response['choices'][0]['message']['content']
-    logger.debug(f"Predicted message intent {classification}")
-    if 'name' in classification:
-        return MessageIntent.NAME
-    elif 'exercise' in classification:
-        return MessageIntent.EXERCISE
-    elif 'height_weight' in classification:
-        return MessageIntent.HEIGHT_WEIGHT
-    else:
+    try:
+        response: ChatResponse = client.chat(
+            model='hf.co/bartowski/Llama-3.2-1B-Instruct-GGUF:Q4_K_L',
+            messages=[
+                {
+                    'role': 'system',
+                    'content': LLAMA_SYSTEM_PROMPT
+                },
+                {
+                    'role': 'user',
+                    'content': message,
+                },
+            ]
+        )
+        classification = response['message']['content']
+        logger.info(f"Classification Response: {response}")
+        logger.info(f"Predicted message intent {classification}")
+        if 'name' in classification:
+            return MessageIntent.NAME
+        elif 'exercise' in classification:
+            return MessageIntent.EXERCISE
+        elif 'height_weight' in classification:
+            return MessageIntent.HEIGHT_WEIGHT
+        else:
+            return MessageIntent.UNKNOWN
+    except Exception as e:
+        logger.error(f"Error in classify_message_intent: {str(e)}")
         return MessageIntent.UNKNOWN
+
 
 def extract_height_weight(message: str) -> Dict[str,Any]:
     model = genai.GenerativeModel("gemini-2.0-flash-exp",
