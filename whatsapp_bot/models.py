@@ -96,6 +96,7 @@ class Exercise(models.Model):
     weight_unit = models.CharField(max_length=50, null=True, blank=True)
     sets = models.IntegerField()
     reps = models.IntegerField()
+    muscle_group = models.CharField(max_length=100, null=True, blank=True)
     workout_machine = models.CharField(max_length=100, null=True, blank=True)
 
     def __str__(self):

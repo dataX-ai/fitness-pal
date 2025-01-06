@@ -21,7 +21,8 @@ for _, row in EXERCISE_LIST_DF.iterrows():
     avg_rep = row['Avg Rep']
     avg_break = row['Avg Break']
     cal_per_rep = row['calories_spent_per_rep_per_kg']
-    exercise_metrics[exercise_name] = [avg_rep, avg_break, cal_per_rep]
+    muscle_group = row['Muscle Group']
+    exercise_metrics[exercise_name] = [avg_rep, avg_break, cal_per_rep, muscle_group]
 
 
 def process_session_wrapper(session_data: Dict):
@@ -103,6 +104,7 @@ def process_session(session: WorkoutSession):
         session_time = 0
         temp_session_time = []
         calories_burnt = 0
+        intensity = 0
 
         # Process exercises from the workout details
         if 'exercises' in workout_details:
@@ -116,16 +118,18 @@ def process_session(session: WorkoutSession):
                             'weights': exercise['weight']['value'],
                             'weight_unit': exercise['weight']['unit'],
                             'sets': exercise['sets'],
-                            'reps': int(exercise['reps'])
+                            'reps': int(exercise['reps']),
+                            'muscle_group': exercise_metrics[exercise['exercise_name']][3]
                         }
-                        exercise_records.append(exercise_record)
 
-                        exercise_time += (exercise_metrics[exercise['exercise_name']][0] * int(exercise['reps'])  + exercise_metrics[exercise['exercise_name']][1]*(int(exercise['sets'])-1) + 120)/60
+                        exercise_time = (exercise_metrics[exercise['exercise_name']][0] * int(int(exercise['reps'])**1.1)  + exercise_metrics[exercise['exercise_name']][1]*(int(exercise['sets'])-1) + 120)/60
                         session_time += exercise_time
                         calories_burnt += exercise_metrics[exercise['exercise_name']][2] * int(exercise['reps']) * int(exercise['sets'])  * (int(exercise['weight']['value']) if exercise['weight']['unit'].lower() in ['kg', 'kgs', 'kilograms', 'kilos', 'kilogram', 'kilo'] else int(lbs_to_kg(exercise['weight']['value'])))
                         intensity += get_exercise_intensity(exercise)
+                        
                         temp_session_time.append({exercise['exercise_name']: {"time": exercise_time, "intensity": get_exercise_intensity(exercise), "calories": exercise_metrics[exercise['exercise_name']][2] * int(exercise['reps']) * int(exercise['sets'])  * (int(exercise['weight']['value']) if exercise['weight']['unit'].lower() in ['kg', 'kgs', 'kilograms', 'kilos', 'kilogram', 'kilo'] else int(lbs_to_kg(exercise['weight']['value'])))}})
-                        logger.info(f"Session Time Now with {exercise['exercise_name']}: {temp_session_time}")
+                        # logger.info(f"Session Time Now with {exercise['exercise_name']}: {temp_session_time}")
+                        exercise_records.append(exercise_record)
                     except (KeyError, ValueError) as e:
                         logger.error(f"Failed to transform exercise data: {str(e)}")
                         continue
@@ -142,7 +146,8 @@ def process_session(session: WorkoutSession):
                         session=session,
                         raw_messages=raw_messages,
                         session_time=math.ceil(session_time),
-                        calories_burnt=math.ceil(calories_burnt)
+                        calories_burnt=math.ceil(calories_burnt),
+                        intensity=intensity,
                     )
                 
                 logger.info(f"Successfully processed {len(created_exercises)} exercises for session {session.id}")

@@ -1,12 +1,12 @@
 from ..dao.user_dao import UserDAO
-from ..dao.exercise_dao import WorkoutSessionDAO
+from ..dao.exercise_dao import WorkoutSessionDAO, ExerciseDAO
 from ..dao.dashboard_dao import DashboardDAO
 from django.utils import timezone
 from ..services import logger_service
 import threading
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from typing import Optional, Dict, Any
-
+from datetime import timedelta
 logger = logger_service.get_logger()
 
 def _fetch_dashboard_details(user_id) -> Optional[Dict[str, Any]]:
@@ -89,4 +89,35 @@ def get_dashboard_user_data(user_id):
             return dashboard_data
     except Exception as e:
         logger.error(f"Error in get_dashboard_user_data: {str(e)}")
+        return None
+
+
+def get_workout_dashboard_data(user_id):
+    try:
+        user = UserDAO.get_user_by_id(user_id)
+        if not user:
+            return None
+
+        data = {}
+        workout_sessions = WorkoutSessionDAO.get_workout_sessions_by_date_range(user)
+        if workout_sessions:
+            data.update(workout_sessions)  # Add intensity and calories_burnt directly
+
+        exercise_volume_by_muscle_group_last_week = ExerciseDAO.get_volume_by_muscle_group(user, start_date=timezone.now() - timedelta(days=7))
+        exercise_volume_by_muscle_group_month = ExerciseDAO.get_volume_by_muscle_group(user, start_date=timezone.now() - timedelta(days=30))
+        exercise_volume_by_muscle_group_year = ExerciseDAO.get_volume_by_muscle_group(user, start_date=timezone.now() - timedelta(days=365))
+        exercise_volume_by_muscle_group_all_time = ExerciseDAO.get_volume_by_muscle_group(user)
+        logger.info(f"exercise_volume_by_muscle_group_all_time: {exercise_volume_by_muscle_group_all_time}")
+        if exercise_volume_by_muscle_group_last_week and exercise_volume_by_muscle_group_month and exercise_volume_by_muscle_group_year and exercise_volume_by_muscle_group_all_time:
+            data['body_focus_area'] = {
+                'last_week': exercise_volume_by_muscle_group_last_week,
+                'month': exercise_volume_by_muscle_group_month,
+                'year': exercise_volume_by_muscle_group_year,
+                'all_time': exercise_volume_by_muscle_group_all_time
+            }
+
+        return data
+
+    except Exception as e:
+        logger.error(f"Error in get_workout_dashboard_data: {str(e)}")
         return None

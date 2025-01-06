@@ -10,4 +10,5 @@ urlpatterns = [
     path('health/', views.health_check, name='health_check'),
     path('workout-info/', views.fetch_workout_info, name='fetch_workout_info'),
     path('v1/dashboard/user-info/', views.get_user_dashboard_info, name='get_user_dashboard_info'),
+    path('v1/dashboard/workout-info/', views.get_workout_dashboard_info, name='get_workout_dashboard_info'),
 ]

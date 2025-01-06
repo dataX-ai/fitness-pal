@@ -100,3 +100,24 @@ EXERCISE_LEVEL_INTENSITY_MAPPING = {
     'level2': 15,
     'level3': 25,
 }
+
+MUSCLE_GROUP_MERGING_MAP = {
+    'bicep': 'arms',
+    'triceps': 'arms',
+    'forearm flexors & grip': 'arms',
+    'forearm extensor': 'arms',
+    'biceps': 'arms',
+    
+    'leg': 'legs',
+    'glute': 'legs',
+    'calves': 'legs',
+    'quadriceps': 'legs',
+    'hamstrings': 'legs',
+    'glutes': 'legs',
+    
+    'shoulder': 'shoulders',
+    'shoulders': 'shoulders',
+    
+    'ab': 'abs',
+    'abs': 'abs'
+}
