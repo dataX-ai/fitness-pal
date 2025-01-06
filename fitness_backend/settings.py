@@ -185,7 +185,7 @@ DJANGO_CRON_CACHE = 'default'  # Use default cache for locking
 # CORS settings
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
-    "https://*.ngrok-free.app",  # Your ngrok URL
+    "https://www.getaktive.fit"  # Your ngrok URL
   # Your frontend URL
 ]
 
