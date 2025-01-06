@@ -2,4528 +2,4528 @@
     "Assisted Dip": {
         "exercise_weights": {
             "level1": {
-                "min": 50,
-                "max": 100
+                "min": 23.0,
+                "max": 45.0
             },
             "level2": {
-                "min": 25,
-                "max": 50
+                "min": 11.0,
+                "max": 23.0
             },
             "level3": {
-                "min": 0,
-                "max": 25
+                "min": 0.0,
+                "max": 11.0
             }
         }
     },
     "Band-Assisted Bench Press": {
         "exercise_weights": {
             "level1": {
-                "min": 25,
-                "max": 75
+                "min": 11.0,
+                "max": 34.0
             },
             "level2": {
-                "min": 75,
-                "max": 135
+                "min": 34.0,
+                "max": 61.0
             },
             "level3": {
-                "min": 135,
-                "max": 225
+                "min": 61.0,
+                "max": 102.0
             }
         }
     },
     "Bar Dip": {
         "exercise_weights": {
             "level1": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             },
             "level2": {
-                "min": 0,
-                "max": 45
+                "min": 0.0,
+                "max": 20.0
             },
             "level3": {
-                "min": 45,
-                "max": 90
+                "min": 20.0,
+                "max": 41.0
             }
         }
     },
     "Bench Press": {
         "exercise_weights": {
             "level1": {
-                "min": 45,
-                "max": 135
+                "min": 20.0,
+                "max": 61.0
             },
             "level2": {
-                "min": 135,
-                "max": 225
+                "min": 61.0,
+                "max": 102.0
             },
             "level3": {
-                "min": 225,
-                "max": 315
+                "min": 102.0,
+                "max": 143.0
             }
         }
     },
     "Bench Press Against Band": {
         "exercise_weights": {
             "level1": {
-                "min": 10,
-                "max": 30
+                "min": 5.0,
+                "max": 14.0
             },
             "level2": {
-                "min": 30,
-                "max": 60
+                "min": 14.0,
+                "max": 27.0
             },
             "level3": {
-                "min": 60,
-                "max": 100
+                "min": 27.0,
+                "max": 45.0
             }
         }
     },
     "Board Press": {
         "exercise_weights": {
             "level1": {
-                "min": 45,
-                "max": 115
+                "min": 20.0,
+                "max": 52.0
             },
             "level2": {
-                "min": 115,
-                "max": 205
+                "min": 52.0,
+                "max": 93.0
             },
             "level3": {
-                "min": 205,
-                "max": 305
+                "min": 93.0,
+                "max": 138.0
             }
         }
     },
     "Cable Chest Press": {
         "exercise_weights": {
             "level1": {
-                "min": 20,
-                "max": 40
+                "min": 9.0,
+                "max": 18.0
             },
             "level2": {
-                "min": 40,
-                "max": 70
+                "min": 18.0,
+                "max": 32.0
             },
             "level3": {
-                "min": 70,
-                "max": 100
+                "min": 32.0,
+                "max": 45.0
             }
         }
     },
     "Close-Grip Bench Press": {
         "exercise_weights": {
             "level1": {
-                "min": 45,
-                "max": 115
+                "min": 20.0,
+                "max": 52.0
             },
             "level2": {
-                "min": 115,
-                "max": 185
+                "min": 52.0,
+                "max": 84.0
             },
             "level3": {
-                "min": 185,
-                "max": 275
+                "min": 84.0,
+                "max": 125.0
             }
         }
     },
     "Close-Grip Feet-Up Bench Press": {
         "exercise_weights": {
             "level1": {
-                "min": 45,
-                "max": 95
+                "min": 20.0,
+                "max": 43.0
             },
             "level2": {
-                "min": 95,
-                "max": 185
+                "min": 43.0,
+                "max": 84.0
             },
             "level3": {
-                "min": 185,
-                "max": 275
+                "min": 84.0,
+                "max": 125.0
             }
         }
     },
     "Decline Bench Press": {
         "exercise_weights": {
             "level1": {
-                "min": 45,
-                "max": 135
+                "min": 20.0,
+                "max": 61.0
             },
             "level2": {
-                "min": 135,
-                "max": 225
+                "min": 61.0,
+                "max": 102.0
             },
             "level3": {
-                "min": 225,
-                "max": 315
+                "min": 102.0,
+                "max": 143.0
             }
         }
     },
     "Decline Push-Up": {
         "exercise_weights": {
             "level1": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             },
             "level2": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             },
             "level3": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             }
         }
     },
     "Dumbbell Chest Fly": {
         "exercise_weights": {
             "level1": {
-                "min": 10,
-                "max": 25
+                "min": 5.0,
+                "max": 11.0
             },
             "level2": {
-                "min": 25,
-                "max": 40
+                "min": 11.0,
+                "max": 18.0
             },
             "level3": {
-                "min": 40,
-                "max": 60
+                "min": 18.0,
+                "max": 27.0
             }
         }
     },
     "Dumbbell Chest Press": {
         "exercise_weights": {
             "level1": {
-                "min": 15,
-                "max": 30
+                "min": 7.0,
+                "max": 14.0
             },
             "level2": {
-                "min": 30,
-                "max": 60
+                "min": 14.0,
+                "max": 27.0
             },
             "level3": {
-                "min": 60,
-                "max": 100
+                "min": 27.0,
+                "max": 45.0
             }
         }
     },
     "Dumbbell Decline Chest Press": {
         "exercise_weights": {
             "level1": {
-                "min": 20,
-                "max": 40
+                "min": 9.0,
+                "max": 18.0
             },
             "level2": {
-                "min": 40,
-                "max": 70
+                "min": 18.0,
+                "max": 32.0
             },
             "level3": {
-                "min": 70,
-                "max": 100
+                "min": 32.0,
+                "max": 45.0
             }
         }
     },
     "Dumbbell Floor Press": {
         "exercise_weights": {
             "level1": {
-                "min": 15,
-                "max": 30
+                "min": 7.0,
+                "max": 14.0
             },
             "level2": {
-                "min": 30,
-                "max": 60
+                "min": 14.0,
+                "max": 27.0
             },
             "level3": {
-                "min": 60,
-                "max": 100
+                "min": 27.0,
+                "max": 45.0
             }
         }
     },
     "Dumbbell Pullover": {
         "exercise_weights": {
             "level1": {
-                "min": 10,
-                "max": 25
+                "min": 5.0,
+                "max": 11.0
             },
             "level2": {
-                "min": 25,
-                "max": 40
+                "min": 11.0,
+                "max": 18.0
             },
             "level3": {
-                "min": 40,
-                "max": 60
+                "min": 18.0,
+                "max": 27.0
             }
         }
     },
     "Feet-Up Bench Press": {
         "exercise_weights": {
             "level1": {
-                "min": 45,
-                "max": 115
+                "min": 20.0,
+                "max": 52.0
             },
             "level2": {
-                "min": 115,
-                "max": 185
+                "min": 52.0,
+                "max": 84.0
             },
             "level3": {
-                "min": 185,
-                "max": 275
+                "min": 84.0,
+                "max": 125.0
             }
         }
     },
     "Floor Press": {
         "exercise_weights": {
             "level1": {
-                "min": 45,
-                "max": 115
+                "min": 20.0,
+                "max": 52.0
             },
             "level2": {
-                "min": 115,
-                "max": 185
+                "min": 52.0,
+                "max": 84.0
             },
             "level3": {
-                "min": 185,
-                "max": 275
+                "min": 84.0,
+                "max": 125.0
             }
         }
     },
     "Incline Bench Press": {
         "exercise_weights": {
             "level1": {
-                "min": 45,
-                "max": 115
+                "min": 20.0,
+                "max": 52.0
             },
             "level2": {
-                "min": 115,
-                "max": 185
+                "min": 52.0,
+                "max": 84.0
             },
             "level3": {
-                "min": 185,
-                "max": 275
+                "min": 84.0,
+                "max": 125.0
             }
         }
     },
     "Incline Dumbbell Press": {
         "exercise_weights": {
             "level1": {
-                "min": 20,
-                "max": 40
+                "min": 9.0,
+                "max": 18.0
             },
             "level2": {
-                "min": 40,
-                "max": 70
+                "min": 18.0,
+                "max": 32.0
             },
             "level3": {
-                "min": 70,
-                "max": 100
+                "min": 32.0,
+                "max": 45.0
             }
         }
     },
     "Incline Push-Up": {
         "exercise_weights": {
             "level1": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             },
             "level2": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             },
             "level3": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             }
         }
     },
     "Kettlebell Floor Press": {
         "exercise_weights": {
             "level1": {
-                "min": 15,
-                "max": 25
+                "min": 7.0,
+                "max": 11.0
             },
             "level2": {
-                "min": 25,
-                "max": 40
+                "min": 11.0,
+                "max": 18.0
             },
             "level3": {
-                "min": 40,
-                "max": 60
+                "min": 18.0,
+                "max": 27.0
             }
         }
     },
     "Kneeling Incline Push-Up": {
         "exercise_weights": {
             "level1": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             },
             "level2": {
-                "min": 0,
-                "max": 10
+                "min": 0.0,
+                "max": 5.0
             },
             "level3": {
-                "min": 10,
-                "max": 25
+                "min": 5.0,
+                "max": 11.0
             }
         }
     },
     "Kneeling Push-Up": {
         "exercise_weights": {
             "level1": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             },
             "level2": {
-                "min": 0,
-                "max": 10
+                "min": 0.0,
+                "max": 5.0
             },
             "level3": {
-                "min": 10,
-                "max": 25
+                "min": 5.0,
+                "max": 11.0
             }
         }
     },
     "Machine Chest Fly": {
         "exercise_weights": {
             "level1": {
-                "min": 20,
-                "max": 40
+                "min": 9.0,
+                "max": 18.0
             },
             "level2": {
-                "min": 40,
-                "max": 70
+                "min": 18.0,
+                "max": 32.0
             },
             "level3": {
-                "min": 70,
-                "max": 100
+                "min": 32.0,
+                "max": 45.0
             }
         }
     },
     "Machine Chest Press": {
         "exercise_weights": {
             "level1": {
-                "min": 40,
-                "max": 90
+                "min": 18.0,
+                "max": 41.0
             },
             "level2": {
-                "min": 90,
-                "max": 180
+                "min": 41.0,
+                "max": 82.0
             },
             "level3": {
-                "min": 180,
-                "max": 270
+                "min": 82.0,
+                "max": 122.0
             }
         }
     },
     "Pec Deck": {
         "exercise_weights": {
             "level1": {
-                "min": 20,
-                "max": 40
+                "min": 9.0,
+                "max": 18.0
             },
             "level2": {
-                "min": 40,
-                "max": 70
+                "min": 18.0,
+                "max": 32.0
             },
             "level3": {
-                "min": 70,
-                "max": 100
+                "min": 32.0,
+                "max": 45.0
             }
         }
     },
     "Pin Bench Press": {
         "exercise_weights": {
             "level1": {
-                "min": 45,
-                "max": 115
+                "min": 20.0,
+                "max": 52.0
             },
             "level2": {
-                "min": 115,
-                "max": 185
+                "min": 52.0,
+                "max": 84.0
             },
             "level3": {
-                "min": 185,
-                "max": 275
+                "min": 84.0,
+                "max": 125.0
             }
         }
     },
     "Push-Up": {
         "exercise_weights": {
             "level1": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             },
             "level2": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             },
             "level3": {
-                "min": 0,
-                "max": 45
+                "min": 0.0,
+                "max": 20.0
             }
         }
     },
     "Push-Up Against Wall": {
         "exercise_weights": {
             "level1": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             },
             "level2": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             },
             "level3": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             }
         }
     },
     "Push-Ups With Feet in Rings": {
         "exercise_weights": {
             "level1": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             },
             "level2": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             },
             "level3": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             }
         }
     },
     "Resistance Band Chest Fly": {
         "exercise_weights": {
             "level1": {
-                "min": 5,
-                "max": 15
+                "min": 2.0,
+                "max": 7.0
             },
             "level2": {
-                "min": 15,
-                "max": 30
+                "min": 7.0,
+                "max": 14.0
             },
             "level3": {
-                "min": 30,
-                "max": 50
+                "min": 14.0,
+                "max": 23.0
             }
         }
     },
     "Ring Dip": {
         "exercise_weights": {
             "level1": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             },
             "level2": {
-                "min": 0,
-                "max": 25
+                "min": 0.0,
+                "max": 11.0
             },
             "level3": {
-                "min": 25,
-                "max": 75
+                "min": 11.0,
+                "max": 34.0
             }
         }
     },
     "Smith Machine Bench Press": {
         "exercise_weights": {
             "level1": {
-                "min": 65,
-                "max": 155
+                "min": 29.0,
+                "max": 70.0
             },
             "level2": {
-                "min": 155,
-                "max": 245
+                "min": 70.0,
+                "max": 111.0
             },
             "level3": {
-                "min": 245,
-                "max": 335
+                "min": 111.0,
+                "max": 152.0
             }
         }
     },
     "Smith Machine Incline Bench Press": {
         "exercise_weights": {
             "level1": {
-                "min": 65,
-                "max": 135
+                "min": 29.0,
+                "max": 61.0
             },
             "level2": {
-                "min": 135,
-                "max": 205
+                "min": 61.0,
+                "max": 93.0
             },
             "level3": {
-                "min": 205,
-                "max": 275
+                "min": 93.0,
+                "max": 125.0
             }
         }
     },
     "Smith Machine Reverse Grip Bench Press": {
         "exercise_weights": {
             "level1": {
-                "min": 65,
-                "max": 115
+                "min": 29.0,
+                "max": 52.0
             },
             "level2": {
-                "min": 115,
-                "max": 185
+                "min": 52.0,
+                "max": 84.0
             },
             "level3": {
-                "min": 185,
-                "max": 275
+                "min": 84.0,
+                "max": 125.0
             }
         }
     },
     "Standing Cable Chest Fly": {
         "exercise_weights": {
             "level1": {
-                "min": 10,
-                "max": 25
+                "min": 5.0,
+                "max": 11.0
             },
             "level2": {
-                "min": 25,
-                "max": 40
+                "min": 11.0,
+                "max": 18.0
             },
             "level3": {
-                "min": 40,
-                "max": 60
+                "min": 18.0,
+                "max": 27.0
             }
         }
     },
     "Standing Resistance Band Chest Fly": {
         "exercise_weights": {
             "level1": {
-                "min": 5,
-                "max": 15
+                "min": 2.0,
+                "max": 7.0
             },
             "level2": {
-                "min": 15,
-                "max": 30
+                "min": 7.0,
+                "max": 14.0
             },
             "level3": {
-                "min": 30,
-                "max": 50
+                "min": 14.0,
+                "max": 23.0
             }
         }
     },
     "Arnold Press": {
         "exercise_weights": {
             "level1": {
-                "min": 10,
-                "max": 25
+                "min": 5.0,
+                "max": 11.0
             },
             "level2": {
-                "min": 25,
-                "max": 40
+                "min": 11.0,
+                "max": 18.0
             },
             "level3": {
-                "min": 40,
-                "max": 60
+                "min": 18.0,
+                "max": 27.0
             }
         }
     },
     "Band External Shoulder Rotation": {
         "exercise_weights": {
             "level1": {
-                "min": 0,
-                "max": 5
+                "min": 0.0,
+                "max": 2.0
             },
             "level2": {
-                "min": 5,
-                "max": 10
+                "min": 2.0,
+                "max": 5.0
             },
             "level3": {
-                "min": 10,
-                "max": 15
+                "min": 5.0,
+                "max": 7.0
             }
         }
     },
     "Band Internal Shoulder Rotation": {
         "exercise_weights": {
             "level1": {
-                "min": 5,
-                "max": 10
+                "min": 2.0,
+                "max": 5.0
             },
             "level2": {
-                "min": 10,
-                "max": 20
+                "min": 5.0,
+                "max": 9.0
             },
             "level3": {
-                "min": 20,
-                "max": 30
+                "min": 9.0,
+                "max": 14.0
             }
         }
     },
     "Band Pull-Apart": {
         "exercise_weights": {
             "level1": {
-                "min": 5,
-                "max": 15
+                "min": 2.0,
+                "max": 7.0
             },
             "level2": {
-                "min": 15,
-                "max": 30
+                "min": 7.0,
+                "max": 14.0
             },
             "level3": {
-                "min": 30,
-                "max": 50
+                "min": 14.0,
+                "max": 23.0
             }
         }
     },
     "Barbell Front Raise": {
         "exercise_weights": {
             "level1": {
-                "min": 10,
-                "max": 30
+                "min": 5.0,
+                "max": 14.0
             },
             "level2": {
-                "min": 30,
-                "max": 60
+                "min": 14.0,
+                "max": 27.0
             },
             "level3": {
-                "min": 60,
-                "max": 90
+                "min": 27.0,
+                "max": 41.0
             }
         }
     },
     "Barbell Rear Delt Row": {
         "exercise_weights": {
             "level1": {
-                "min": 45,
-                "max": 95
+                "min": 20.0,
+                "max": 43.0
             },
             "level2": {
-                "min": 95,
-                "max": 135
+                "min": 43.0,
+                "max": 61.0
             },
             "level3": {
-                "min": 135,
-                "max": 185
+                "min": 61.0,
+                "max": 84.0
             }
         }
     },
     "Barbell Upright Row": {
         "exercise_weights": {
             "level1": {
-                "min": 45,
-                "max": 75
+                "min": 20.0,
+                "max": 34.0
             },
             "level2": {
-                "min": 75,
-                "max": 115
+                "min": 34.0,
+                "max": 52.0
             },
             "level3": {
-                "min": 115,
-                "max": 155
+                "min": 52.0,
+                "max": 70.0
             }
         }
     },
     "Behind the Neck Press": {
         "exercise_weights": {
             "level1": {
-                "min": 45,
-                "max": 95
+                "min": 20.0,
+                "max": 43.0
             },
             "level2": {
-                "min": 95,
-                "max": 135
+                "min": 43.0,
+                "max": 61.0
             },
             "level3": {
-                "min": 135,
-                "max": 185
+                "min": 61.0,
+                "max": 84.0
             }
         }
     },
     "Cable Lateral Raise": {
         "exercise_weights": {
             "level1": {
-                "min": 5,
-                "max": 10
+                "min": 2.0,
+                "max": 5.0
             },
             "level2": {
-                "min": 10,
-                "max": 20
+                "min": 5.0,
+                "max": 9.0
             },
             "level3": {
-                "min": 20,
-                "max": 30
+                "min": 9.0,
+                "max": 14.0
             }
         }
     },
     "Cable Rear Delt Row": {
         "exercise_weights": {
             "level1": {
-                "min": 10,
-                "max": 20
+                "min": 5.0,
+                "max": 9.0
             },
             "level2": {
-                "min": 20,
-                "max": 40
+                "min": 9.0,
+                "max": 18.0
             },
             "level3": {
-                "min": 40,
-                "max": 60
+                "min": 18.0,
+                "max": 27.0
             }
         }
     },
     "Cuban Press": {
         "exercise_weights": {
             "level1": {
-                "min": 5,
-                "max": 10
+                "min": 2.0,
+                "max": 5.0
             },
             "level2": {
-                "min": 10,
-                "max": 20
+                "min": 5.0,
+                "max": 9.0
             },
             "level3": {
-                "min": 20,
-                "max": 30
+                "min": 9.0,
+                "max": 14.0
             }
         }
     },
     "Dumbbell Front Raise": {
         "exercise_weights": {
             "level1": {
-                "min": 5,
-                "max": 10
+                "min": 2.0,
+                "max": 5.0
             },
             "level2": {
-                "min": 10,
-                "max": 20
+                "min": 5.0,
+                "max": 9.0
             },
             "level3": {
-                "min": 20,
-                "max": 30
+                "min": 9.0,
+                "max": 14.0
             }
         }
     },
     "Dumbbell Horizontal Internal Shoulder Rotation": {
         "exercise_weights": {
             "level1": {
-                "min": 2,
-                "max": 5
+                "min": 1.0,
+                "max": 2.0
             },
             "level2": {
-                "min": 5,
-                "max": 10
+                "min": 2.0,
+                "max": 5.0
             },
             "level3": {
-                "min": 10,
-                "max": 15
+                "min": 5.0,
+                "max": 7.0
             }
         }
     },
     "Dumbbell Horizontal External Shoulder Rotation": {
         "exercise_weights": {
             "level1": {
-                "min": 2,
-                "max": 5
+                "min": 1.0,
+                "max": 2.0
             },
             "level2": {
-                "min": 5,
-                "max": 10
+                "min": 2.0,
+                "max": 5.0
             },
             "level3": {
-                "min": 10,
-                "max": 15
+                "min": 5.0,
+                "max": 7.0
             }
         }
     },
     "Dumbbell Lateral Raise": {
         "exercise_weights": {
             "level1": {
-                "min": 5,
-                "max": 10
+                "min": 2.0,
+                "max": 5.0
             },
             "level2": {
-                "min": 10,
-                "max": 20
+                "min": 5.0,
+                "max": 9.0
             },
             "level3": {
-                "min": 20,
-                "max": 35
+                "min": 9.0,
+                "max": 16.0
             }
         }
     },
     "Dumbbell Rear Delt Row": {
         "exercise_weights": {
             "level1": {
-                "min": 5,
-                "max": 15
+                "min": 2.0,
+                "max": 7.0
             },
             "level2": {
-                "min": 15,
-                "max": 30
+                "min": 7.0,
+                "max": 14.0
             },
             "level3": {
-                "min": 30,
-                "max": 50
+                "min": 14.0,
+                "max": 23.0
             }
         }
     },
     "Dumbbell Shoulder Press": {
         "exercise_weights": {
             "level1": {
-                "min": 10,
-                "max": 25
+                "min": 5.0,
+                "max": 11.0
             },
             "level2": {
-                "min": 25,
-                "max": 50
+                "min": 11.0,
+                "max": 23.0
             },
             "level3": {
-                "min": 50,
-                "max": 80
+                "min": 23.0,
+                "max": 36.0
             }
         }
     },
     "Face Pull": {
         "exercise_weights": {
             "level1": {
-                "min": 15,
-                "max": 30
+                "min": 7.0,
+                "max": 14.0
             },
             "level2": {
-                "min": 30,
-                "max": 50
+                "min": 14.0,
+                "max": 23.0
             },
             "level3": {
-                "min": 50,
-                "max": 70
+                "min": 23.0,
+                "max": 32.0
             }
         }
     },
     "Front Hold": {
         "exercise_weights": {
             "level1": {
-                "min": 0,
-                "max": 10
+                "min": 0.0,
+                "max": 5.0
             },
             "level2": {
-                "min": 10,
-                "max": 25
+                "min": 5.0,
+                "max": 11.0
             },
             "level3": {
-                "min": 25,
-                "max": 50
+                "min": 11.0,
+                "max": 23.0
             }
         }
     },
     "Landmine Press": {
         "exercise_weights": {
             "level1": {
-                "min": 25,
-                "max": 45
+                "min": 11.0,
+                "max": 20.0
             },
             "level2": {
-                "min": 45,
-                "max": 90
+                "min": 20.0,
+                "max": 41.0
             },
             "level3": {
-                "min": 90,
-                "max": 135
+                "min": 41.0,
+                "max": 61.0
             }
         }
     },
     "Lying Dumbbell External Shoulder Rotation": {
         "exercise_weights": {
             "level1": {
-                "min": 2.5,
-                "max": 7.5
+                "min": 1.0,
+                "max": 3.0
             },
             "level2": {
-                "min": 7.5,
-                "max": 15
+                "min": 3.0,
+                "max": 7.0
             },
             "level3": {
-                "min": 15,
-                "max": 25
+                "min": 7.0,
+                "max": 11.0
             }
         }
     },
     "Lying Dumbbell Internal Shoulder Rotation": {
         "exercise_weights": {
             "level1": {
-                "min": 2,
-                "max": 5
+                "min": 1.0,
+                "max": 2.0
             },
             "level2": {
-                "min": 5,
-                "max": 10
+                "min": 2.0,
+                "max": 5.0
             },
             "level3": {
-                "min": 10,
-                "max": 15
+                "min": 5.0,
+                "max": 7.0
             }
         }
     },
     "Machine Lateral Raise": {
         "exercise_weights": {
             "level1": {
-                "min": 10,
-                "max": 25
+                "min": 5.0,
+                "max": 11.0
             },
             "level2": {
-                "min": 25,
-                "max": 45
+                "min": 11.0,
+                "max": 20.0
             },
             "level3": {
-                "min": 45,
-                "max": 70
+                "min": 20.0,
+                "max": 32.0
             }
         }
     },
     "Machine Shoulder Press": {
         "exercise_weights": {
             "level1": {
-                "min": 20,
-                "max": 60
+                "min": 9.0,
+                "max": 27.0
             },
             "level2": {
-                "min": 60,
-                "max": 120
+                "min": 27.0,
+                "max": 54.0
             },
             "level3": {
-                "min": 120,
-                "max": 180
+                "min": 54.0,
+                "max": 82.0
             }
         }
     },
     "Monkey Row": {
         "exercise_weights": {
             "level1": {
-                "min": 10,
-                "max": 25
+                "min": 5.0,
+                "max": 11.0
             },
             "level2": {
-                "min": 25,
-                "max": 45
+                "min": 11.0,
+                "max": 20.0
             },
             "level3": {
-                "min": 45,
-                "max": 70
+                "min": 20.0,
+                "max": 32.0
             }
         }
     },
     "Overhead Press": {
         "exercise_weights": {
             "level1": {
-                "min": 45,
-                "max": 95
+                "min": 20.0,
+                "max": 43.0
             },
             "level2": {
-                "min": 95,
-                "max": 155
+                "min": 43.0,
+                "max": 70.0
             },
             "level3": {
-                "min": 155,
-                "max": 225
+                "min": 70.0,
+                "max": 102.0
             }
         }
     },
     "Plate Front Raise": {
         "exercise_weights": {
             "level1": {
-                "min": 5,
-                "max": 10
+                "min": 2.0,
+                "max": 5.0
             },
             "level2": {
-                "min": 10,
-                "max": 25
+                "min": 5.0,
+                "max": 11.0
             },
             "level3": {
-                "min": 25,
-                "max": 45
+                "min": 11.0,
+                "max": 20.0
             }
         }
     },
     "Power Jerk": {
         "exercise_weights": {
             "level1": {
-                "min": 65,
-                "max": 135
+                "min": 29.0,
+                "max": 61.0
             },
             "level2": {
-                "min": 135,
-                "max": 225
+                "min": 61.0,
+                "max": 102.0
             },
             "level3": {
-                "min": 225,
-                "max": 315
+                "min": 102.0,
+                "max": 143.0
             }
         }
     },
     "Push Press": {
         "exercise_weights": {
             "level1": {
-                "min": 65,
-                "max": 115
+                "min": 29.0,
+                "max": 52.0
             },
             "level2": {
-                "min": 115,
-                "max": 185
+                "min": 52.0,
+                "max": 84.0
             },
             "level3": {
-                "min": 185,
-                "max": 275
+                "min": 84.0,
+                "max": 125.0
             }
         }
     },
     "Reverse Cable Flyes": {
         "exercise_weights": {
             "level1": {
-                "min": 10,
-                "max": 20
+                "min": 5.0,
+                "max": 9.0
             },
             "level2": {
-                "min": 20,
-                "max": 40
+                "min": 9.0,
+                "max": 18.0
             },
             "level3": {
-                "min": 40,
-                "max": 60
+                "min": 18.0,
+                "max": 27.0
             }
         }
     },
     "Reverse Dumbbell Flyes": {
         "exercise_weights": {
             "level1": {
-                "min": 5,
-                "max": 15
+                "min": 2.0,
+                "max": 7.0
             },
             "level2": {
-                "min": 15,
-                "max": 30
+                "min": 7.0,
+                "max": 14.0
             },
             "level3": {
-                "min": 30,
-                "max": 50
+                "min": 14.0,
+                "max": 23.0
             }
         }
     },
     "Reverse Machine Fly": {
         "exercise_weights": {
             "level1": {
-                "min": 20,
-                "max": 50
+                "min": 9.0,
+                "max": 23.0
             },
             "level2": {
-                "min": 50,
-                "max": 90
+                "min": 23.0,
+                "max": 41.0
             },
             "level3": {
-                "min": 90,
-                "max": 140
+                "min": 41.0,
+                "max": 63.0
             }
         }
     },
     "Seated Dumbbell Shoulder Press": {
         "exercise_weights": {
             "level1": {
-                "min": 10,
-                "max": 25
+                "min": 5.0,
+                "max": 11.0
             },
             "level2": {
-                "min": 25,
-                "max": 50
+                "min": 11.0,
+                "max": 23.0
             },
             "level3": {
-                "min": 50,
-                "max": 75
+                "min": 23.0,
+                "max": 34.0
             }
         }
     },
     "Seated Barbell Overhead Press": {
         "exercise_weights": {
             "level1": {
-                "min": 45,
-                "max": 95
+                "min": 20.0,
+                "max": 43.0
             },
             "level2": {
-                "min": 95,
-                "max": 135
+                "min": 43.0,
+                "max": 61.0
             },
             "level3": {
-                "min": 135,
-                "max": 185
+                "min": 61.0,
+                "max": 84.0
             }
         }
     },
     "Seated Smith Machine Shoulder Press": {
         "exercise_weights": {
             "level1": {
-                "min": 45,
-                "max": 95
+                "min": 20.0,
+                "max": 43.0
             },
             "level2": {
-                "min": 95,
-                "max": 135
+                "min": 43.0,
+                "max": 61.0
             },
             "level3": {
-                "min": 135,
-                "max": 185
+                "min": 61.0,
+                "max": 84.0
             }
         }
     },
     "Snatch Grip Behind the Neck Press": {
         "exercise_weights": {
             "level1": {
-                "min": 45,
-                "max": 95
+                "min": 20.0,
+                "max": 43.0
             },
             "level2": {
-                "min": 95,
-                "max": 135
+                "min": 43.0,
+                "max": 61.0
             },
             "level3": {
-                "min": 135,
-                "max": 185
+                "min": 61.0,
+                "max": 84.0
             }
         }
     },
     "Squat Jerk": {
         "exercise_weights": {
             "level1": {
-                "min": 65,
-                "max": 135
+                "min": 29.0,
+                "max": 61.0
             },
             "level2": {
-                "min": 135,
-                "max": 225
+                "min": 61.0,
+                "max": 102.0
             },
             "level3": {
-                "min": 225,
-                "max": 315
+                "min": 102.0,
+                "max": 143.0
             }
         }
     },
     "Split Jerk": {
         "exercise_weights": {
             "level1": {
-                "min": 65,
-                "max": 135
+                "min": 29.0,
+                "max": 61.0
             },
             "level2": {
-                "min": 135,
-                "max": 225
+                "min": 61.0,
+                "max": 102.0
             },
             "level3": {
-                "min": 225,
-                "max": 315
+                "min": 102.0,
+                "max": 143.0
             }
         }
     },
     "Barbell Curl": {
         "exercise_weights": {
             "level1": {
-                "min": 30,
-                "max": 60
+                "min": 14.0,
+                "max": 27.0
             },
             "level2": {
-                "min": 60,
-                "max": 100
+                "min": 27.0,
+                "max": 45.0
             },
             "level3": {
-                "min": 100,
-                "max": 135
+                "min": 45.0,
+                "max": 61.0
             }
         }
     },
     "Barbell Preacher Curl": {
         "exercise_weights": {
             "level1": {
-                "min": 30,
-                "max": 50
+                "min": 14.0,
+                "max": 23.0
             },
             "level2": {
-                "min": 50,
-                "max": 80
+                "min": 23.0,
+                "max": 36.0
             },
             "level3": {
-                "min": 80,
-                "max": 120
+                "min": 36.0,
+                "max": 54.0
             }
         }
     },
     "Bayesian Curl": {
         "exercise_weights": {
             "level1": {
-                "min": 5,
-                "max": 15
+                "min": 2.0,
+                "max": 7.0
             },
             "level2": {
-                "min": 15,
-                "max": 30
+                "min": 7.0,
+                "max": 14.0
             },
             "level3": {
-                "min": 30,
-                "max": 50
+                "min": 14.0,
+                "max": 23.0
             }
         }
     },
     "Bodyweight Curl": {
         "exercise_weights": {
             "level1": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             },
             "level2": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             },
             "level3": {
-                "min": 0,
-                "max": 20
+                "min": 0.0,
+                "max": 9.0
             }
         }
     },
     "Cable Crossover Bicep Curl": {
         "exercise_weights": {
             "level1": {
-                "min": 5,
-                "max": 15
+                "min": 2.0,
+                "max": 7.0
             },
             "level2": {
-                "min": 15,
-                "max": 30
+                "min": 7.0,
+                "max": 14.0
             },
             "level3": {
-                "min": 30,
-                "max": 50
+                "min": 14.0,
+                "max": 23.0
             }
         }
     },
     "Cable Curl With Bar": {
         "exercise_weights": {
             "level1": {
-                "min": 10,
-                "max": 25
+                "min": 5.0,
+                "max": 11.0
             },
             "level2": {
-                "min": 25,
-                "max": 50
+                "min": 11.0,
+                "max": 23.0
             },
             "level3": {
-                "min": 50,
-                "max": 75
+                "min": 23.0,
+                "max": 34.0
             }
         }
     },
     "Cable Curl With Rope": {
         "exercise_weights": {
             "level1": {
-                "min": 10,
-                "max": 25
+                "min": 5.0,
+                "max": 11.0
             },
             "level2": {
-                "min": 25,
-                "max": 50
+                "min": 11.0,
+                "max": 23.0
             },
             "level3": {
-                "min": 50,
-                "max": 75
+                "min": 23.0,
+                "max": 34.0
             }
         }
     },
     "Concentration Curl": {
         "exercise_weights": {
             "level1": {
-                "min": 5,
-                "max": 15
+                "min": 2.0,
+                "max": 7.0
             },
             "level2": {
-                "min": 15,
-                "max": 30
+                "min": 7.0,
+                "max": 14.0
             },
             "level3": {
-                "min": 30,
-                "max": 50
+                "min": 14.0,
+                "max": 23.0
             }
         }
     },
     "Drag Curl": {
         "exercise_weights": {
             "level1": {
-                "min": 10,
-                "max": 25
+                "min": 5.0,
+                "max": 11.0
             },
             "level2": {
-                "min": 25,
-                "max": 45
+                "min": 11.0,
+                "max": 20.0
             },
             "level3": {
-                "min": 45,
-                "max": 70
+                "min": 20.0,
+                "max": 32.0
             }
         }
     },
     "Dumbbell Curl": {
         "exercise_weights": {
             "level1": {
-                "min": 10,
-                "max": 25
+                "min": 5.0,
+                "max": 11.0
             },
             "level2": {
-                "min": 25,
-                "max": 45
+                "min": 11.0,
+                "max": 20.0
             },
             "level3": {
-                "min": 45,
-                "max": 70
+                "min": 20.0,
+                "max": 32.0
             }
         }
     },
     "Dumbbell Preacher Curl": {
         "exercise_weights": {
             "level1": {
-                "min": 5,
-                "max": 15
+                "min": 2.0,
+                "max": 7.0
             },
             "level2": {
-                "min": 15,
-                "max": 30
+                "min": 7.0,
+                "max": 14.0
             },
             "level3": {
-                "min": 30,
-                "max": 50
+                "min": 14.0,
+                "max": 23.0
             }
         }
     },
     "Hammer Curl": {
         "exercise_weights": {
             "level1": {
-                "min": 10,
-                "max": 25
+                "min": 5.0,
+                "max": 11.0
             },
             "level2": {
-                "min": 25,
-                "max": 45
+                "min": 11.0,
+                "max": 20.0
             },
             "level3": {
-                "min": 45,
-                "max": 70
+                "min": 20.0,
+                "max": 32.0
             }
         }
     },
     "Incline Dumbbell Curl": {
         "exercise_weights": {
             "level1": {
-                "min": 5,
-                "max": 15
+                "min": 2.0,
+                "max": 7.0
             },
             "level2": {
-                "min": 15,
-                "max": 30
+                "min": 7.0,
+                "max": 14.0
             },
             "level3": {
-                "min": 30,
-                "max": 50
+                "min": 14.0,
+                "max": 23.0
             }
         }
     },
     "Machine Bicep Curl": {
         "exercise_weights": {
             "level1": {
-                "min": 20,
-                "max": 40
+                "min": 9.0,
+                "max": 18.0
             },
             "level2": {
-                "min": 40,
-                "max": 70
+                "min": 18.0,
+                "max": 32.0
             },
             "level3": {
-                "min": 70,
-                "max": 100
+                "min": 32.0,
+                "max": 45.0
             }
         }
     },
     "Resistance Band Curl": {
         "exercise_weights": {
             "level1": {
-                "min": 5,
-                "max": 15
+                "min": 2.0,
+                "max": 7.0
             },
             "level2": {
-                "min": 15,
-                "max": 30
+                "min": 7.0,
+                "max": 14.0
             },
             "level3": {
-                "min": 30,
-                "max": 50
+                "min": 14.0,
+                "max": 23.0
             }
         }
     },
     "Spider Curl": {
         "exercise_weights": {
             "level1": {
-                "min": 5,
-                "max": 15
+                "min": 2.0,
+                "max": 7.0
             },
             "level2": {
-                "min": 15,
-                "max": 30
+                "min": 7.0,
+                "max": 14.0
             },
             "level3": {
-                "min": 30,
-                "max": 50
+                "min": 14.0,
+                "max": 23.0
             }
         }
     },
     "Barbell Standing Triceps Extension": {
         "exercise_weights": {
             "level1": {
-                "min": 20,
-                "max": 45
+                "min": 9.0,
+                "max": 20.0
             },
             "level2": {
-                "min": 45,
-                "max": 75
+                "min": 20.0,
+                "max": 34.0
             },
             "level3": {
-                "min": 75,
-                "max": 100
+                "min": 34.0,
+                "max": 45.0
             }
         }
     },
     "Barbell Lying Triceps Extension": {
         "exercise_weights": {
             "level1": {
-                "min": 25,
-                "max": 55
+                "min": 11.0,
+                "max": 25.0
             },
             "level2": {
-                "min": 55,
-                "max": 95
+                "min": 25.0,
+                "max": 43.0
             },
             "level3": {
-                "min": 95,
-                "max": 135
+                "min": 43.0,
+                "max": 61.0
             }
         }
     },
     "Bench Dip": {
         "exercise_weights": {
             "level1": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             },
             "level2": {
-                "min": 0,
-                "max": 45
+                "min": 0.0,
+                "max": 20.0
             },
             "level3": {
-                "min": 45,
-                "max": 90
+                "min": 20.0,
+                "max": 41.0
             }
         }
     },
     "Crossbody Cable Triceps Extension": {
         "exercise_weights": {
             "level1": {
-                "min": 5,
-                "max": 15
+                "min": 2.0,
+                "max": 7.0
             },
             "level2": {
-                "min": 15,
-                "max": 30
+                "min": 7.0,
+                "max": 14.0
             },
             "level3": {
-                "min": 30,
-                "max": 50
+                "min": 14.0,
+                "max": 23.0
             }
         }
     },
     "Close-Grip Push-Up": {
         "exercise_weights": {
             "level1": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             },
             "level2": {
-                "min": 0,
-                "max": 25
+                "min": 0.0,
+                "max": 11.0
             },
             "level3": {
-                "min": 25,
-                "max": 50
+                "min": 11.0,
+                "max": 23.0
             }
         }
     },
     "Dumbbell Lying Triceps Extension": {
         "exercise_weights": {
             "level1": {
-                "min": 10,
-                "max": 20
+                "min": 5.0,
+                "max": 9.0
             },
             "level2": {
-                "min": 20,
-                "max": 40
+                "min": 9.0,
+                "max": 18.0
             },
             "level3": {
-                "min": 40,
-                "max": 60
+                "min": 18.0,
+                "max": 27.0
             }
         }
     },
     "Dumbbell Standing Triceps Extension": {
         "exercise_weights": {
             "level1": {
-                "min": 10,
-                "max": 20
+                "min": 5.0,
+                "max": 9.0
             },
             "level2": {
-                "min": 20,
-                "max": 35
+                "min": 9.0,
+                "max": 16.0
             },
             "level3": {
-                "min": 35,
-                "max": 50
+                "min": 16.0,
+                "max": 23.0
             }
         }
     },
     "Overhead Cable Triceps Extension": {
         "exercise_weights": {
             "level1": {
-                "min": 10,
-                "max": 25
+                "min": 5.0,
+                "max": 11.0
             },
             "level2": {
-                "min": 25,
-                "max": 45
+                "min": 11.0,
+                "max": 20.0
             },
             "level3": {
-                "min": 45,
-                "max": 70
+                "min": 20.0,
+                "max": 32.0
             }
         }
     },
     "Tricep Bodyweight Extension": {
         "exercise_weights": {
             "level1": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             },
             "level2": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             },
             "level3": {
-                "min": 0,
-                "max": 20
+                "min": 0.0,
+                "max": 9.0
             }
         }
     },
     "Tricep Pushdown With Bar": {
         "exercise_weights": {
             "level1": {
-                "min": 20,
-                "max": 40
+                "min": 9.0,
+                "max": 18.0
             },
             "level2": {
-                "min": 40,
-                "max": 70
+                "min": 18.0,
+                "max": 32.0
             },
             "level3": {
-                "min": 70,
-                "max": 100
+                "min": 32.0,
+                "max": 45.0
             }
         }
     },
     "Tricep Pushdown With Rope": {
         "exercise_weights": {
             "level1": {
-                "min": 20,
-                "max": 40
+                "min": 9.0,
+                "max": 18.0
             },
             "level2": {
-                "min": 40,
-                "max": 70
+                "min": 18.0,
+                "max": 32.0
             },
             "level3": {
-                "min": 70,
-                "max": 100
+                "min": 32.0,
+                "max": 45.0
             }
         }
     },
     "Air Squat": {
         "exercise_weights": {
             "level1": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             },
             "level2": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             },
             "level3": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             }
         }
     },
     "Barbell Hack Squat": {
         "exercise_weights": {
             "level1": {
-                "min": 65,
-                "max": 135
+                "min": 29.0,
+                "max": 61.0
             },
             "level2": {
-                "min": 135,
-                "max": 225
+                "min": 61.0,
+                "max": 102.0
             },
             "level3": {
-                "min": 225,
-                "max": 315
+                "min": 102.0,
+                "max": 143.0
             }
         }
     },
     "Barbell Lunge": {
         "exercise_weights": {
             "level1": {
-                "min": 45,
-                "max": 95
+                "min": 20.0,
+                "max": 43.0
             },
             "level2": {
-                "min": 95,
-                "max": 135
+                "min": 43.0,
+                "max": 61.0
             },
             "level3": {
-                "min": 135,
-                "max": 185
+                "min": 61.0,
+                "max": 84.0
             }
         }
     },
     "Barbell Walking Lunge": {
         "exercise_weights": {
             "level1": {
-                "min": 45,
-                "max": 95
+                "min": 20.0,
+                "max": 43.0
             },
             "level2": {
-                "min": 95,
-                "max": 135
+                "min": 43.0,
+                "max": 61.0
             },
             "level3": {
-                "min": 135,
-                "max": 185
+                "min": 61.0,
+                "max": 84.0
             }
         }
     },
     "Belt Squat": {
         "exercise_weights": {
             "level1": {
-                "min": 50,
-                "max": 100
+                "min": 23.0,
+                "max": 45.0
             },
             "level2": {
-                "min": 100,
-                "max": 200
+                "min": 45.0,
+                "max": 91.0
             },
             "level3": {
-                "min": 200,
-                "max": 300
+                "min": 91.0,
+                "max": 136.0
             }
         }
     },
     "Body Weight Lunge": {
         "exercise_weights": {
             "level1": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             },
             "level2": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             },
             "level3": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             }
         }
     },
     "Bodyweight Leg Curl": {
         "exercise_weights": {
             "level1": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             },
             "level2": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             },
             "level3": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             }
         }
     },
     "Box Jump": {
         "exercise_weights": {
             "level1": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             },
             "level2": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             },
             "level3": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             }
         }
     },
     "Box Squat": {
         "exercise_weights": {
             "level1": {
-                "min": 65,
-                "max": 155
+                "min": 29.0,
+                "max": 70.0
             },
             "level2": {
-                "min": 155,
-                "max": 275
+                "min": 70.0,
+                "max": 125.0
             },
             "level3": {
-                "min": 275,
-                "max": 405
+                "min": 125.0,
+                "max": 184.0
             }
         }
     },
     "Bulgarian Split Squat": {
         "exercise_weights": {
             "level1": {
-                "min": 0,
-                "max": 20
+                "min": 0.0,
+                "max": 9.0
             },
             "level2": {
-                "min": 20,
-                "max": 45
+                "min": 9.0,
+                "max": 20.0
             },
             "level3": {
-                "min": 45,
-                "max": 75
+                "min": 20.0,
+                "max": 34.0
             }
         }
     },
     "Chair Squat": {
         "exercise_weights": {
             "level1": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             },
             "level2": {
-                "min": 0,
-                "max": 20
+                "min": 0.0,
+                "max": 9.0
             },
             "level3": {
-                "min": 20,
-                "max": 50
+                "min": 9.0,
+                "max": 23.0
             }
         }
     },
     "Dumbbell Lunge": {
         "exercise_weights": {
             "level1": {
-                "min": 10,
-                "max": 25
+                "min": 5.0,
+                "max": 11.0
             },
             "level2": {
-                "min": 25,
-                "max": 50
+                "min": 11.0,
+                "max": 23.0
             },
             "level3": {
-                "min": 50,
-                "max": 80
+                "min": 23.0,
+                "max": 36.0
             }
         }
     },
     "Dumbbell Squat": {
         "exercise_weights": {
             "level1": {
-                "min": 10,
-                "max": 30
+                "min": 5.0,
+                "max": 14.0
             },
             "level2": {
-                "min": 30,
-                "max": 60
+                "min": 14.0,
+                "max": 27.0
             },
             "level3": {
-                "min": 60,
-                "max": 100
+                "min": 27.0,
+                "max": 45.0
             }
         }
     },
     "Front Squat": {
         "exercise_weights": {
             "level1": {
-                "min": 65,
-                "max": 135
+                "min": 29.0,
+                "max": 61.0
             },
             "level2": {
-                "min": 135,
-                "max": 225
+                "min": 61.0,
+                "max": 102.0
             },
             "level3": {
-                "min": 225,
-                "max": 315
+                "min": 102.0,
+                "max": 143.0
             }
         }
     },
     "Glute Ham Raise": {
         "exercise_weights": {
             "level1": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             },
             "level2": {
-                "min": 0,
-                "max": 25
+                "min": 0.0,
+                "max": 11.0
             },
             "level3": {
-                "min": 25,
-                "max": 50
+                "min": 11.0,
+                "max": 23.0
             }
         }
     },
     "Goblet Squat": {
         "exercise_weights": {
             "level1": {
-                "min": 10,
-                "max": 25
+                "min": 5.0,
+                "max": 11.0
             },
             "level2": {
-                "min": 25,
-                "max": 50
+                "min": 11.0,
+                "max": 23.0
             },
             "level3": {
-                "min": 50,
-                "max": 80
+                "min": 23.0,
+                "max": 36.0
             }
         }
     },
     "Hack Squat Machine": {
         "exercise_weights": {
             "level1": {
-                "min": 45,
-                "max": 135
+                "min": 20.0,
+                "max": 61.0
             },
             "level2": {
-                "min": 135,
-                "max": 275
+                "min": 61.0,
+                "max": 125.0
             },
             "level3": {
-                "min": 275,
-                "max": 405
+                "min": 125.0,
+                "max": 184.0
             }
         }
     },
     "Half Air Squat": {
         "exercise_weights": {
             "level1": {
-                "min": 0,
-                "max": 25
+                "min": 0.0,
+                "max": 11.0
             },
             "level2": {
-                "min": 25,
-                "max": 75
+                "min": 11.0,
+                "max": 34.0
             },
             "level3": {
-                "min": 75,
-                "max": 135
+                "min": 34.0,
+                "max": 61.0
             }
         }
     },
     "Hip Adduction Machine": {
         "exercise_weights": {
             "level1": {
-                "min": 40,
-                "max": 70
+                "min": 18.0,
+                "max": 32.0
             },
             "level2": {
-                "min": 70,
-                "max": 120
+                "min": 32.0,
+                "max": 54.0
             },
             "level3": {
-                "min": 120,
-                "max": 180
+                "min": 54.0,
+                "max": 82.0
             }
         }
     },
     "Jumping Lunge": {
         "exercise_weights": {
             "level1": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             },
             "level2": {
-                "min": 0,
-                "max": 10
+                "min": 0.0,
+                "max": 5.0
             },
             "level3": {
-                "min": 10,
-                "max": 25
+                "min": 5.0,
+                "max": 11.0
             }
         }
     },
     "Landmine Hack Squat": {
         "exercise_weights": {
             "level1": {
-                "min": 45,
-                "max": 90
+                "min": 20.0,
+                "max": 41.0
             },
             "level2": {
-                "min": 90,
-                "max": 180
+                "min": 41.0,
+                "max": 82.0
             },
             "level3": {
-                "min": 180,
-                "max": 270
+                "min": 82.0,
+                "max": 122.0
             }
         }
     },
     "Landmine Squat": {
         "exercise_weights": {
             "level1": {
-                "min": 45,
-                "max": 95
+                "min": 20.0,
+                "max": 43.0
             },
             "level2": {
-                "min": 95,
-                "max": 135
+                "min": 43.0,
+                "max": 61.0
             },
             "level3": {
-                "min": 135,
-                "max": 225
+                "min": 61.0,
+                "max": 102.0
             }
         }
     },
     "Leg Curl On Ball": {
         "exercise_weights": {
             "level1": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             },
             "level2": {
-                "min": 0,
-                "max": 10
+                "min": 0.0,
+                "max": 5.0
             },
             "level3": {
-                "min": 10,
-                "max": 25
+                "min": 5.0,
+                "max": 11.0
             }
         }
     },
     "Leg Extension": {
         "exercise_weights": {
             "level1": {
-                "min": 20,
-                "max": 50
+                "min": 9.0,
+                "max": 23.0
             },
             "level2": {
-                "min": 50,
-                "max": 90
+                "min": 23.0,
+                "max": 41.0
             },
             "level3": {
-                "min": 90,
-                "max": 150
+                "min": 41.0,
+                "max": 68.0
             }
         }
     },
     "Leg Press": {
         "exercise_weights": {
             "level1": {
-                "min": 90,
-                "max": 180
+                "min": 41.0,
+                "max": 82.0
             },
             "level2": {
-                "min": 180,
-                "max": 360
+                "min": 82.0,
+                "max": 163.0
             },
             "level3": {
-                "min": 360,
-                "max": 540
+                "min": 163.0,
+                "max": 245.0
             }
         }
     },
     "Lying Leg Curl": {
         "exercise_weights": {
             "level1": {
-                "min": 30,
-                "max": 70
+                "min": 14.0,
+                "max": 32.0
             },
             "level2": {
-                "min": 70,
-                "max": 120
+                "min": 32.0,
+                "max": 54.0
             },
             "level3": {
-                "min": 120,
-                "max": 180
+                "min": 54.0,
+                "max": 82.0
             }
         }
     },
     "Nordic Hamstring Eccentric": {
         "exercise_weights": {
             "level1": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             },
             "level2": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             },
             "level3": {
-                "min": 0,
-                "max": 25
+                "min": 0.0,
+                "max": 11.0
             }
         }
     },
     "Pause Squat": {
         "exercise_weights": {
             "level1": {
-                "min": 65,
-                "max": 135
+                "min": 29.0,
+                "max": 61.0
             },
             "level2": {
-                "min": 135,
-                "max": 225
+                "min": 61.0,
+                "max": 102.0
             },
             "level3": {
-                "min": 225,
-                "max": 315
+                "min": 102.0,
+                "max": 143.0
             }
         }
     },
     "Pistol Squat": {
         "exercise_weights": {
             "level1": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             },
             "level2": {
-                "min": 0,
-                "max": 10
+                "min": 0.0,
+                "max": 5.0
             },
             "level3": {
-                "min": 10,
-                "max": 25
+                "min": 5.0,
+                "max": 11.0
             }
         }
     },
     "Reverse Barbell Lunge": {
         "exercise_weights": {
             "level1": {
-                "min": 45,
-                "max": 95
+                "min": 20.0,
+                "max": 43.0
             },
             "level2": {
-                "min": 95,
-                "max": 135
+                "min": 43.0,
+                "max": 61.0
             },
             "level3": {
-                "min": 135,
-                "max": 185
+                "min": 61.0,
+                "max": 84.0
             }
         }
     },
     "Romanian Deadlift": {
         "exercise_weights": {
             "level1": {
-                "min": 65,
-                "max": 135
+                "min": 29.0,
+                "max": 61.0
             },
             "level2": {
-                "min": 135,
-                "max": 225
+                "min": 61.0,
+                "max": 102.0
             },
             "level3": {
-                "min": 225,
-                "max": 315
+                "min": 102.0,
+                "max": 143.0
             }
         }
     },
     "Safety Bar Squat": {
         "exercise_weights": {
             "level1": {
-                "min": 65,
-                "max": 155
+                "min": 29.0,
+                "max": 70.0
             },
             "level2": {
-                "min": 155,
-                "max": 275
+                "min": 70.0,
+                "max": 125.0
             },
             "level3": {
-                "min": 275,
-                "max": 405
+                "min": 125.0,
+                "max": 184.0
             }
         }
     },
     "Seated Leg Curl": {
         "exercise_weights": {
             "level1": {
-                "min": 30,
-                "max": 60
+                "min": 14.0,
+                "max": 27.0
             },
             "level2": {
-                "min": 60,
-                "max": 100
+                "min": 27.0,
+                "max": 45.0
             },
             "level3": {
-                "min": 100,
-                "max": 150
+                "min": 45.0,
+                "max": 68.0
             }
         }
     },
     "Shallow Body Weight Lunge": {
         "exercise_weights": {
             "level1": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             },
             "level2": {
-                "min": 0,
-                "max": 20
+                "min": 0.0,
+                "max": 9.0
             },
             "level3": {
-                "min": 20,
-                "max": 50
+                "min": 9.0,
+                "max": 23.0
             }
         }
     },
     "Side Lunges (Bodyweight)": {
         "exercise_weights": {
             "level1": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             },
             "level2": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             },
             "level3": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             }
         }
     },
     "Smith Machine Bulgarian Split Squat": {
         "exercise_weights": {
             "level1": {
-                "min": 20,
-                "max": 45
+                "min": 9.0,
+                "max": 20.0
             },
             "level2": {
-                "min": 45,
-                "max": 90
+                "min": 20.0,
+                "max": 41.0
             },
             "level3": {
-                "min": 90,
-                "max": 135
+                "min": 41.0,
+                "max": 61.0
             }
         }
     },
     "Smith Machine Front Squat": {
         "exercise_weights": {
             "level1": {
-                "min": 65,
-                "max": 135
+                "min": 29.0,
+                "max": 61.0
             },
             "level2": {
-                "min": 135,
-                "max": 225
+                "min": 61.0,
+                "max": 102.0
             },
             "level3": {
-                "min": 225,
-                "max": 315
+                "min": 102.0,
+                "max": 143.0
             }
         }
     },
     "Smith Machine Squat": {
         "exercise_weights": {
             "level1": {
-                "min": 65,
-                "max": 135
+                "min": 29.0,
+                "max": 61.0
             },
             "level2": {
-                "min": 135,
-                "max": 225
+                "min": 61.0,
+                "max": 102.0
             },
             "level3": {
-                "min": 225,
-                "max": 315
+                "min": 102.0,
+                "max": 143.0
             }
         }
     },
     "Squat": {
         "exercise_weights": {
             "level1": {
-                "min": 65,
-                "max": 155
+                "min": 29.0,
+                "max": 70.0
             },
             "level2": {
-                "min": 155,
-                "max": 275
+                "min": 70.0,
+                "max": 125.0
             },
             "level3": {
-                "min": 275,
-                "max": 405
+                "min": 125.0,
+                "max": 184.0
             }
         }
     },
     "Step Up": {
         "exercise_weights": {
             "level1": {
-                "min": 0,
-                "max": 10
+                "min": 0.0,
+                "max": 5.0
             },
             "level2": {
-                "min": 10,
-                "max": 25
+                "min": 5.0,
+                "max": 11.0
             },
             "level3": {
-                "min": 25,
-                "max": 50
+                "min": 11.0,
+                "max": 23.0
             }
         }
     },
     "Zercher Squat": {
         "exercise_weights": {
             "level1": {
-                "min": 65,
-                "max": 135
+                "min": 29.0,
+                "max": 61.0
             },
             "level2": {
-                "min": 135,
-                "max": 225
+                "min": 61.0,
+                "max": 102.0
             },
             "level3": {
-                "min": 225,
-                "max": 315
+                "min": 102.0,
+                "max": 143.0
             }
         }
     },
     "Zombie Squat": {
         "exercise_weights": {
             "level1": {
-                "min": 45,
-                "max": 95
+                "min": 20.0,
+                "max": 43.0
             },
             "level2": {
-                "min": 95,
-                "max": 185
+                "min": 43.0,
+                "max": 84.0
             },
             "level3": {
-                "min": 185,
-                "max": 275
+                "min": 84.0,
+                "max": 125.0
             }
         }
     },
     "Assisted Chin-Up": {
         "exercise_weights": {
             "level1": {
-                "min": 70,
-                "max": 100
+                "min": 32.0,
+                "max": 45.0
             },
             "level2": {
-                "min": 40,
-                "max": 70
+                "min": 18.0,
+                "max": 32.0
             },
             "level3": {
-                "min": 0,
-                "max": 40
+                "min": 0.0,
+                "max": 18.0
             }
         }
     },
     "Assisted Pull-Up": {
         "exercise_weights": {
             "level1": {
-                "min": 80,
-                "max": 120
+                "min": 36.0,
+                "max": 54.0
             },
             "level2": {
-                "min": 40,
-                "max": 80
+                "min": 18.0,
+                "max": 36.0
             },
             "level3": {
-                "min": 0,
-                "max": 40
+                "min": 0.0,
+                "max": 18.0
             }
         }
     },
     "Back Extension": {
         "exercise_weights": {
             "level1": {
-                "min": 0,
-                "max": 25
+                "min": 0.0,
+                "max": 11.0
             },
             "level2": {
-                "min": 25,
-                "max": 45
+                "min": 11.0,
+                "max": 20.0
             },
             "level3": {
-                "min": 45,
-                "max": 90
+                "min": 20.0,
+                "max": 41.0
             }
         }
     },
     "Banded Muscle-Up": {
         "exercise_weights": {
             "level1": {
-                "min": 40,
-                "max": 60
+                "min": 18.0,
+                "max": 27.0
             },
             "level2": {
-                "min": 20,
-                "max": 40
+                "min": 9.0,
+                "max": 18.0
             },
             "level3": {
-                "min": 5,
-                "max": 20
+                "min": 2.0,
+                "max": 9.0
             }
         }
     },
     "Barbell Row": {
         "exercise_weights": {
             "level1": {
-                "min": 65,
-                "max": 135
+                "min": 29.0,
+                "max": 61.0
             },
             "level2": {
-                "min": 135,
-                "max": 225
+                "min": 61.0,
+                "max": 102.0
             },
             "level3": {
-                "min": 225,
-                "max": 315
+                "min": 102.0,
+                "max": 143.0
             }
         }
     },
     "Barbell Shrug": {
         "exercise_weights": {
             "level1": {
-                "min": 95,
-                "max": 185
+                "min": 43.0,
+                "max": 84.0
             },
             "level2": {
-                "min": 185,
-                "max": 315
+                "min": 84.0,
+                "max": 143.0
             },
             "level3": {
-                "min": 315,
-                "max": 455
+                "min": 143.0,
+                "max": 206.0
             }
         }
     },
     "Block Clean": {
         "exercise_weights": {
             "level1": {
-                "min": 65,
-                "max": 115
+                "min": 29.0,
+                "max": 52.0
             },
             "level2": {
-                "min": 115,
-                "max": 185
+                "min": 52.0,
+                "max": 84.0
             },
             "level3": {
-                "min": 185,
-                "max": 275
+                "min": 84.0,
+                "max": 125.0
             }
         }
     },
     "Block Snatch": {
         "exercise_weights": {
             "level1": {
-                "min": 65,
-                "max": 115
+                "min": 29.0,
+                "max": 52.0
             },
             "level2": {
-                "min": 115,
-                "max": 185
+                "min": 52.0,
+                "max": 84.0
             },
             "level3": {
-                "min": 185,
-                "max": 275
+                "min": 84.0,
+                "max": 125.0
             }
         }
     },
     "Cable Close Grip Seated Row": {
         "exercise_weights": {
             "level1": {
-                "min": 50,
-                "max": 90
+                "min": 23.0,
+                "max": 41.0
             },
             "level2": {
-                "min": 90,
-                "max": 150
+                "min": 41.0,
+                "max": 68.0
             },
             "level3": {
-                "min": 150,
-                "max": 200
+                "min": 68.0,
+                "max": 91.0
             }
         }
     },
     "Cable Wide Grip Seated Row": {
         "exercise_weights": {
             "level1": {
-                "min": 60,
-                "max": 100
+                "min": 27.0,
+                "max": 45.0
             },
             "level2": {
-                "min": 100,
-                "max": 160
+                "min": 45.0,
+                "max": 73.0
             },
             "level3": {
-                "min": 160,
-                "max": 220
+                "min": 73.0,
+                "max": 100.0
             }
         }
     },
     "Chest to Bar": {
         "exercise_weights": {
             "level1": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             },
             "level2": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             },
             "level3": {
-                "min": 0,
-                "max": 45
+                "min": 0.0,
+                "max": 20.0
             }
         }
     },
     "Chin-Up": {
         "exercise_weights": {
             "level1": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             },
             "level2": {
-                "min": -25,
-                "max": 25
+                "min": -11.0,
+                "max": 11.0
             },
             "level3": {
-                "min": 25,
-                "max": 50
+                "min": 11.0,
+                "max": 23.0
             }
         }
     },
     "Clean": {
         "exercise_weights": {
             "level1": {
-                "min": 65,
-                "max": 95
+                "min": 29.0,
+                "max": 43.0
             },
             "level2": {
-                "min": 95,
-                "max": 155
+                "min": 43.0,
+                "max": 70.0
             },
             "level3": {
-                "min": 155,
-                "max": 225
+                "min": 70.0,
+                "max": 102.0
             }
         }
     },
     "Clean and Jerk": {
         "exercise_weights": {
             "level1": {
-                "min": 65,
-                "max": 115
+                "min": 29.0,
+                "max": 52.0
             },
             "level2": {
-                "min": 115,
-                "max": 185
+                "min": 52.0,
+                "max": 84.0
             },
             "level3": {
-                "min": 185,
-                "max": 275
+                "min": 84.0,
+                "max": 125.0
             }
         }
     },
     "Deadlift": {
         "exercise_weights": {
             "level1": {
-                "min": 95,
-                "max": 185
+                "min": 43.0,
+                "max": 84.0
             },
             "level2": {
-                "min": 185,
-                "max": 315
+                "min": 84.0,
+                "max": 143.0
             },
             "level3": {
-                "min": 315,
-                "max": 405
+                "min": 143.0,
+                "max": 184.0
             }
         }
     },
     "Deficit Deadlift": {
         "exercise_weights": {
             "level1": {
-                "min": 95,
-                "max": 185
+                "min": 43.0,
+                "max": 84.0
             },
             "level2": {
-                "min": 185,
-                "max": 300
+                "min": 84.0,
+                "max": 136.0
             },
             "level3": {
-                "min": 300,
-                "max": 405
+                "min": 136.0,
+                "max": 184.0
             }
         }
     },
     "Dumbbell Deadlift": {
         "exercise_weights": {
             "level1": {
-                "min": 20,
-                "max": 40
+                "min": 9.0,
+                "max": 18.0
             },
             "level2": {
-                "min": 40,
-                "max": 80
+                "min": 18.0,
+                "max": 36.0
             },
             "level3": {
-                "min": 80,
-                "max": 120
+                "min": 36.0,
+                "max": 54.0
             }
         }
     },
     "Dumbbell Row": {
         "exercise_weights": {
             "level1": {
-                "min": 15,
-                "max": 30
+                "min": 7.0,
+                "max": 14.0
             },
             "level2": {
-                "min": 30,
-                "max": 50
+                "min": 14.0,
+                "max": 23.0
             },
             "level3": {
-                "min": 50,
-                "max": 75
+                "min": 23.0,
+                "max": 34.0
             }
         }
     },
     "Dumbbell Shrug": {
         "exercise_weights": {
             "level1": {
-                "min": 20,
-                "max": 40
+                "min": 9.0,
+                "max": 18.0
             },
             "level2": {
-                "min": 40,
-                "max": 70
+                "min": 18.0,
+                "max": 32.0
             },
             "level3": {
-                "min": 70,
-                "max": 100
+                "min": 32.0,
+                "max": 45.0
             }
         }
     },
     "Floor Back Extension": {
         "exercise_weights": {
             "level1": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             },
             "level2": {
-                "min": 10,
-                "max": 25
+                "min": 5.0,
+                "max": 11.0
             },
             "level3": {
-                "min": 25,
-                "max": 50
+                "min": 11.0,
+                "max": 23.0
             }
         }
     },
     "Good Morning": {
         "exercise_weights": {
             "level1": {
-                "min": 10,
-                "max": 25
+                "min": 5.0,
+                "max": 11.0
             },
             "level2": {
-                "min": 25,
-                "max": 50
+                "min": 11.0,
+                "max": 23.0
             },
             "level3": {
-                "min": 50,
-                "max": 75
+                "min": 23.0,
+                "max": 34.0
             }
         }
     },
     "Gorilla Row": {
         "exercise_weights": {
             "level1": {
-                "min": 10,
-                "max": 25
+                "min": 5.0,
+                "max": 11.0
             },
             "level2": {
-                "min": 25,
-                "max": 50
+                "min": 11.0,
+                "max": 23.0
             },
             "level3": {
-                "min": 50,
-                "max": 80
+                "min": 23.0,
+                "max": 36.0
             }
         }
     },
     "Hang Clean": {
         "exercise_weights": {
             "level1": {
-                "min": 65,
-                "max": 115
+                "min": 29.0,
+                "max": 52.0
             },
             "level2": {
-                "min": 115,
-                "max": 185
+                "min": 52.0,
+                "max": 84.0
             },
             "level3": {
-                "min": 185,
-                "max": 275
+                "min": 84.0,
+                "max": 125.0
             }
         }
     },
     "Hang Power Clean": {
         "exercise_weights": {
             "level1": {
-                "min": 65,
-                "max": 115
+                "min": 29.0,
+                "max": 52.0
             },
             "level2": {
-                "min": 115,
-                "max": 185
+                "min": 52.0,
+                "max": 84.0
             },
             "level3": {
-                "min": 185,
-                "max": 275
+                "min": 84.0,
+                "max": 125.0
             }
         }
     },
     "Hang Power Snatch": {
         "exercise_weights": {
             "level1": {
-                "min": 45,
-                "max": 95
+                "min": 20.0,
+                "max": 43.0
             },
             "level2": {
-                "min": 95,
-                "max": 155
+                "min": 43.0,
+                "max": 70.0
             },
             "level3": {
-                "min": 155,
-                "max": 225
+                "min": 70.0,
+                "max": 102.0
             }
         }
     },
     "Hang Snatch": {
         "exercise_weights": {
             "level1": {
-                "min": 45,
-                "max": 95
+                "min": 20.0,
+                "max": 43.0
             },
             "level2": {
-                "min": 95,
-                "max": 135
+                "min": 43.0,
+                "max": 61.0
             },
             "level3": {
-                "min": 135,
-                "max": 185
+                "min": 61.0,
+                "max": 84.0
             }
         }
     },
     "Inverted Row": {
         "exercise_weights": {
             "level1": {
-                "min": 0,
-                "max": 0.25
+                "min": 0.0,
+                "max": 0.0
             },
             "level2": {
-                "min": 0.25,
-                "max": 0.75
+                "min": 0.0,
+                "max": 0.0
             },
             "level3": {
-                "min": 0.75,
-                "max": 1.25
+                "min": 0.0,
+                "max": 1.0
             }
         }
     },
     "Inverted Row with Underhand Grip": {
         "exercise_weights": {
             "level1": {
-                "min": 0,
-                "max": 50
+                "min": 0.0,
+                "max": 23.0
             },
             "level2": {
-                "min": 50,
-                "max": 100
+                "min": 23.0,
+                "max": 45.0
             },
             "level3": {
-                "min": 100,
-                "max": 150
+                "min": 45.0,
+                "max": 68.0
             }
         }
     },
     "Jefferson Curl": {
         "exercise_weights": {
             "level1": {
-                "min": 5,
-                "max": 15
+                "min": 2.0,
+                "max": 7.0
             },
             "level2": {
-                "min": 15,
-                "max": 35
+                "min": 7.0,
+                "max": 16.0
             },
             "level3": {
-                "min": 35,
-                "max": 65
+                "min": 16.0,
+                "max": 29.0
             }
         }
     },
     "Jumping Muscle-Up": {
         "exercise_weights": {
             "level1": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             },
             "level2": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             },
             "level3": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             }
         }
     },
     "Kettlebell Swing": {
         "exercise_weights": {
             "level1": {
-                "min": 25,
-                "max": 35
+                "min": 11.0,
+                "max": 16.0
             },
             "level2": {
-                "min": 35,
-                "max": 53
+                "min": 16.0,
+                "max": 24.0
             },
             "level3": {
-                "min": 53,
-                "max": 70
+                "min": 24.0,
+                "max": 32.0
             }
         }
     },
     "Lat Pulldown With Pronated Grip": {
         "exercise_weights": {
             "level1": {
-                "min": 40,
-                "max": 80
+                "min": 18.0,
+                "max": 36.0
             },
             "level2": {
-                "min": 80,
-                "max": 150
+                "min": 36.0,
+                "max": 68.0
             },
             "level3": {
-                "min": 150,
-                "max": 220
+                "min": 68.0,
+                "max": 100.0
             }
         }
     },
     "Lat Pulldown With Supinated Grip": {
         "exercise_weights": {
             "level1": {
-                "min": 40,
-                "max": 80
+                "min": 18.0,
+                "max": 36.0
             },
             "level2": {
-                "min": 80,
-                "max": 130
+                "min": 36.0,
+                "max": 59.0
             },
             "level3": {
-                "min": 130,
-                "max": 180
+                "min": 59.0,
+                "max": 82.0
             }
         }
     },
     "Muscle-Up (Bar)": {
         "exercise_weights": {
             "level1": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             },
             "level2": {
-                "min": 0,
-                "max": 25
+                "min": 0.0,
+                "max": 11.0
             },
             "level3": {
-                "min": 25,
-                "max": 50
+                "min": 11.0,
+                "max": 23.0
             }
         }
     },
     "Muscle-Up (Rings)": {
         "exercise_weights": {
             "level1": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             },
             "level2": {
-                "min": 0,
-                "max": 20
+                "min": 0.0,
+                "max": 9.0
             },
             "level3": {
-                "min": 20,
-                "max": 40
+                "min": 9.0,
+                "max": 18.0
             }
         }
     },
     "One-Handed Cable Row": {
         "exercise_weights": {
             "level1": {
-                "min": 10,
-                "max": 25
+                "min": 5.0,
+                "max": 11.0
             },
             "level2": {
-                "min": 25,
-                "max": 50
+                "min": 11.0,
+                "max": 23.0
             },
             "level3": {
-                "min": 50,
-                "max": 80
+                "min": 23.0,
+                "max": 36.0
             }
         }
     },
     "One-Handed Lat Pulldown": {
         "exercise_weights": {
             "level1": {
-                "min": 10,
-                "max": 25
+                "min": 5.0,
+                "max": 11.0
             },
             "level2": {
-                "min": 25,
-                "max": 45
+                "min": 11.0,
+                "max": 20.0
             },
             "level3": {
-                "min": 45,
-                "max": 70
+                "min": 20.0,
+                "max": 32.0
             }
         }
     },
     "Pause Deadlift": {
         "exercise_weights": {
             "level1": {
-                "min": 95,
-                "max": 185
+                "min": 43.0,
+                "max": 84.0
             },
             "level2": {
-                "min": 185,
-                "max": 315
+                "min": 84.0,
+                "max": 143.0
             },
             "level3": {
-                "min": 315,
-                "max": 405
+                "min": 143.0,
+                "max": 184.0
             }
         }
     },
     "Pendlay Row": {
         "exercise_weights": {
             "level1": {
-                "min": 65,
-                "max": 115
+                "min": 29.0,
+                "max": 52.0
             },
             "level2": {
-                "min": 115,
-                "max": 185
+                "min": 52.0,
+                "max": 84.0
             },
             "level3": {
-                "min": 185,
-                "max": 275
+                "min": 84.0,
+                "max": 125.0
             }
         }
     },
     "Power Clean": {
         "exercise_weights": {
             "level1": {
-                "min": 65,
-                "max": 115
+                "min": 29.0,
+                "max": 52.0
             },
             "level2": {
-                "min": 115,
-                "max": 185
+                "min": 52.0,
+                "max": 84.0
             },
             "level3": {
-                "min": 185,
-                "max": 275
+                "min": 84.0,
+                "max": 125.0
             }
         }
     },
     "Power Snatch": {
         "exercise_weights": {
             "level1": {
-                "min": 45,
-                "max": 95
+                "min": 20.0,
+                "max": 43.0
             },
             "level2": {
-                "min": 95,
-                "max": 185
+                "min": 43.0,
+                "max": 84.0
             },
             "level3": {
-                "min": 185,
-                "max": 275
+                "min": 84.0,
+                "max": 125.0
             }
         }
     },
     "Pull-Up": {
         "exercise_weights": {
             "level1": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             },
             "level2": {
-                "min": -25,
-                "max": 25
+                "min": -11.0,
+                "max": 11.0
             },
             "level3": {
-                "min": 25,
-                "max": 100
+                "min": 11.0,
+                "max": 45.0
             }
         }
     },
     "Pull-Up With a Neutral Grip": {
         "exercise_weights": {
             "level1": {
-                "min": 0,
-                "max": 5
+                "min": 0.0,
+                "max": 2.0
             },
             "level2": {
-                "min": 5,
-                "max": 25
+                "min": 2.0,
+                "max": 11.0
             },
             "level3": {
-                "min": 25,
-                "max": 75
+                "min": 11.0,
+                "max": 34.0
             }
         }
     },
     "Rack Pull": {
         "exercise_weights": {
             "level1": {
-                "min": 135,
-                "max": 225
+                "min": 61.0,
+                "max": 102.0
             },
             "level2": {
-                "min": 225,
-                "max": 365
+                "min": 102.0,
+                "max": 166.0
             },
             "level3": {
-                "min": 365,
-                "max": 495
+                "min": 166.0,
+                "max": 224.0
             }
         }
     },
     "Ring Pull-Up": {
         "exercise_weights": {
             "level1": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             },
             "level2": {
-                "min": -20,
-                "max": 0
+                "min": -9.0,
+                "max": 0.0
             },
             "level3": {
-                "min": -50,
-                "max": -20
+                "min": -23.0,
+                "max": -9.0
             }
         }
     },
     "Ring Row": {
         "exercise_weights": {
             "level1": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             },
             "level2": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             },
             "level3": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             }
         }
     },
     "Scap Pull-Up": {
         "exercise_weights": {
             "level1": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             },
             "level2": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             },
             "level3": {
-                "min": 0,
-                "max": 20
+                "min": 0.0,
+                "max": 9.0
             }
         }
     },
     "Seal Row": {
         "exercise_weights": {
             "level1": {
-                "min": 45,
-                "max": 95
+                "min": 20.0,
+                "max": 43.0
             },
             "level2": {
-                "min": 95,
-                "max": 185
+                "min": 43.0,
+                "max": 84.0
             },
             "level3": {
-                "min": 185,
-                "max": 275
+                "min": 84.0,
+                "max": 125.0
             }
         }
     },
     "Seated Machine Row": {
         "exercise_weights": {
             "level1": {
-                "min": 50,
-                "max": 100
+                "min": 23.0,
+                "max": 45.0
             },
             "level2": {
-                "min": 100,
-                "max": 180
+                "min": 45.0,
+                "max": 82.0
             },
             "level3": {
-                "min": 180,
-                "max": 250
+                "min": 82.0,
+                "max": 113.0
             }
         }
     },
     "Single Leg Deadlift with Kettlebell": {
         "exercise_weights": {
             "level1": {
-                "min": 10,
-                "max": 25
+                "min": 5.0,
+                "max": 11.0
             },
             "level2": {
-                "min": 25,
-                "max": 45
+                "min": 11.0,
+                "max": 20.0
             },
             "level3": {
-                "min": 45,
-                "max": 70
+                "min": 20.0,
+                "max": 32.0
             }
         }
     },
     "Smith Machine One-Handed Row": {
         "exercise_weights": {
             "level1": {
-                "min": 10,
-                "max": 25
+                "min": 5.0,
+                "max": 11.0
             },
             "level2": {
-                "min": 25,
-                "max": 45
+                "min": 11.0,
+                "max": 20.0
             },
             "level3": {
-                "min": 45,
-                "max": 70
+                "min": 20.0,
+                "max": 32.0
             }
         }
     },
     "Snatch": {
         "exercise_weights": {
             "level1": {
-                "min": 45,
-                "max": 95
+                "min": 20.0,
+                "max": 43.0
             },
             "level2": {
-                "min": 95,
-                "max": 185
+                "min": 43.0,
+                "max": 84.0
             },
             "level3": {
-                "min": 185,
-                "max": 275
+                "min": 84.0,
+                "max": 125.0
             }
         }
     },
     "Snatch Grip Deadlift": {
         "exercise_weights": {
             "level1": {
-                "min": 95,
-                "max": 155
+                "min": 43.0,
+                "max": 70.0
             },
             "level2": {
-                "min": 155,
-                "max": 255
+                "min": 70.0,
+                "max": 116.0
             },
             "level3": {
-                "min": 255,
-                "max": 365
+                "min": 116.0,
+                "max": 166.0
             }
         }
     },
     "Stiff-Legged Deadlift": {
         "exercise_weights": {
             "level1": {
-                "min": 95,
-                "max": 155
+                "min": 43.0,
+                "max": 70.0
             },
             "level2": {
-                "min": 155,
-                "max": 245
+                "min": 70.0,
+                "max": 111.0
             },
             "level3": {
-                "min": 245,
-                "max": 335
+                "min": 111.0,
+                "max": 152.0
             }
         }
     },
     "Straight Arm Lat Pulldown": {
         "exercise_weights": {
             "level1": {
-                "min": 20,
-                "max": 40
+                "min": 9.0,
+                "max": 18.0
             },
             "level2": {
-                "min": 40,
-                "max": 70
+                "min": 18.0,
+                "max": 32.0
             },
             "level3": {
-                "min": 70,
-                "max": 100
+                "min": 32.0,
+                "max": 45.0
             }
         }
     },
     "Sumo Deadlift": {
         "exercise_weights": {
             "level1": {
-                "min": 135,
-                "max": 225
+                "min": 61.0,
+                "max": 102.0
             },
             "level2": {
-                "min": 225,
-                "max": 365
+                "min": 102.0,
+                "max": 166.0
             },
             "level3": {
-                "min": 365,
-                "max": 495
+                "min": 166.0,
+                "max": 224.0
             }
         }
     },
     "T-Bar Row": {
         "exercise_weights": {
             "level1": {
-                "min": 45,
-                "max": 90
+                "min": 20.0,
+                "max": 41.0
             },
             "level2": {
-                "min": 90,
-                "max": 180
+                "min": 41.0,
+                "max": 82.0
             },
             "level3": {
-                "min": 180,
-                "max": 270
+                "min": 82.0,
+                "max": 122.0
             }
         }
     },
     "Trap Bar Deadlift With High Handles": {
         "exercise_weights": {
             "level1": {
-                "min": 95,
-                "max": 185
+                "min": 43.0,
+                "max": 84.0
             },
             "level2": {
-                "min": 185,
-                "max": 315
+                "min": 84.0,
+                "max": 143.0
             },
             "level3": {
-                "min": 315,
-                "max": 455
+                "min": 143.0,
+                "max": 206.0
             }
         }
     },
     "Trap Bar Deadlift With Low Handles": {
         "exercise_weights": {
             "level1": {
-                "min": 95,
-                "max": 185
+                "min": 43.0,
+                "max": 84.0
             },
             "level2": {
-                "min": 185,
-                "max": 315
+                "min": 84.0,
+                "max": 143.0
             },
             "level3": {
-                "min": 315,
-                "max": 455
+                "min": 143.0,
+                "max": 206.0
             }
         }
     },
     "Banded Side Kicks": {
         "exercise_weights": {
             "level1": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             },
             "level2": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             },
             "level3": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             }
         }
     },
     "Cable Pull Through": {
         "exercise_weights": {
             "level1": {
-                "min": 30,
-                "max": 60
+                "min": 14.0,
+                "max": 27.0
             },
             "level2": {
-                "min": 60,
-                "max": 100
+                "min": 27.0,
+                "max": 45.0
             },
             "level3": {
-                "min": 100,
-                "max": 150
+                "min": 45.0,
+                "max": 68.0
             }
         }
     },
     "Clamshells": {
         "exercise_weights": {
             "level1": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             },
             "level2": {
-                "min": 5,
-                "max": 15
+                "min": 2.0,
+                "max": 7.0
             },
             "level3": {
-                "min": 15,
-                "max": 25
+                "min": 7.0,
+                "max": 11.0
             }
         }
     },
     "Cossack Squat": {
         "exercise_weights": {
             "level1": {
-                "min": 0,
-                "max": 10
+                "min": 0.0,
+                "max": 5.0
             },
             "level2": {
-                "min": 10,
-                "max": 35
+                "min": 5.0,
+                "max": 16.0
             },
             "level3": {
-                "min": 35,
-                "max": 65
+                "min": 16.0,
+                "max": 29.0
             }
         }
     },
     "Death March with Dumbbells": {
         "exercise_weights": {
             "level1": {
-                "min": 10,
-                "max": 25
+                "min": 5.0,
+                "max": 11.0
             },
             "level2": {
-                "min": 25,
-                "max": 50
+                "min": 11.0,
+                "max": 23.0
             },
             "level3": {
-                "min": 50,
-                "max": 75
+                "min": 23.0,
+                "max": 34.0
             }
         }
     },
     "Donkey Kicks": {
         "exercise_weights": {
             "level1": {
-                "min": 0,
-                "max": 5
+                "min": 0.0,
+                "max": 2.0
             },
             "level2": {
-                "min": 5,
-                "max": 15
+                "min": 2.0,
+                "max": 7.0
             },
             "level3": {
-                "min": 15,
-                "max": 25
+                "min": 7.0,
+                "max": 11.0
             }
         }
     },
     "Dumbbell Romanian Deadlift": {
         "exercise_weights": {
             "level1": {
-                "min": 20,
-                "max": 40
+                "min": 9.0,
+                "max": 18.0
             },
             "level2": {
-                "min": 40,
-                "max": 70
+                "min": 18.0,
+                "max": 32.0
             },
             "level3": {
-                "min": 70,
-                "max": 100
+                "min": 32.0,
+                "max": 45.0
             }
         }
     },
     "Dumbbell Frog Pumps": {
         "exercise_weights": {
             "level1": {
-                "min": 10,
-                "max": 25
+                "min": 5.0,
+                "max": 11.0
             },
             "level2": {
-                "min": 25,
-                "max": 40
+                "min": 11.0,
+                "max": 18.0
             },
             "level3": {
-                "min": 40,
-                "max": 60
+                "min": 18.0,
+                "max": 27.0
             }
         }
     },
     "Fire Hydrants": {
         "exercise_weights": {
             "level1": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             },
             "level2": {
-                "min": 2,
-                "max": 10
+                "min": 1.0,
+                "max": 5.0
             },
             "level3": {
-                "min": 10,
-                "max": 20
+                "min": 5.0,
+                "max": 9.0
             }
         }
     },
     "Frog Pumps": {
         "exercise_weights": {
             "level1": {
-                "min": 0,
-                "max": 25
+                "min": 0.0,
+                "max": 11.0
             },
             "level2": {
-                "min": 25,
-                "max": 75
+                "min": 11.0,
+                "max": 34.0
             },
             "level3": {
-                "min": 75,
-                "max": 135
+                "min": 34.0,
+                "max": 61.0
             }
         }
     },
     "Glute Bridge": {
         "exercise_weights": {
             "level1": {
-                "min": 0,
-                "max": 95
+                "min": 0.0,
+                "max": 43.0
             },
             "level2": {
-                "min": 95,
-                "max": 225
+                "min": 43.0,
+                "max": 102.0
             },
             "level3": {
-                "min": 225,
-                "max": 315
+                "min": 102.0,
+                "max": 143.0
             }
         }
     },
     "Hip Abduction Against Band": {
         "exercise_weights": {
             "level1": {
-                "min": 5,
-                "max": 15
+                "min": 2.0,
+                "max": 7.0
             },
             "level2": {
-                "min": 15,
-                "max": 30
+                "min": 7.0,
+                "max": 14.0
             },
             "level3": {
-                "min": 30,
-                "max": 50
+                "min": 14.0,
+                "max": 23.0
             }
         }
     },
     "Hip Abduction Machine": {
         "exercise_weights": {
             "level1": {
-                "min": 30,
-                "max": 60
+                "min": 14.0,
+                "max": 27.0
             },
             "level2": {
-                "min": 60,
-                "max": 100
+                "min": 27.0,
+                "max": 45.0
             },
             "level3": {
-                "min": 100,
-                "max": 150
+                "min": 45.0,
+                "max": 68.0
             }
         }
     },
     "Hip Thrust": {
         "exercise_weights": {
             "level1": {
-                "min": 65,
-                "max": 135
+                "min": 29.0,
+                "max": 61.0
             },
             "level2": {
-                "min": 135,
-                "max": 225
+                "min": 61.0,
+                "max": 102.0
             },
             "level3": {
-                "min": 225,
-                "max": 315
+                "min": 102.0,
+                "max": 143.0
             }
         }
     },
     "Hip Thrust Machine": {
         "exercise_weights": {
             "level1": {
-                "min": 45,
-                "max": 90
+                "min": 20.0,
+                "max": 41.0
             },
             "level2": {
-                "min": 90,
-                "max": 180
+                "min": 41.0,
+                "max": 82.0
             },
             "level3": {
-                "min": 180,
-                "max": 270
+                "min": 82.0,
+                "max": 122.0
             }
         }
     },
     "Hip Thrust With Band Around Knees": {
         "exercise_weights": {
             "level1": {
-                "min": 0,
-                "max": 25
+                "min": 0.0,
+                "max": 11.0
             },
             "level2": {
-                "min": 25,
-                "max": 75
+                "min": 11.0,
+                "max": 34.0
             },
             "level3": {
-                "min": 75,
-                "max": 135
+                "min": 34.0,
+                "max": 61.0
             }
         }
     },
     "Lateral Walk With Band": {
         "exercise_weights": {
             "level1": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             },
             "level2": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             },
             "level3": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             }
         }
     },
     "Machine Glute Kickbacks": {
         "exercise_weights": {
             "level1": {
-                "min": 20,
-                "max": 50
+                "min": 9.0,
+                "max": 23.0
             },
             "level2": {
-                "min": 50,
-                "max": 80
+                "min": 23.0,
+                "max": 36.0
             },
             "level3": {
-                "min": 80,
-                "max": 120
+                "min": 36.0,
+                "max": 54.0
             }
         }
     },
     "One-Legged Glute Bridge": {
         "exercise_weights": {
             "level1": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             },
             "level2": {
-                "min": 10,
-                "max": 25
+                "min": 5.0,
+                "max": 11.0
             },
             "level3": {
-                "min": 25,
-                "max": 45
+                "min": 11.0,
+                "max": 20.0
             }
         }
     },
     "One-Legged Hip Thrust": {
         "exercise_weights": {
             "level1": {
-                "min": 0,
-                "max": 25
+                "min": 0.0,
+                "max": 11.0
             },
             "level2": {
-                "min": 25,
-                "max": 50
+                "min": 11.0,
+                "max": 23.0
             },
             "level3": {
-                "min": 50,
-                "max": 100
+                "min": 23.0,
+                "max": 45.0
             }
         }
     },
     "Reverse Hyperextension": {
         "exercise_weights": {
             "level1": {
-                "min": 25,
-                "max": 75
+                "min": 11.0,
+                "max": 34.0
             },
             "level2": {
-                "min": 75,
-                "max": 150
+                "min": 34.0,
+                "max": 68.0
             },
             "level3": {
-                "min": 150,
-                "max": 250
+                "min": 68.0,
+                "max": 113.0
             }
         }
     },
     "Smith Machine Hip Thrust": {
         "exercise_weights": {
             "level1": {
-                "min": 65,
-                "max": 135
+                "min": 29.0,
+                "max": 61.0
             },
             "level2": {
-                "min": 135,
-                "max": 225
+                "min": 61.0,
+                "max": 102.0
             },
             "level3": {
-                "min": 225,
-                "max": 315
+                "min": 102.0,
+                "max": 143.0
             }
         }
     },
     "Single Leg Romanian Deadlift": {
         "exercise_weights": {
             "level1": {
-                "min": 10,
-                "max": 25
+                "min": 5.0,
+                "max": 11.0
             },
             "level2": {
-                "min": 25,
-                "max": 50
+                "min": 11.0,
+                "max": 23.0
             },
             "level3": {
-                "min": 50,
-                "max": 85
+                "min": 23.0,
+                "max": 39.0
             }
         }
     },
     "Standing Glute Kickback in Machine": {
         "exercise_weights": {
             "level1": {
-                "min": 10,
-                "max": 25
+                "min": 5.0,
+                "max": 11.0
             },
             "level2": {
-                "min": 25,
-                "max": 50
+                "min": 11.0,
+                "max": 23.0
             },
             "level3": {
-                "min": 50,
-                "max": 80
+                "min": 23.0,
+                "max": 36.0
             }
         }
     },
     "Ball Slams": {
         "exercise_weights": {
             "level1": {
-                "min": 6,
-                "max": 12
+                "min": 3.0,
+                "max": 5.0
             },
             "level2": {
-                "min": 12,
-                "max": 20
+                "min": 5.0,
+                "max": 9.0
             },
             "level3": {
-                "min": 20,
-                "max": 30
+                "min": 9.0,
+                "max": 14.0
             }
         }
     },
     "Cable Crunch": {
         "exercise_weights": {
             "level1": {
-                "min": 20,
-                "max": 40
+                "min": 9.0,
+                "max": 18.0
             },
             "level2": {
-                "min": 40,
-                "max": 70
+                "min": 18.0,
+                "max": 32.0
             },
             "level3": {
-                "min": 70,
-                "max": 100
+                "min": 32.0,
+                "max": 45.0
             }
         }
     },
     "Crunch": {
         "exercise_weights": {
             "level1": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             },
             "level2": {
-                "min": 0,
-                "max": 25
+                "min": 0.0,
+                "max": 11.0
             },
             "level3": {
-                "min": 25,
-                "max": 45
+                "min": 11.0,
+                "max": 20.0
             }
         }
     },
     "Dead Bug": {
         "exercise_weights": {
             "level1": {
-                "min": 0,
-                "max": 5
+                "min": 0.0,
+                "max": 2.0
             },
             "level2": {
-                "min": 5,
-                "max": 10
+                "min": 2.0,
+                "max": 5.0
             },
             "level3": {
-                "min": 10,
-                "max": 20
+                "min": 5.0,
+                "max": 9.0
             }
         }
     },
     "Dragon Flag": {
         "exercise_weights": {
             "level1": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             },
             "level2": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             },
             "level3": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             }
         }
     },
     "Hanging Knee Raise": {
         "exercise_weights": {
             "level1": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             },
             "level2": {
-                "min": 0,
-                "max": 10
+                "min": 0.0,
+                "max": 5.0
             },
             "level3": {
-                "min": 10,
-                "max": 25
+                "min": 5.0,
+                "max": 11.0
             }
         }
     },
     "Hanging Leg Raise": {
         "exercise_weights": {
             "level1": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             },
             "level2": {
-                "min": 0,
-                "max": 10
+                "min": 0.0,
+                "max": 5.0
             },
             "level3": {
-                "min": 10,
-                "max": 25
+                "min": 5.0,
+                "max": 11.0
             }
         }
     },
     "Hanging Sit-Up": {
         "exercise_weights": {
             "level1": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             },
             "level2": {
-                "min": 0,
-                "max": 10
+                "min": 0.0,
+                "max": 5.0
             },
             "level3": {
-                "min": 10,
-                "max": 25
+                "min": 5.0,
+                "max": 11.0
             }
         }
     },
     "Hanging Windshield Wiper": {
         "exercise_weights": {
             "level1": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             },
             "level2": {
-                "min": 0,
-                "max": 5
+                "min": 0.0,
+                "max": 2.0
             },
             "level3": {
-                "min": 5,
-                "max": 10
+                "min": 2.0,
+                "max": 5.0
             }
         }
     },
     "High to Low Wood Chop with Band": {
         "exercise_weights": {
             "level1": {
-                "min": 5,
-                "max": 15
+                "min": 2.0,
+                "max": 7.0
             },
             "level2": {
-                "min": 15,
-                "max": 30
+                "min": 7.0,
+                "max": 14.0
             },
             "level3": {
-                "min": 30,
-                "max": 50
+                "min": 14.0,
+                "max": 23.0
             }
         }
     },
     "Horizontal Wood Chop with Band": {
         "exercise_weights": {
             "level1": {
-                "min": 5,
-                "max": 15
+                "min": 2.0,
+                "max": 7.0
             },
             "level2": {
-                "min": 15,
-                "max": 30
+                "min": 7.0,
+                "max": 14.0
             },
             "level3": {
-                "min": 30,
-                "max": 50
+                "min": 14.0,
+                "max": 23.0
             }
         }
     },
     "Jackknife Sit-Up": {
         "exercise_weights": {
             "level1": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             },
             "level2": {
-                "min": 0,
-                "max": 10
+                "min": 0.0,
+                "max": 5.0
             },
             "level3": {
-                "min": 10,
-                "max": 25
+                "min": 5.0,
+                "max": 11.0
             }
         }
     },
     "Kneeling Ab Wheel Roll-Out": {
         "exercise_weights": {
             "level1": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             },
             "level2": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             },
             "level3": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             }
         }
     },
     "Kneeling Plank": {
         "exercise_weights": {
             "level1": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             },
             "level2": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             },
             "level3": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             }
         }
     },
     "Kneeling Side Plank": {
         "exercise_weights": {
             "level1": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             },
             "level2": {
-                "min": 0,
-                "max": 5
+                "min": 0.0,
+                "max": 2.0
             },
             "level3": {
-                "min": 5,
-                "max": 15
+                "min": 2.0,
+                "max": 7.0
             }
         }
     },
     "Lying Leg Raise": {
         "exercise_weights": {
             "level1": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             },
             "level2": {
-                "min": 0,
-                "max": 10
+                "min": 0.0,
+                "max": 5.0
             },
             "level3": {
-                "min": 10,
-                "max": 25
+                "min": 5.0,
+                "max": 11.0
             }
         }
     },
     "Lying Windshield Wiper": {
         "exercise_weights": {
             "level1": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             },
             "level2": {
-                "min": 0,
-                "max": 10
+                "min": 0.0,
+                "max": 5.0
             },
             "level3": {
-                "min": 10,
-                "max": 25
+                "min": 5.0,
+                "max": 11.0
             }
         }
     },
     "Lying Windshield Wiper with Bent Knees": {
         "exercise_weights": {
             "level1": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             },
             "level2": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             },
             "level3": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             }
         }
     },
     "Machine Crunch": {
         "exercise_weights": {
             "level1": {
-                "min": 20,
-                "max": 40
+                "min": 9.0,
+                "max": 18.0
             },
             "level2": {
-                "min": 40,
-                "max": 80
+                "min": 18.0,
+                "max": 36.0
             },
             "level3": {
-                "min": 80,
-                "max": 120
+                "min": 36.0,
+                "max": 54.0
             }
         }
     },
     "Mountain Climbers": {
         "exercise_weights": {
             "level1": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             },
             "level2": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             },
             "level3": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             }
         }
     },
     "Oblique Crunch": {
         "exercise_weights": {
             "level1": {
-                "min": 0,
-                "max": 10
+                "min": 0.0,
+                "max": 5.0
             },
             "level2": {
-                "min": 10,
-                "max": 25
+                "min": 5.0,
+                "max": 11.0
             },
             "level3": {
-                "min": 25,
-                "max": 45
+                "min": 11.0,
+                "max": 20.0
             }
         }
     },
     "Oblique Sit-Up": {
         "exercise_weights": {
             "level1": {
-                "min": 0,
-                "max": 10
+                "min": 0.0,
+                "max": 5.0
             },
             "level2": {
-                "min": 10,
-                "max": 25
+                "min": 5.0,
+                "max": 11.0
             },
             "level3": {
-                "min": 25,
-                "max": 45
+                "min": 11.0,
+                "max": 20.0
             }
         }
     },
     "Plank": {
         "exercise_weights": {
             "level1": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             },
             "level2": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             },
             "level3": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             }
         }
     },
     "Plank with Leg Lifts": {
         "exercise_weights": {
             "level1": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             },
             "level2": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             },
             "level3": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             }
         }
     },
     "Russian Twist": {
         "exercise_weights": {
             "level1": {
-                "min": 0,
-                "max": 10
+                "min": 0.0,
+                "max": 5.0
             },
             "level2": {
-                "min": 10,
-                "max": 25
+                "min": 5.0,
+                "max": 11.0
             },
             "level3": {
-                "min": 25,
-                "max": 50
+                "min": 11.0,
+                "max": 23.0
             }
         }
     },
     "Side Plank": {
         "exercise_weights": {
             "level1": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             },
             "level2": {
-                "min": 0,
-                "max": 10
+                "min": 0.0,
+                "max": 5.0
             },
             "level3": {
-                "min": 10,
-                "max": 25
+                "min": 5.0,
+                "max": 11.0
             }
         }
     },
     "Sit-Up": {
         "exercise_weights": {
             "level1": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             },
             "level2": {
-                "min": 5,
-                "max": 25
+                "min": 2.0,
+                "max": 11.0
             },
             "level3": {
-                "min": 25,
-                "max": 50
+                "min": 11.0,
+                "max": 23.0
             }
         }
     },
     "Barbell Standing Calf Raise": {
         "exercise_weights": {
             "level1": {
-                "min": 95,
-                "max": 135
+                "min": 43.0,
+                "max": 61.0
             },
             "level2": {
-                "min": 135,
-                "max": 225
+                "min": 61.0,
+                "max": 102.0
             },
             "level3": {
-                "min": 225,
-                "max": 315
+                "min": 102.0,
+                "max": 143.0
             }
         }
     },
     "Donkey Calf Raise": {
         "exercise_weights": {
             "level1": {
-                "min": 25,
-                "max": 75
+                "min": 11.0,
+                "max": 34.0
             },
             "level2": {
-                "min": 75,
-                "max": 150
+                "min": 34.0,
+                "max": 68.0
             },
             "level3": {
-                "min": 150,
-                "max": 250
+                "min": 68.0,
+                "max": 113.0
             }
         }
     },
     "Eccentric Heel Drop": {
         "exercise_weights": {
             "level1": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             },
             "level2": {
-                "min": 0,
-                "max": 25
+                "min": 0.0,
+                "max": 11.0
             },
             "level3": {
-                "min": 25,
-                "max": 50
+                "min": 11.0,
+                "max": 23.0
             }
         }
     },
     "Heel Raise": {
         "exercise_weights": {
             "level1": {
-                "min": 0,
-                "max": 25
+                "min": 0.0,
+                "max": 11.0
             },
             "level2": {
-                "min": 25,
-                "max": 75
+                "min": 11.0,
+                "max": 34.0
             },
             "level3": {
-                "min": 75,
-                "max": 150
+                "min": 34.0,
+                "max": 68.0
             }
         }
     },
     "Seated Calf Raise": {
         "exercise_weights": {
             "level1": {
-                "min": 45,
-                "max": 90
+                "min": 20.0,
+                "max": 41.0
             },
             "level2": {
-                "min": 90,
-                "max": 180
+                "min": 41.0,
+                "max": 82.0
             },
             "level3": {
-                "min": 180,
-                "max": 270
+                "min": 82.0,
+                "max": 122.0
             }
         }
     },
     "Standing Calf Raise": {
         "exercise_weights": {
             "level1": {
-                "min": 50,
-                "max": 100
+                "min": 23.0,
+                "max": 45.0
             },
             "level2": {
-                "min": 100,
-                "max": 200
+                "min": 45.0,
+                "max": 91.0
             },
             "level3": {
-                "min": 200,
-                "max": 300
+                "min": 91.0,
+                "max": 136.0
             }
         }
     },
     "Barbell Wrist Curl": {
         "exercise_weights": {
             "level1": {
-                "min": 15,
-                "max": 30
+                "min": 7.0,
+                "max": 14.0
             },
             "level2": {
-                "min": 30,
-                "max": 50
+                "min": 14.0,
+                "max": 23.0
             },
             "level3": {
-                "min": 50,
-                "max": 75
+                "min": 23.0,
+                "max": 34.0
             }
         }
     },
     "Barbell Wrist Curl Behind the Back": {
         "exercise_weights": {
             "level1": {
-                "min": 10,
-                "max": 25
+                "min": 5.0,
+                "max": 11.0
             },
             "level2": {
-                "min": 25,
-                "max": 50
+                "min": 11.0,
+                "max": 23.0
             },
             "level3": {
-                "min": 50,
-                "max": 75
+                "min": 23.0,
+                "max": 34.0
             }
         }
     },
     "Bar Hang": {
         "exercise_weights": {
             "level1": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             },
             "level2": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             },
             "level3": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             }
         }
     },
     "Dumbbell Wrist Curl": {
         "exercise_weights": {
             "level1": {
-                "min": 5,
-                "max": 15
+                "min": 2.0,
+                "max": 7.0
             },
             "level2": {
-                "min": 15,
-                "max": 25
+                "min": 7.0,
+                "max": 11.0
             },
             "level3": {
-                "min": 25,
-                "max": 40
+                "min": 11.0,
+                "max": 18.0
             }
         }
     },
     "Farmers Walk": {
         "exercise_weights": {
             "level1": {
-                "min": 50,
-                "max": 100
+                "min": 23.0,
+                "max": 45.0
             },
             "level2": {
-                "min": 100,
-                "max": 175
+                "min": 45.0,
+                "max": 79.0
             },
             "level3": {
-                "min": 175,
-                "max": 250
+                "min": 79.0,
+                "max": 113.0
             }
         }
     },
     "Fat Bar Deadlift": {
         "exercise_weights": {
             "level1": {
-                "min": 135,
-                "max": 225
+                "min": 61.0,
+                "max": 102.0
             },
             "level2": {
-                "min": 225,
-                "max": 365
+                "min": 102.0,
+                "max": 166.0
             },
             "level3": {
-                "min": 365,
-                "max": 495
+                "min": 166.0,
+                "max": 224.0
             }
         }
     },
     "Gripper": {
         "exercise_weights": {
             "level1": {
-                "min": 20,
-                "max": 50
+                "min": 9.0,
+                "max": 23.0
             },
             "level2": {
-                "min": 50,
-                "max": 100
+                "min": 23.0,
+                "max": 45.0
             },
             "level3": {
-                "min": 100,
-                "max": 150
+                "min": 45.0,
+                "max": 68.0
             }
         }
     },
     "One-Handed Bar Hang": {
         "exercise_weights": {
             "level1": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             },
             "level2": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             },
             "level3": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             }
         }
     },
     "Plate Pinch": {
         "exercise_weights": {
             "level1": {
-                "min": 5,
-                "max": 25
+                "min": 2.0,
+                "max": 11.0
             },
             "level2": {
-                "min": 25,
-                "max": 45
+                "min": 11.0,
+                "max": 20.0
             },
             "level3": {
-                "min": 45,
-                "max": 75
+                "min": 20.0,
+                "max": 34.0
             }
         }
     },
     "Plate Wrist Curl": {
         "exercise_weights": {
             "level1": {
-                "min": 5,
-                "max": 15
+                "min": 2.0,
+                "max": 7.0
             },
             "level2": {
-                "min": 15,
-                "max": 30
+                "min": 7.0,
+                "max": 14.0
             },
             "level3": {
-                "min": 30,
-                "max": 50
+                "min": 14.0,
+                "max": 23.0
             }
         }
     },
     "Towel Pull-Up": {
         "exercise_weights": {
             "level1": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             },
             "level2": {
-                "min": 0,
-                "max": 20
+                "min": 0.0,
+                "max": 9.0
             },
             "level3": {
-                "min": 20,
-                "max": 50
+                "min": 9.0,
+                "max": 23.0
             }
         }
     },
     "Wrist Roller": {
         "exercise_weights": {
             "level1": {
-                "min": 2.5,
-                "max": 10
+                "min": 1.0,
+                "max": 5.0
             },
             "level2": {
-                "min": 10,
-                "max": 25
+                "min": 5.0,
+                "max": 11.0
             },
             "level3": {
-                "min": 25,
-                "max": 50
+                "min": 11.0,
+                "max": 23.0
             }
         }
     },
     "Barbell Wrist Extension": {
         "exercise_weights": {
             "level1": {
-                "min": 5,
-                "max": 15
+                "min": 2.0,
+                "max": 7.0
             },
             "level2": {
-                "min": 15,
-                "max": 30
+                "min": 7.0,
+                "max": 14.0
             },
             "level3": {
-                "min": 30,
-                "max": 50
+                "min": 14.0,
+                "max": 23.0
             }
         }
     },
     "Dumbbell Wrist Extension": {
         "exercise_weights": {
             "level1": {
-                "min": 5,
-                "max": 10
+                "min": 2.0,
+                "max": 5.0
             },
             "level2": {
-                "min": 10,
-                "max": 20
+                "min": 5.0,
+                "max": 9.0
             },
             "level3": {
-                "min": 20,
-                "max": 35
+                "min": 9.0,
+                "max": 16.0
             }
         }
     },
     "Rowing Machine": {
         "exercise_weights": {
             "level1": {
-                "min": 50,
-                "max": 100
+                "min": 23.0,
+                "max": 45.0
             },
             "level2": {
-                "min": 100,
-                "max": 175
+                "min": 45.0,
+                "max": 79.0
             },
             "level3": {
-                "min": 175,
-                "max": 250
+                "min": 79.0,
+                "max": 113.0
             }
         }
     },
     "Stationary Bike": {
         "exercise_weights": {
             "level1": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             },
             "level2": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             },
             "level3": {
-                "min": 0,
-                "max": 0
+                "min": 0.0,
+                "max": 0.0
             }
         }
     },
     "Bar Dips": {
         "exercise_weights": {
             "level1": {
-                "min": 0,
-                "max": 25
+                "min": 0.0,
+                "max": 11.0
             },
             "level2": {
-                "min": 25,
-                "max": 75
+                "min": 11.0,
+                "max": 34.0
             },
             "level3": {
-                "min": 75,
-                "max": 150
+                "min": 34.0,
+                "max": 68.0
             }
         }
     },
     "Reverse Dumbbell Fly": {
         "exercise_weights": {
             "level1": {
-                "min": 5,
-                "max": 10
+                "min": 2.0,
+                "max": 5.0
             },
             "level2": {
-                "min": 10,
-                "max": 20
+                "min": 5.0,
+                "max": 9.0
             },
             "level3": {
-                "min": 20,
-                "max": 35
+                "min": 9.0,
+                "max": 16.0
             }
         }
     },
     "Lat Pulldown": {
         "exercise_weights": {
             "level1": {
-                "min": 50,
-                "max": 90
+                "min": 23.0,
+                "max": 41.0
             },
             "level2": {
-                "min": 90,
-                "max": 150
+                "min": 41.0,
+                "max": 68.0
             },
             "level3": {
-                "min": 150,
-                "max": 200
+                "min": 68.0,
+                "max": 91.0
             }
         }
     },
     "Tricep Pushdown": {
         "exercise_weights": {
             "level1": {
-                "min": 20,
-                "max": 40
+                "min": 9.0,
+                "max": 18.0
             },
             "level2": {
-                "min": 40,
-                "max": 70
+                "min": 18.0,
+                "max": 32.0
             },
             "level3": {
-                "min": 70,
-                "max": 100
+                "min": 32.0,
+                "max": 45.0
             }
         }
     },
     "Hack Squats": {
         "exercise_weights": {
             "level1": {
-                "min": 45,
-                "max": 135
+                "min": 20.0,
+                "max": 61.0
             },
             "level2": {
-                "min": 135,
-                "max": 275
+                "min": 61.0,
+                "max": 125.0
             },
             "level3": {
-                "min": 275,
-                "max": 405
+                "min": 125.0,
+                "max": 184.0
             }
         }
     },
     "High to Low Wood Chop": {
         "exercise_weights": {
             "level1": {
-                "min": 5,
-                "max": 15
+                "min": 2.0,
+                "max": 7.0
             },
             "level2": {
-                "min": 15,
-                "max": 30
+                "min": 7.0,
+                "max": 14.0
             },
             "level3": {
-                "min": 30,
-                "max": 50
+                "min": 14.0,
+                "max": 23.0
             }
         }
     }
