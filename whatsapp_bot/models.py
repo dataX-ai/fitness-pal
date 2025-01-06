@@ -80,6 +80,8 @@ class WorkoutSession(models.Model):
     user = models.ForeignKey(WhatsAppUser, on_delete=models.CASCADE, related_name='workouts')
     activity_type = models.CharField(max_length=100, null=True, blank=True)
     duration_minutes = models.IntegerField(null=True, blank=True)
+    calories_burnt = models.FloatField(null=True, blank=True)
+    intensity = models.IntegerField(null=True, blank=True)
     raw_messages = models.ManyToManyField(RawMessage, related_name='raw_workout_sessions')
     processed_messages = models.ManyToManyField(RawMessage, related_name='processed_workout_sessions')
     created_at = models.DateTimeField(auto_now_add=True)
@@ -168,3 +170,16 @@ class PaymentHistory(models.Model):
 
     def __str__(self):
         return f"{self.user.phone_number} - {self.subscription_id} ({self.status})"
+
+class DashboardDetails(models.Model):
+    user = models.OneToOneField(WhatsAppUser, on_delete=models.CASCADE, related_name='dashboard_details')
+    all_time_duration = models.IntegerField(null=True, blank=True)
+    last_week_duration = models.IntegerField(null=True, blank=True)
+    avg_week_duration = models.IntegerField(null=True, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    achievements = models.JSONField(null=True, blank=True)
+    initial_weight = models.FloatField(null=True, blank=True)
+    current_weight = models.FloatField(null=True, blank=True)
+    goal_weight = models.FloatField(null=True, blank=True)
+    fitness_score = models.IntegerField(null=True, blank=True)
+    fitness_score_change = models.IntegerField(null=True, blank=True)

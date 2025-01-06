@@ -1,6 +1,13 @@
 from typing import Optional, List, Tuple
 from django.db.models import Q
 from ..models import WhatsAppUser, BodyHistory
+import pandas as pd
+from django.core.cache import cache
+from django.conf import settings
+from functools import lru_cache
+from ..services.logger_service import get_logger
+
+logger = get_logger()
 
 class UserDAO:
     @staticmethod
@@ -12,26 +19,25 @@ class UserDAO:
         return user, created
 
     @staticmethod
-    def get_user_by_phone(phone_number: str) -> Optional[WhatsAppUser]:
-        """Get user by phone number"""
+    @lru_cache(maxsize=1000)  # Cache up to 1000 most recent users
+    def get_user_by_id(user_id: int) -> Optional[WhatsAppUser]:
+        """Get user by ID with local caching"""
         try:
-            return WhatsAppUser.objects.get(phone_number=phone_number)
+            return WhatsAppUser.objects.get(id=user_id)
         except WhatsAppUser.DoesNotExist:
             return None
 
     @staticmethod
     def update_user_details(phone_number: str, **kwargs) -> Optional[WhatsAppUser]:
-        """
-        Update user details
-        Args:
-            phone_number: User's phone number
-            **kwargs: Fields to update (name, height, weight, etc.)
-        """
+        """Update user details and invalidate cache"""
         try:
             user = WhatsAppUser.objects.get(phone_number=phone_number)
             for key, value in kwargs.items():
                 setattr(user, key, value)
             user.save()
+            
+            # Clear the cache for this user
+            UserDAO.get_user_by_id.cache_clear()
             return user
         except WhatsAppUser.DoesNotExist:
             return None
@@ -122,3 +128,72 @@ class UserDAO:
         user.paid = paid
         user.save()
         return user
+
+    @staticmethod
+    def get_users_weight_history(users: List[WhatsAppUser] = None) -> pd.DataFrame:
+        """
+        Get first and last recorded weights for users
+        Args:
+            users: List of WhatsAppUser instances. If None or empty, stats for all users will be returned
+        Returns:
+            DataFrame with columns: user_id, first_weight, first_weight_date, last_weight, last_weight_date,
+            height, goal
+        """
+        from django.db.models import Window, F, Subquery, OuterRef
+        from django.db.models.functions import FirstValue
+        from django.db.models import Q
+
+        # Base query filters
+        base_filter = Q(weight__isnull=False) | Q(goal__isnull=False)
+        if users:
+            base_filter &= Q(user__in=users)
+
+        # Get first weight records
+        first_records = BodyHistory.objects.filter(base_filter).values('user_id').annotate(
+            first_weight=Window(
+                expression=FirstValue('weight'),
+                partition_by='user_id',
+                order_by=F('created_at').asc()
+            ),
+            first_weight_date=Window(
+                expression=FirstValue('created_at'),
+                partition_by='user_id',
+                order_by=F('created_at').asc()
+            )
+        ).order_by('user_id')
+
+        # Get latest records for each user
+        latest_records = (
+            BodyHistory.objects
+            .filter(base_filter)
+            .order_by('user_id', '-created_at')
+            .distinct('user_id')
+            .values(
+                'user_id',
+                'weight',
+                'created_at',
+                'height',
+                'goal'
+            )
+        )
+
+        # Combine the results
+        combined_data = []
+        first_records_dict = {r['user_id']: r for r in first_records}
+        latest_records_dict = {r['user_id']: r for r in latest_records}
+
+        for user_id in set(first_records_dict.keys()) | set(latest_records_dict.keys()):
+            first_data = first_records_dict.get(user_id, {})
+            latest_data = latest_records_dict.get(user_id, {})
+            
+            combined_data.append({
+                'user_id': user_id,
+                'first_weight': first_data.get('first_weight'),
+                'first_weight_date': first_data.get('first_weight_date'),
+                'last_weight': latest_data.get('weight'),
+                'last_weight_date': latest_data.get('created_at'),
+                'user_height': latest_data.get('height'),
+                'user_goal': latest_data.get('goal')
+            })
+
+        return pd.DataFrame.from_records(combined_data)

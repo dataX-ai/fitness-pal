@@ -5,8 +5,33 @@ from ..services.logger_service import get_logger
 from ..ai_services.nlp_processor import extract_workout_details
 from django.db import transaction
 from ..dao.exercise_dao import ExerciseDAO, WorkoutSessionDAO
+import pandas as pd
+import os
+import math
+from concurrent.futures import ThreadPoolExecutor
+from typing import Dict
+from ..utils.config import EXERCISE_LIST_DF
 
 logger = get_logger(__name__)
+
+exercise_metrics = {}
+for _, row in EXERCISE_LIST_DF.iterrows():
+    exercise_name = row['Exercise Name']
+    avg_rep = row['Avg Rep']
+    avg_break = row['Avg Break']
+    cal_per_rep = row['calories_spent_per_rep_per_kg']
+    exercise_metrics[exercise_name] = [avg_rep, avg_break, cal_per_rep]
+
+
+def process_session_wrapper(session_data: Dict):
+    """Wrapper function to handle individual session processing"""
+    try:
+        session = WorkoutSession.objects.get(id=session_data['id'])
+        process_session(session)
+        return True
+    except Exception as e:
+        logger.error(f"Failed to process session {session_data['id']}: {str(e)}")
+        return False
 
 def process_pending_workout_messages():
     """
@@ -27,17 +52,19 @@ def process_pending_workout_messages():
         ).values('id', 'raw_count', 'processed_count')
         
         session_count = len(pending_sessions)
-        
+
         if session_count > 0:
             logger.info(f"Found {session_count} sessions with pending messages to process")
-            # Process each session
-            for session_data in pending_sessions:
-                try:
-                    session = WorkoutSession.objects.get(id=session_data['id'])
-                    process_session(session)
-                except Exception as e:
-                    logger.error(f"Failed to process session {session_data['id']}: {str(e)}")
-                    continue
+            
+            # Process sessions in parallel using ThreadPoolExecutor
+            max_workers = min(session_count, 4)  # Limit max workers to 4 or session count
+            with ThreadPoolExecutor(max_workers=max_workers) as executor:
+                # Submit all sessions for processing
+                results = list(executor.map(process_session_wrapper, pending_sessions))
+                
+                # Count successful processes
+                successful = sum(1 for result in results if result)
+                logger.info(f"Successfully processed {successful} out of {session_count} sessions")
         else:
             logger.info("No sessions found with pending messages")
         
@@ -71,7 +98,10 @@ def process_session(session: WorkoutSession):
         
         workout_details = extract_workout_details(message_blob)
         logger.info(f"Extracted workout details: {workout_details}")
-        
+
+        session_time = 0
+        calories_burnt = 0
+
         # Process exercises from the workout details
         if 'exercises' in workout_details:
             try:
@@ -87,6 +117,10 @@ def process_session(session: WorkoutSession):
                             'reps': int(exercise['reps'])
                         }
                         exercise_records.append(exercise_record)
+                        logger.info(f"Exercise Record: {exercise_record} :::: {exercise_metrics[exercise['exercise_name']]}")
+                        session_time += (exercise_metrics[exercise['exercise_name']][0] * int(exercise['reps'])  + exercise_metrics[exercise['exercise_name']][1]*(int(exercise['sets'])-1) + 120)/60
+                        calories_burnt += exercise_metrics[exercise['exercise_name']][2] * int(exercise['reps']) * int(exercise['sets']) * int(exercise['weight']['value']) * (1 if exercise['weight']['unit'].lower() in ['kg', 'kgs', 'kilograms', 'kilos', 'kilogram', 'kilo'] else 2.20462)
+                        logger.info(f"Session Time Now with {exercise['exercise_name']}: {session_time}")
                     except (KeyError, ValueError) as e:
                         logger.error(f"Failed to transform exercise data: {str(e)}")
                         continue
@@ -101,7 +135,9 @@ def process_session(session: WorkoutSession):
                 if created_exercises:
                     WorkoutSessionDAO.mark_messages_as_processed(
                         session=session,
-                        raw_messages=raw_messages
+                        raw_messages=raw_messages,
+                        session_time=math.ceil(session_time),
+                        calories_burnt=math.ceil(calories_burnt)
                     )
                 
                 logger.info(f"Successfully processed {len(created_exercises)} exercises for session {session.id}")

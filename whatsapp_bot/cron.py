@@ -5,6 +5,7 @@ from django.conf import settings
 import os
 from .services.logger_service import get_logger
 from .cron_services.process_pending_workout_messages import process_pending_workout_messages
+from .cron_services.process_workout_metrics import process_workout_metrics
 
 import traceback
 
@@ -77,7 +78,7 @@ class ProcessPendingWorkoutMessagesCronJob(BaseCronJob):
     Cron job to identify workout sessions with unprocessed messages
     Runs every 15 minutes
     """
-    RUN_EVERY_MINS = 1
+    RUN_EVERY_MINS = 15
     schedule = Schedule(run_every_mins=RUN_EVERY_MINS)
     code = 'whatsapp_bot.process_pending_workout_messages'
     
@@ -86,3 +87,16 @@ class ProcessPendingWorkoutMessagesCronJob(BaseCronJob):
     
     def do(self):
         process_pending_workout_messages()
+
+class ProcessWorkoutMetricsCronJob(BaseCronJob):
+    """
+    Cron job to process workout metrics
+    Runs every 15 minutes
+    """
+    RUN_EVERY_MINS = 60*6
+    schedule = Schedule(run_every_mins=RUN_EVERY_MINS)
+    code = 'whatsapp_bot.process_workout_metrics'
+
+    def do(self):
+        process_workout_metrics()
+

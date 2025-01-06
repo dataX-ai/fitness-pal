@@ -15,6 +15,7 @@ from ollama import chat
 from ollama import ChatResponse
 import google.generativeai as genai
 from ollama import Client
+from typing_extensions import TypedDict
 
 load_dotenv()
 
@@ -32,11 +33,11 @@ class MessageIntent(Enum):
     HEIGHT_WEIGHT = 'height_weight'
     UNKNOWN = 'unknown'
 
-class ExerciseMatch(typing.TypedDict, total=True):  # total=True makes all fields required
+class ExerciseMatch(TypedDict, total=True):  # total=True makes all fields required
     matched_exercise: str
     confidence: typing.Literal["HIGH", "MEDIUM", "LOW"]
 
-class ExerciseMatchResponse(typing.TypedDict, total=True):
+class ExerciseMatchResponse(TypedDict, total=True):
     matched_exercises: list[ExerciseMatch]
 
 def extract_workout_details(message: str) -> Dict[str, Any]:
@@ -72,7 +73,7 @@ def extract_workout_details(message: str) -> Dict[str, Any]:
             }
         )
 
-        json_response = json.loads(response.choices[0].message.content)
+        json_response = match_exercise_name(json.loads(response.choices[0].message.content))
     except JSONSchemaValidationError as e:
         logger.error(f"Schema validation error in Gemini response: {e}")
         raise ValueError("Failed to parse workout details - invalid response format")
@@ -198,12 +199,16 @@ def match_exercise_name(exercise_dict:Dict) -> Dict[str,Any]:
         )
         matched_exercise_json = json.loads(result.text)
         
+        # Update the original exercise names in-place
+        for i, matched in enumerate(matched_exercise_json["matched_exercises"]):
+            exercise_dict["exercises"][i]["exercise_name"] = matched["matched_exercise"]
+        
+        return exercise_dict
+        
     except JSONSchemaValidationError as e:
         logger.error(f"Schema validation error in Gemini response: {e}")
         raise ValueError("Failed to parse workout details - invalid response format")
     except Exception as e:
         logger.error(f"Error in parsing Gemini response: {e}")
         raise RuntimeError(f"Failed to process workout details: {str(e)}")
-
-    return matched_exercise_json
 

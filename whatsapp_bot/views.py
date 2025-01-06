@@ -15,6 +15,11 @@ from standardwebhooks import Webhook
 from .utils.config import DODO_WEBHOOK_SECRET
 from .services.payments import handle_dodo_webhook
 from django.db import connection
+from .models import WhatsAppUser, BodyHistory, WorkoutSession, ProgressPhoto
+from .services.dashboard_services import get_dashboard_user_data
+import pandas as pd
+import os
+from .utils.config import EXERCISE_LIST_DF
 
 # Configure logging
 logger = logger_service.get_logger()
@@ -135,9 +140,7 @@ def health_check(request):
 @require_http_methods(["GET"])
 def fetch_workout_info(request):
     try:
-        import pandas as pd
-        # Read CSV file
-        df = pd.read_csv('whatsapp_bot/exercise_inventory - exercises.csv')
+        df = EXERCISE_LIST_DF
         
         # Initialize list to store exercise objects
         exercises = []
@@ -166,3 +169,29 @@ def fetch_workout_info(request):
             {'error': 'Failed to fetch workout information'}, 
             status=500
         )    
+
+@csrf_exempt
+@require_http_methods(["POST"])
+def get_user_dashboard_info(request):
+    try:
+        logger.info(f"Request body: {request.body}")
+        user_id = request.POST.get('user-id')
+        logger.info(f"Request User ID: {user_id}")
+        if not user_id:
+            return JsonResponse({'error': 'user-id parameter is required'}, status=400)
+
+        dashboard_data = get_dashboard_user_data(user_id)
+        
+        if dashboard_data is None:
+            return JsonResponse({'error': 'User not found'}, status=404)
+
+        return JsonResponse(dashboard_data)
+
+    except Exception as e:
+        logger.error(f"Error in get_user_dashboard_info: {str(e)}")
+        return JsonResponse(
+            {'error': 'Failed to fetch user dashboard information'},
+            status=500
+        )
+
+

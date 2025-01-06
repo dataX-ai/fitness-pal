@@ -9,7 +9,7 @@ from ..ai_services.nlp_services import is_name_response, is_measurement_response
 from .message_types import *
 from .twilio_services import twilio_client
 from ..services import logger_service
-from ..dao.workout_session_dao import WorkoutSessionDAO
+from ..dao.exercise_dao import WorkoutSessionDAO
 from ..models import RawMessage
 from .subscription_check import SubscriptionCheck
 

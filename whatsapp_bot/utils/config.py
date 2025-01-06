@@ -1,7 +1,18 @@
 import os
+import pandas as pd
 
 # Environment-based configuration
 IS_DEBUG = os.getenv('DEBUG', 'False').lower() == 'true'
+
+############################
+# BMI Configuration
+############################
+
+BMI_TARGETS = {
+    'lean': 20.5,      # Slim and Defined
+    'athletic': 23.0,  # Muscular and Balanced
+    'bulk': 25.0       # Large and Powerful
+}
 
 ############################
 # Dodo Configuration
@@ -61,3 +72,16 @@ WHATSAPP_ACTIVITY_TEMPLATE_SID = "HX924f53aed72555c48b8f5f402a615098"
 ############################
 
 MAX_FREE_MESSAGES_PER_DAY = int(os.getenv('MAX_FREE_MESSAGES_PER_DAY', '3'))
+
+############################
+# Exercise List
+############################
+
+EXERCISE_LIST_CSV_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'utils', 'exercise_list.csv')
+try:
+    EXERCISE_LIST_DF = pd.read_csv(EXERCISE_LIST_CSV_PATH)
+    # Convert all string columns to lowercase
+    string_columns = EXERCISE_LIST_DF.select_dtypes(include=['object']).columns
+    EXERCISE_LIST_DF[string_columns] = EXERCISE_LIST_DF[string_columns].apply(lambda x: x.str.lower())
+except Exception as e:
+    raise Exception(f"Error loading exercise list CSV: {e}")

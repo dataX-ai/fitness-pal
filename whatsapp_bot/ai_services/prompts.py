@@ -1,13 +1,9 @@
 import pandas as pd
 import json
 import os
+from ..utils.config import EXERCISE_LIST_DF
 
-# Get the directory containing this file
-current_dir = os.path.dirname(os.path.abspath(__file__))
-csv_path = os.path.join(current_dir, "exercise_list.csv")
-
-df = pd.read_csv(csv_path)
-exercise_names = df['Exercise Name'].to_list()
+exercise_names = EXERCISE_LIST_DF['Exercise Name'].to_list()
 exercise_names_dict = {"exercises": exercise_names}
 
 GEMINI_MATCH_EXERCISE_SYSTEM_PROMPT = '''You are an AI assistant specialized in mapping user-provided exercise names to a standardized exercise database. Your task is to match input exercise names with the closest matching exercise from the authorized list, even when the input contains variations, misspellings, or colloquial terms.
