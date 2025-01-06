@@ -1,5 +1,6 @@
 import os
 import pandas as pd
+import json
 
 # Environment-based configuration
 IS_DEBUG = os.getenv('DEBUG', 'False').lower() == 'true'
@@ -78,10 +79,24 @@ MAX_FREE_MESSAGES_PER_DAY = int(os.getenv('MAX_FREE_MESSAGES_PER_DAY', '3'))
 ############################
 
 EXERCISE_LIST_CSV_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'utils', 'exercise_list.csv')
+EXERCISE_LEVEL_JSON_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'utils', 'exercise_range_kg.json')
 try:
     EXERCISE_LIST_DF = pd.read_csv(EXERCISE_LIST_CSV_PATH)
-    # Convert all string columns to lowercase
     string_columns = EXERCISE_LIST_DF.select_dtypes(include=['object']).columns
     EXERCISE_LIST_DF[string_columns] = EXERCISE_LIST_DF[string_columns].apply(lambda x: x.str.lower())
 except Exception as e:
     raise Exception(f"Error loading exercise list CSV: {e}")
+
+try:
+    with open(EXERCISE_LEVEL_JSON_PATH) as f:
+        data = json.load(f)
+        # Convert all exercise names to lowercase
+        EXERCISE_LEVEL_JSON = {k.lower(): v for k, v in data.items()}
+except Exception as e:
+    raise Exception(f"Error loading exercise level JSON: {e}")
+
+EXERCISE_LEVEL_INTENSITY_MAPPING = {
+    'level1': 10,
+    'level2': 15,
+    'level3': 25,
+}

@@ -10,7 +10,8 @@ import os
 import math
 from concurrent.futures import ThreadPoolExecutor
 from typing import Dict
-from ..utils.config import EXERCISE_LIST_DF
+from ..utils.config import EXERCISE_LIST_DF, EXERCISE_LEVEL_JSON, EXERCISE_LEVEL_INTENSITY_MAPPING
+from ..utils.conversion import lbs_to_kg
 
 logger = get_logger(__name__)
 
@@ -100,6 +101,7 @@ def process_session(session: WorkoutSession):
         logger.info(f"Extracted workout details: {workout_details}")
 
         session_time = 0
+        temp_session_time = []
         calories_burnt = 0
 
         # Process exercises from the workout details
@@ -117,10 +119,13 @@ def process_session(session: WorkoutSession):
                             'reps': int(exercise['reps'])
                         }
                         exercise_records.append(exercise_record)
-                        logger.info(f"Exercise Record: {exercise_record} :::: {exercise_metrics[exercise['exercise_name']]}")
-                        session_time += (exercise_metrics[exercise['exercise_name']][0] * int(exercise['reps'])  + exercise_metrics[exercise['exercise_name']][1]*(int(exercise['sets'])-1) + 120)/60
-                        calories_burnt += exercise_metrics[exercise['exercise_name']][2] * int(exercise['reps']) * int(exercise['sets']) * int(exercise['weight']['value']) * (1 if exercise['weight']['unit'].lower() in ['kg', 'kgs', 'kilograms', 'kilos', 'kilogram', 'kilo'] else 2.20462)
-                        logger.info(f"Session Time Now with {exercise['exercise_name']}: {session_time}")
+
+                        exercise_time += (exercise_metrics[exercise['exercise_name']][0] * int(exercise['reps'])  + exercise_metrics[exercise['exercise_name']][1]*(int(exercise['sets'])-1) + 120)/60
+                        session_time += exercise_time
+                        calories_burnt += exercise_metrics[exercise['exercise_name']][2] * int(exercise['reps']) * int(exercise['sets'])  * (int(exercise['weight']['value']) if exercise['weight']['unit'].lower() in ['kg', 'kgs', 'kilograms', 'kilos', 'kilogram', 'kilo'] else int(lbs_to_kg(exercise['weight']['value'])))
+                        intensity += get_exercise_intensity(exercise)
+                        temp_session_time.append({exercise['exercise_name']: {"time": exercise_time, "intensity": get_exercise_intensity(exercise), "calories": exercise_metrics[exercise['exercise_name']][2] * int(exercise['reps']) * int(exercise['sets'])  * (int(exercise['weight']['value']) if exercise['weight']['unit'].lower() in ['kg', 'kgs', 'kilograms', 'kilos', 'kilogram', 'kilo'] else int(lbs_to_kg(exercise['weight']['value'])))}})
+                        logger.info(f"Session Time Now with {exercise['exercise_name']}: {temp_session_time}")
                     except (KeyError, ValueError) as e:
                         logger.error(f"Failed to transform exercise data: {str(e)}")
                         continue
@@ -150,3 +155,22 @@ def process_session(session: WorkoutSession):
     except Exception as e:
         logger.error(f"Error processing session {session.id}: {str(e)}")
         raise
+
+def get_exercise_intensity(exercise: Dict):
+    try:
+        weight = exercise['weight']['value']
+        rep = exercise['reps']
+        set = exercise['sets']
+
+        if exercise['weight']['unit'].lower() in ['kg', 'kgs', 'kilograms', 'kilos', 'kilogram', 'kilo']:
+            weight = int(lbs_to_kg(weight))
+
+        if weight < EXERCISE_LEVEL_JSON[exercise['exercise_name']]['exercise_weights']['level1']['max']:
+            return ((rep*set)**1.5)*(EXERCISE_LEVEL_INTENSITY_MAPPING['level1'])
+        elif weight>= EXERCISE_LEVEL_JSON[exercise['exercise_name']]['exercise_weights']['level2']['min'] and weight < EXERCISE_LEVEL_JSON[exercise['exercise_name']]['exercise_weights']['level2']['max']:
+            return ((rep*set)**1.5)*(EXERCISE_LEVEL_INTENSITY_MAPPING['level2'])
+        else:
+            return ((rep*set)**1.5)*(EXERCISE_LEVEL_INTENSITY_MAPPING['level3'])
+    except Exception as e:
+        logger.error(f"Error getting exercise intensity: {str(e)}")
+        return 0
