@@ -6,6 +6,7 @@ import os
 from .services.logger_service import get_logger
 from .cron_services.process_pending_workout_messages import process_pending_workout_messages
 from .cron_services.eod_user_message import send_eod_workout_summaries
+from .cron_services.eow_user_message import send_eow_workout_summaries
 
 
 import traceback
@@ -103,4 +104,19 @@ class SendEODWorkoutSummariesCronJob(BaseCronJob):
     
     def do(self):
         send_eod_workout_summaries()
+
+class SendEOWWorkoutSummariesCronJob(BaseCronJob):
+    """
+    Cron job to send end-of-week workout summaries to users
+    Runs weekly on Monday at 09:00 AM
+    """
+    RUN_AT_TIMES = ['09:00']
+    schedule = Schedule(run_at_times=RUN_AT_TIMES,run_on_days=[6]) # 6 = Sunday
+    code = 'whatsapp_bot.send_eow_workout_summaries'
+    
+    TIMEOUT_SECONDS = 600  # 10 minutes timeout
+    ALLOW_PARALLEL_RUNS = False
+    
+    def do(self):
+        send_eow_workout_summaries()
 

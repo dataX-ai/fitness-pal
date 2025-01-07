@@ -170,7 +170,9 @@ LOGGING = {
 
 # Django Cron Settings
 CRON_CLASSES = [
-    'whatsapp_bot.cron.ProcessPendingWorkoutMessagesCronJob'
+    'whatsapp_bot.cron.ProcessPendingWorkoutMessagesCronJob',
+    # 'whatsapp_bot.cron.SendEODWorkoutSummariesCronJob',
+    # 'whatsapp_bot.cron.SendEOWWorkoutSummariesCronJob',  
 ]
 
 # Cron specific settings
