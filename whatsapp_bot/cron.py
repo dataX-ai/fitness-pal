@@ -5,6 +5,8 @@ from django.conf import settings
 import os
 from .services.logger_service import get_logger
 from .cron_services.process_pending_workout_messages import process_pending_workout_messages
+from .cron_services.eod_user_message import send_eod_workout_summaries
+
 
 import traceback
 
@@ -86,3 +88,19 @@ class ProcessPendingWorkoutMessagesCronJob(BaseCronJob):
     
     def do(self):
         process_pending_workout_messages()
+
+class SendEODWorkoutSummariesCronJob(BaseCronJob):
+    """
+    Cron job to send end-of-day workout summaries to users
+    Runs daily at 23:30 (11:30 PM)
+    """
+    RUN_AT_TIMES = ['23:30']
+    schedule = Schedule(run_at_times=RUN_AT_TIMES)
+    code = 'whatsapp_bot.send_eod_workout_summaries'
+    
+    TIMEOUT_SECONDS = 300  # 5 minutes timeout
+    ALLOW_PARALLEL_RUNS = False
+    
+    def do(self):
+        send_eod_workout_summaries()
+

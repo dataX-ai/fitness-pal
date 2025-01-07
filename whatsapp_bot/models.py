@@ -83,6 +83,7 @@ class WorkoutSession(models.Model):
     raw_messages = models.ManyToManyField(RawMessage, related_name='raw_workout_sessions')
     processed_messages = models.ManyToManyField(RawMessage, related_name='processed_workout_sessions')
     created_at = models.DateTimeField(auto_now_add=True)
+    eod_summary_sent = models.BooleanField(default=False)  # New field
 
     def __str__(self):
         return f"{self.user.phone_number} - {self.activity_type} ({self.created_at})"
